@@ -261,9 +261,9 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xxl-1 offset-xxl-0"><div class="btn-group-vertical btn-group-sm" role="group">
-    <button id="MWhbtn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="myFunction(this)">MWh</button>
-    <button id="TSEKbtn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myFunction(this)" >TSEK</button>
-    <button id="KgCO2btn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myFunction(this)" >kgCO<sub>2</sub></button>
+    <button id="MWhbtn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="myFunction(this,'bigMapChartDiv')">MWh</button>
+    <button id="TSEKbtn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myFunction(this,'bigMapChartDiv')" >TSEK</button>
+    <button id="KgCO2btn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myFunction(this,'bigMapChartDiv')" >kgCO<sub>2</sub></button>
 </div></div>
                                     <div class="col-xxl-10" id="bigMapChartDiv"><div>
   <canvas id="myChart" onload="renderMapChart"></canvas>
@@ -281,27 +281,30 @@
       datasets: [{
         label: 'El',
         data: [12, 19, 3, 5, 2, 3, 5,6],
-        borderWidth: 1
+        borderWidth: 0,
+        backgroundColor:'#FFB4AB',
       }, 
         {
         label: 'Kol',
         data: [14, 16, 5, 4, 5, 6, 5,6],
-        borderWidth: 1
-      }, 
-                        {
+        borderWidth: 0, 
+        backgroundColor:'#4B9200',
+      }, {
+        label: 'Koks',
+        data: [14, 16, 5, 4, 5, 6, 5,6],
+        borderWidth: 0, 
+        backgroundColor:'#920028',
+      },{
         label: 'Naturgas',
         data: [14, 16, 5, 4, 5, 6, 5,6],
-        borderWidth: 1
+        borderWidth: 0, 
+        backgroundColor:'#9ACBFF',
       },
                         {
         label: 'Olja',
         data: [14, 16, 5, 4, 5, 6, 5,6],
-        borderWidth: 1
-      }, 
-                       {
-        label: 'Koks',
-        data: [14, 16, 5, 4, 5, 6, 5,6],
-        borderWidth: 1
+        borderWidth: 0, 
+        backgroundColor:'#6750A4',
       }]
     },
     options: {
@@ -507,87 +510,98 @@
                             <div class="card-body">
                                 <div class="row"><div class="row" style="padding-bottom: 3px;">
 
-    <!-- ÅR/MÅN Knappar  -->
+    <!-- ÅR Knappar  -->
     <div class="col-xxl-7" style="font-size: 0.85vw;width: 100%;">
         <div class="row d-xl-flex" style="font-size: 0.85vw;margin-bottom: 3px;">
-            <div class="col-xl-3 d-flex flex-column-reverse" style="padding-right: 61px;margin-right: -41px;"><button id="yearSelect" onclick="YearMonthSelect(this)" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-left: 0px;margin-right: -9px;background: #f1f0f4;">År</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="YMSelect(this)">2017</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">2018</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">2019</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">2020</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">2021</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">2022</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">2023</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">2024</button></div>
+            <div class="col-xl-3 d-flex flex-column-reverse" style="padding-right: 61px;margin-right: -41px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-left: 0px;margin-right: -9px;background: #D6E4F7;">År</button></div>
+            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2017</button></div>
+            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2018</button></div>
+            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2019</button></div>
+            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2020</button></div>
+            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2021</button></div>
+            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2022</button></div>
+            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="YSelectBudget(this)">2023</button></div>
+            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2024</button></div>
         </div>
-        <div class="row d-xl-flex" style="font-size: 0.85vw;">
-            <div class="col-xl-3 d-flex flex-column-reverse" style="padding-right: 61px;margin-right: -41px;"><button id="monthSelect" onclick="YearMonthSelect(this)" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-left: 0px;margin-right: -9px;background: #D6E4F7;" onclick="YMSelect(this)">Mån</button></div>
-            <div id="monthSelectDiv1" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="YMSelect(this)">Jan</button></div>
-            <div  id="monthSelectDiv2" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">Feb</button></div>
-            <div  id="monthSelectDiv3" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">Mar</button></div>
-            <div  id="monthSelectDiv4" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">Apr</button></div>
-            <div  id="monthSelectDiv5" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">Maj</button></div>
-            <div  id="monthSelectDiv6" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">Jun</button></div>
-            <div  id="monthSelectDiv7" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">Jul</button></div>
-            <div  id="monthSelectDiv8" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">Sep</button></div>
-        </div>
+
     </div>
 </div></div>
 
-                                <!-- ÅR/MÅN Knappar  -->
+                                
                                 <div class="row">
-                                    <div class="col d-xl-flex justify-content-xl-end">
-                                        <div class="btn-group btn-group-sm" role="group" style="padding-top: 6px;margin-top: -6px;padding-bottom: 7px;margin-bottom: -1px;padding-left: 0px;"><button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xxl-center" type="button" style="padding-top: 2px;padding-left: 1px;padding-right: 1px;margin-right: -1px;margin-left: -1px;background: rgb(214,228,247);border-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="d-xxl-flex align-items-xxl-center" style="font-size: 1.6vw;color: #0f1d2a;">
+                                    <div class="col d-xl-flex justify-content-xl-end" style="margin-right: 18px;margin-top:12px; margin-bottom: 12px;">
+                                        <div class="btn-group btn-group-sm" role="group" ><button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xxl-center" type="button" style="background: rgb(214,228,247);border-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="d-xxl-flex align-items-xxl-center" style="font-size: 1.6vw;color: #0f1d2a;">
                                                     <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                                     <path d="M160 80C160 53.49 181.5 32 208 32H240C266.5 32 288 53.49 288 80V432C288 458.5 266.5 480 240 480H208C181.5 480 160 458.5 160 432V80zM0 272C0 245.5 21.49 224 48 224H80C106.5 224 128 245.5 128 272V432C128 458.5 106.5 480 80 480H48C21.49 480 0 458.5 0 432V272zM400 96C426.5 96 448 117.5 448 144V432C448 458.5 426.5 480 400 480H368C341.5 480 320 458.5 320 432V144C320 117.5 341.5 96 368 96H400z"></path>
                                                 </svg></button>
-                                                <button class="btn btn-primary d-xl-flex d-xxl-flex align-items-xxl-center" type="button" style="padding-right: 0px;padding-left: 1px;background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);"><i class="fas fa-map-marker-alt d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;"></i></button></div>
+                                                <button class="btn btn-primary d-xl-flex d-xxl-flex align-items-xxl-center" type="button" style="background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);"><i class="fas fa-map-marker-alt d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;"></i></button></div>
                                     </div>
                                 </div>
+                                <!-- MWH/TSEK/kgCO" Knappar  -->
                                 <div class="row">
-                                    <div class="col-xl-2"><div class="btn-group-vertical btn-group-sm" role="group">
-                                        <button id="MWhbtn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="myFunction(this)">MWh</button>
-                                        <button id="TSEKbtn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myFunction(this)" >TSEK</button>
-                                        <button id="KgCO2btn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myFunction(this)" >kgCO<sub>2</sub></button>
+                                    <div class="col-xl-2"><div class="btn-group-vertical btn-group-sm" role="group" style="margin-left:0px;margin-right:0px;padding-left:0px;padding-right:0px;">
+                                        <button  id="MWHBudget" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="myBudgetFunction(this)">MWh</button>
+                                        <button  id="TSEKBudget" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myBudgetFunction(this)" >TSEK</button>
+                                        <button  id="kgCO2Budget" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myBudgetFunction(this)" >kgCO<sub>2</sub></button>
                                     </div>
                                 </div>
-                                <div class="col-xl-7">
+                                <div class="col-xl-8" style="margin-left:-30px;margin-right:0px;padding-left:0px;padding-right:0px;width:100%">
                                     <!-- Chart  -->
-                                    <div>
-                                        <canvas id="budgetChart">
+                                    <div id="bigBudgetDiv">
+                                        <canvas id="budgetChart" style="margin-left:0px;margin-right:0px;padding-left:0px;padding-right:0px;width:100%">
                                             <script>
                                                 const ct = document.getElementById('budgetChart');
 
                                                 new Chart(ct, {
-                                                type: 'bar',
                                                 data: {
-                                                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                                                    datasets: [{
-                                                    label: '# of Votes',
-                                                    data: [12, 19, 3, 5, 2, 3],
-                                                    borderWidth: 1
-                                                    }]
+                                                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Sep', 'Okt', 'Nov', 'Dec'],
+                                                    datasets: [                                            {
+                                                    type: 'line',
+                                                    label: 'Budget',
+                                                    data: [12, 19, 3, 5, 2, 5, 4, 7, 5, 6, 7 ,8 ,9],
+                                                    borderWidth: 1, 
+                                                    backgroundColor: '#42474E',
+                                                    },{
+                                                    type: 'bar',
+                                                    label: 'Utfall',
+                                                    data: [12, 19, 10, 5, 2, 3, 7, 8, 9],
+                                                    borderWidth: 1, 
+                                                    backgroundColor: ['#9ACBFF', '#9ACBFF', '#ED9080', '#9ACBFF','#9ACBFF', '#9ACBFF','#ED9080', '#9ACBFF','#ED9080', '#ED9080','#9ACBFF', '#9ACBFF'],
+                                                    }
+                                                
+                                                ]
                                                 },
                                                 options: {
                                                     scales: {
-                                                    y: {
-                                                        beginAtZero: true
-                                                    }
+                                                        y: {
+                                                            beginAtZero: true,
+                                                            display:true
+                                                        }, 
+                                                        x: {
+                                                            stacked:false, 
+                                                            display:false
+                                                        }
+                                                    }, 
+                                                    events: ['mousemove','click'],
+                                                    
+                                                    onClick: (e) => {
+                                                        alert("Du klicka på grafen"); 
                                                     }
                                                 }
-});
+                                                });
                                             </script>
 
                                         </canvas>
                                     </div>
                                 </div>
-                                <div class="col-xl-3"><img class="img-fluid" src="assets/img/mätare.jpg"></div>
+                                <div class="col-xl-2" style="margin-left:0px;margin-right:0px;margin-bottom:20px;padding-left:15px;padding-right:0px;width:100%">
+                                    <img class="img-fluid" src="assets/img/newMesurement.jpg"></div>
                             </div>
                                 <div class="row">
 
                                 <!-- Footer  -->
-                                    <div class="col">
-                                        <h1 style="color: var(--bs-blue);font-size: 13px;">go text</h1>
+                                    <div class="col" style="margin-top:12px">
+                                        <h1 style="color:#0f1d2a; font-size: 0.85vw;">Plåt AB har hitills förbrukat <b>80%</b> av sin budget i <b>MWh</b> under <b>2023</b>. Förbrukningen översteg prognos under <b>Mars</b>, <b>Oktober</b> och <b>September</b> månad. </h1>
                                     </div>
                                 </div>
                             </div>
