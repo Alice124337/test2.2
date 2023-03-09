@@ -126,3 +126,10 @@ function RandomeChart(){
   });
     
 };
+
+function changeSelect() {
+   $('.selectpicker').on('change', function(){
+    var selected = $(this).val();
+    alert(selected);
+  });
+};
