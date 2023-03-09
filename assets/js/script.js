@@ -1,4 +1,9 @@
- 
+    function loadBudgetChart(){
+      console.log("loaded");
+    }
+
+
+
     function YearMonthSelect(invar) {
         
         if (invar.innerText == "År"){
@@ -39,7 +44,6 @@
 
   
     function myFunction(invar) {
-    console.log(invar.style.background);
       
     
     if (invar.innerText == "MWh"){
