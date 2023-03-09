@@ -4,6 +4,7 @@
 
 
 
+
     function YearMonthSelect(invar) {
         
         if (invar.innerText == "År"){
@@ -37,13 +38,102 @@
             } else {
             invar.style.background = "rgb(214, 228, 247)";
         }
-        RandomeChart();
+        RandomeChart('bigMapChartDiv');
     }
+
+
+    function myBudgetFunction(invar){
+      if (invar.innerText == "MWh"){
+            
+        invar.style.background = "rgb(214, 228, 247)"; 
+        document.getElementById("TSEKBudget").style.background = "rgb(241, 240, 244)";  
+        document.getElementById("kgCO2Budget").style.background = "rgb(241, 240, 244)";  
+            
+        } else if (invar.innerText == "TSEK"){
+        
+        invar.style.background = "rgb(214, 228, 247)"; 
+        document.getElementById("MWHBudget").style.background = "rgb(241, 240, 244)";  
+        document.getElementById("kgCO2Budget").style.background = "rgb(241, 240, 244)";  
+            
+        } else {
+            
+        invar.style.background = "rgb(214, 228, 247)"; 
+        document.getElementById("MWHBudget").style.background = "rgb(241, 240, 244)";  
+        document.getElementById("TSEKBudget").style.background = "rgb(241, 240, 244)";   
+            
+        }
+            
+        RandomeChartBudget('bigBudgetDiv');
+    
+    };
+
+    function YSelectBudget(invar) {
+      if (invar.style.background == "rgb(214, 228, 247)"){
+          invar.style.background = "rgb(241, 240, 244)";
+          } else {
+          invar.style.background = "rgb(214, 228, 247)";
+      }
+      RandomeChartBudget('bigBudgetDiv');
+  }
+
+  function RandomeChartBudget(indiv){
+    document.getElementById(indiv).innerHTML = "";
+     var x = document.createElement("CANVAS");
+        
+    document.getElementById(indiv).appendChild(x);
+        
+    let data = [12, 19, 3, 5, 2, 5, 4, 7, 5, 6, 7 ,8 ,9];
+      
+    let data1 = data.map(x => Math.floor(Math.random() * 50));    
+    let data2 = data1; 
+
+    
+    new Chart(x, {
+      data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Sep', 'Okt', 'Nov', 'Dec'],
+          datasets: [                                            {
+          type: 'line',
+          label: 'Budget',
+          data: data1,
+          borderWidth: 1, 
+          backgroundColor: '#42474E',
+          },{
+          type: 'bar',
+          label: 'Utfall',
+          data: data1,
+          borderWidth: 1, 
+          backgroundColor: ['#9ACBFF', '#9ACBFF', '#9ACBFF', '#9ACBFF','#9ACBFF', '#9ACBFF','#9ACBFF', '#9ACBFF','#9ACBFF', '#9ACBFF','#9ACBFF', '#9ACBFF'],
+          }
+      
+      ]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true,
+                  display:true
+              }, 
+              x: {
+                  stacked:false, 
+                  display:false
+              }
+          }, 
+          events: ['mousemove','click'],
+          
+          onClick: (e) => {
+              alert("Du klicka på grafen"); 
+          }
+      }
+      });
+    
+};
+
+
 
 
 
   
-    function myFunction(invar) {
+    function myFunction(invar, indiv) {
       
     
     if (invar.innerText == "MWh"){
@@ -66,17 +156,17 @@
         
     }
         
-    RandomeChart(); 
+    RandomeChart(indiv); 
 
 
     
     };
 
-function RandomeChart(){
-    document.getElementById("bigMapChartDiv").innerHTML = "";
+function RandomeChart(indiv){
+    document.getElementById(indiv).innerHTML = "";
      var x = document.createElement("CANVAS");
         
-    document.getElementById("bigMapChartDiv").appendChild(x);
+    document.getElementById(indiv).appendChild(x);
         
     let data = [1, 10, 5, 2, 20, 30, 45, 3];
       
