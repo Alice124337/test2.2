@@ -1,5 +1,11 @@
+
+    
     function loadBudgetChart(){
       console.log("loaded");
+    }
+
+    function wheelfunc(){
+      console.log("wehoooo"); 
     }
 
 
@@ -183,27 +189,27 @@ function RandomeChart(indiv){
       datasets: [{
         label: 'El',
         data: data1,
-        borderWidth: 1
+        backgroundColor:'#FFB4AB',
       }, 
         {
         label: 'Kol',
         data: data2,
-        borderWidth: 1
+        backgroundColor:'#4B9200',
       }, 
                         {
         label: 'Naturgas',
         data: data3,
-        borderWidth: 1
+        backgroundColor:'#920028',
       },
                         {
         label: 'Olja',
         data: data4,
-        borderWidth: 1
+        backgroundColor:'#9ACBFF',
       }, 
                        {
         label: 'Koks',
         data: data5,
-        borderWidth: 1
+        backgroundColor:'#6750A4',
       }]
     },
     options: {
