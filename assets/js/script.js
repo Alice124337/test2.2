@@ -4,12 +4,6 @@
       console.log("loaded");
     }
 
-    function wheelfunc(){
-      console.log("wehoooo"); 
-    }
-
-
-
 
     function YearMonthSelect(invar) {
         
@@ -232,4 +226,35 @@ function changeSelect() {
     var selected = $(this).val();
     alert(selected);
   });
+};
+
+function myMeasureFunction(invar){
+
+  if (invar.innerText == "MWh"){
+        
+    invar.style.background = "rgb(214, 228, 247)"; 
+    document.getElementById("TSEKMeasure").style.background = "rgb(241, 240, 244)";  
+    document.getElementById("kgCO2Measure").style.background = "rgb(241, 240, 244)";  
+        
+    } else if (invar.innerText == "TSEK"){
+    invar.style.background = "rgb(214, 228, 247)"; 
+    document.getElementById("MWHMeasure").style.background = "rgb(241, 240, 244)";  
+    document.getElementById("kgCO2Measure").style.background = "rgb(241, 240, 244)";  
+        
+    } else {
+        
+    invar.style.background = "rgb(214, 228, 247)"; 
+    document.getElementById("MWHMeasure").style.background = "rgb(241, 240, 244)";  
+    document.getElementById("TSEKMeasure").style.background = "rgb(241, 240, 244)";   
+        
+    }
+        
+};
+
+function showGoal(x) {
+
+  alert(x.classList); 
+
+  x.classList.toggle("bi-star-fill");
+
 };
