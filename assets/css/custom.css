@@ -5,3 +5,44 @@
 }
 
 
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: black!important;
+  }
+  
+  .custom-checkbox .custom-control-input:checked:focus ~ .custom-control-label::before {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.1rem black
+  }
+  .custom-checkbox .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.1rem black
+  }
+  .custom-checkbox .custom-control-input:active ~ .custom-control-label::before {
+    background-color: #C8FFC8; 
+  }
+
+  .blue {
+    color: #00629F;
+  }
+
+  .purple {
+    color: #6750A4;
+  }
+
+  .grey {
+    color: #526070;
+  }
+
+  #firstmodal {
+    background-image: url(../img/malnedbrytning.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 420px;
+}
+
+#secondmodal {
+    background-image: url(../img/measure-masugn.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 420px;
+}
+
+

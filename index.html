@@ -8,6 +8,7 @@
     <title>Prototyp</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">    
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
@@ -44,10 +45,14 @@
                             </div><div class="card-body" style="width: 706;">
     <div class="row">
         <div class="col-xl-8">
-            <div class="btn-group" role="group"><button id="yearbutton" class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;">År</button><button class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;">Månad</button><button class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;">Vecka</button></div>
+            <div class="btn-group btn-group-sm" role="group">
+                <button id="year" class="btn btn-sm" type="button" style="font-size: 0.85vw;background: #D6E4F7;" onclick="myScopeFunction(this)">År</button>
+                <button id="month" class="btn btn-sm" type="button" style="font-size: 0.85vw;background: #f1f0f4;" onclick="myScopeFunction(this)">Månad</button>
+                <button id="week" class="btn btn-sm" type="button" style="font-size: 0.85vw;background: #f1f0f4;" onclick="myScopeFunction(this)">Vecka</button>
+            </div>
         </div>
         <div class="col d-xl-flex justify-content-xl-end" style="color: rgb(10,10,10);">
-            <select class="selectpicker" multiple data-selected data-live-search="true" data-none-selected-text="Välj anläggning">
+            <select class="selectpicker" multiple data-selected data-none-selected-text="Välj anläggning">
                 <option selected>Narvik</option>
                 <option selected>Oslo</option>
                 <option selected>Sveg</option>
@@ -101,12 +106,51 @@
                     </div>
                     <div class="row">
                         <div class="col-xxl-12 d-xxl-flex justify-content-xxl-center" style="padding: 0px;">
-                            <h1 style="font-size: 4vw;color: #dd2400;text-align: center;">132<button class="btn" type="button" style="padding: 8px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em">
+                            <h1 style="font-size: 4vw;color: #dd2400;text-align: center;">132<button class="btn" type="button" style="padding: 8px;" data-toggle="modal" data-target="#exampleModal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em">
                                         <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                         <path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"></path>
                                     </svg></button></h1>
                         </div>
                     </div>
+
+                    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" style="color: black;">Målnedbrytning</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="firstmodal" class="modal-body">
+            <div class="col d-lg-flex d-xl-flex"><button class="btn" type="button" data-toggle="modal" href="#exampleModal2" style="margin-top:340px; margin-left: 300px;"><img src="assets\img\info-measure.png" class="img-fluid" ></button></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel2" style="color: black;">Åtgärdsförslag</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="secondmodal" class="modal-body" style="color: black;">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
                     <div class="row">
                         <div class="col">
                             <h1 class="fw-lighter" style="font-size: 0.85vw;color: rgb(0,0,0);text-align: center;">Januari, 2023</h1>
@@ -181,18 +225,17 @@
                 <div class="col-xl-5">
                     <select class="selectpicker">
                         <option selected>Externt</option>
-                        <option>Internt</option>
+                        <option disabled>Internt</option>
                       </select>
                 </div>
                 <div class="col">
-                    <select class="selectpicker" onchange="changeSelect()" data-live-search="true">
+                    <select class="selectpicker" data-size="6" onchange="changeSelect()" data-live-search="true">
                         <optgroup label="Total">
                             <option>MWh/anställd</option>
                             <option>MWh/m²</option>
-                            <option>CO₂/anställd</option>
+                            <option selected>CO₂/anställd</option>
                             <option>Andel förnybar energi</option>
                             <option>MWh/omsatt TSEK</option>
-                            <option>Andel förnybar energi</option>
                         </optgroup>
                         <optgroup label="Lokalvärme">
                             <option>MWh/m²</option>
@@ -207,21 +250,18 @@
                         <optgroup label="Tappvarmvatten">
                             <option>MWh/årligt antal produktionstimmar</option>
                         </optgroup>
-                        <optgroup label="Ånga">
-                            <option>MWh/omsatt TSEK</option>
-                        </optgroup>
                       </select>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div id="benchmark" class="col">
             <img src="assets\img\benchmark-co2-externt.JPG" class="img-fluid" >
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div id="benchmark-info" class="col">
             <p style="color: rgb(33,37,41);font-size: 1vw;text-align: center;margin-bottom: 0px;">Plåt AB:s <strong>CO</strong><sub><strong>2</strong></sub><strong>-förbrukning per anställd</strong> är <strong>11% högre än genomsnittet</strong> inom branschen.</p>
         </div>
     </div>
@@ -475,18 +515,18 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="row">
-                                            <div class="col">
-                                                <select class="selectpicker" multiple data-selected data-live-search="true" data-none-selected-text="Välj person" style="padding:0px">
+                                            <div class="col" style="margin-bottom: 15px;">
+                                                <select class="selectpicker" multiple data-selected data-none-selected-text="Välj person" style="padding:0px; margin-bottom: 15px;">
                                                     <option selected>Narvik</option>
                                                     <option selected>Oslo</option>
                                                     <option selected>Sveg</option>
                                                 </select>
                                             </div>
                                             <div class="col-xl-12 offset-xl-0">
-                                                <select class="selectpicker" multiple data-selected data-live-search="true" data-none-selected-text="Välj kategori">
-                                                    <option selected> Lagefterlevnad</option>
-                                                    <option selected>Teknisk Åtgärd</option>
-                                                    <option selected>Övrigt</option>
+                                                <select class="selectpicker" multiple data-selected data-none-selected-text="Välj kategori">
+                                                    <option data-icon="fa-solid fa-circle blue" selected>Lagefterlevnad</option>
+                                                    <option data-icon="fa-solid fa-circle purple" selected>Teknisk Åtgärd</option>
+                                                    <option data-icon="fa-solid fa-circle grey" selected>Övrigt</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -495,14 +535,17 @@
                                         
                                     </div>
                                     <div class="col d-xl-flex justify-content-xl-end align-items-xl-center">
-                                        <div class="btn-group btn-group-sm d-xl-flex justify-content-xl-center" role="group" style="padding-top: 6px;margin-top: -6px;padding-bottom: 7px;margin-bottom: -1px;padding-left: 0px;"><button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xl-center align-items-xxl-center" type="button" style="padding-top: 2px;padding-left: 1px;padding-right: 1px;margin-right: -1px;margin-left: -1px;background: rgb(214,228,247);border-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-steering-wheel d-xxl-flex align-items-xxl-center" style="font-size: 1.6vw;color: #0f1d2a;">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                    <circle cx="12" cy="12" r="9"></circle>
-                                                    <circle cx="12" cy="12" r="2"></circle>
-                                                    <line x1="12" y1="14" x2="12" y2="21"></line>
-                                                    <line x1="10" y1="12" x2="3.25" y2="10"></line>
-                                                    <line x1="14" y1="12" x2="20.75" y2="10"></line>
-                                                </svg></button><button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xl-center align-items-xxl-center" type="button" style="padding-right: 0px;padding-left: 1px;background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" class="d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;">
+                                        <div class="btn-group btn-group-sm d-xl-flex justify-content-xl-center" role="group" style="padding-top: 6px;margin-top: -6px;padding-bottom: 7px;margin-bottom: -1px;padding-left: 0px;"><button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xl-center align-items-xxl-center" type="button" style="padding-top: 2px;padding-left: 1px;padding-right: 1px;margin-right: -1px;margin-left: -1px;background: rgb(214,228,247);border-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-dashed" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95"></path>
+                                            <path d="M3.69 8.56a9 9 0 0 0 -.69 3.44"></path>
+                                            <path d="M3.69 15.44a9 9 0 0 0 1.95 2.92"></path>
+                                            <path d="M8.56 20.31a9 9 0 0 0 3.44 .69"></path>
+                                            <path d="M15.44 20.31a9 9 0 0 0 2.92 -1.95"></path>
+                                            <path d="M20.31 15.44a9 9 0 0 0 .69 -3.44"></path>
+                                            <path d="M20.31 8.56a9 9 0 0 0 -1.95 -2.92"></path>
+                                            <path d="M15.44 3.69a9 9 0 0 0 -3.44 -.69"></path>
+                                         </svg></button><button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xl-center align-items-xxl-center" type="button" style="padding-right: 0px;padding-left: 1px;background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" class="d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;">
                                                     <path d="M3 4C3 3.44772 3.44772 3 4 3H16C16.5523 3 17 3.44772 17 4V6C17 6.55228 16.5523 7 16 7H4C3.44772 7 3 6.55228 3 6V4Z" fill="currentColor"></path>
                                                     <path d="M3 10C3 9.44771 3.44772 9 4 9H10C10.5523 9 11 9.44771 11 10V16C11 16.5523 10.5523 17 10 17H4C3.44772 17 3 16.5523 3 16V10Z" fill="currentColor"></path>
                                                     <path d="M14 9C13.4477 9 13 9.44771 13 10V16C13 16.5523 13.4477 17 14 17H16C16.5523 17 17 16.5523 17 16V10C17 9.44771 16.5523 9 16 9H14Z" fill="currentColor"></path>
@@ -510,10 +553,10 @@
                                     </div>
                                 </div>
                                 <div class="row d-xl-flex justify-content-xl-center align-items-xl-center">
-                                    <div class="col-xl-5 d-xl-flex" style="background: url(&quot;assets/img/newwheel.jpg&quot;) center / contain no-repeat, rgba(255,255,255,0);border-radius: 0px;height: 23vw;width: 23vw;">
-                                        <div class="col d-xl-flex justify-content-xl-start align-items-xl-center" style="margin-left: 13.5vw; margin-top:7vw">
+                                    <div class="col-xl-6 d-xl-flex" style="background: url(&quot;assets/img/newwheel.jpg&quot;) center / contain no-repeat, rgba(255,255,255,0);border-radius: 0px;height: 23vw;width: 23vw;">
+                                        <div class="col d-xl-flex justify-content-xl-start align-items-xl-center" style="margin-left: 16vw; margin-top:9vw">
                                             <!-- <button class="btn btn-info" style="height: 13px; width: 13px; padding: 0px; border-radius: 10px;" type="button" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"></button> -->
-                                            <input type="button" style="height: 0.85vw; width: 0.85vw; padding: 0px; border-radius: 10px; background-color:#6750A4" class="btn btn-secondary" data-html="true" title="                                                
+                                            <input type="button" style="height: 1.13vw; width: 1.13vw; padding: 0px; border-radius: 10px; background-color:#6750A4" class="btn btn-secondary" data-html="true" title="                                                
                                                 <h5 class='card-title' style='margin:0;'>Pumpoptimering      
                                                 
                                                 <img class='img-fluid' src='assets/img/namelogga.jpg' style='height: 2.3vw; width: 2.3vw; border-radius: 2vw; margin-top:-0.2vw; float: right;padding-bottom:0vw'></h5>" 
@@ -530,7 +573,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col d-xl-flex justify-content-xl-start align-items-xl-center"><button id="selectbtn" class="btn btn-info" type="button">Ny aktivitet</button></div>
+                                    <div class="col d-xl-flex justify-content-xl-start align-items-xl-center"><button id="selectbtn" class="btn btn-info" type="button" onclick="newActivity()">Ny aktivitet</button></div>
                                 </div>
                             </div>
                         </div>
@@ -670,7 +713,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col d-xl-flex justify-content-xl-end">
-                                        <select class="selectpicker" multiple data-selected data-live-search="true" data-none-selected-text="Välj anläggning">
+                                        <select class="selectpicker" multiple data-selected data-none-selected-text="Välj anläggning">
                                             <option selected>Narvik</option>
                                             <option selected>Oslo</option>
                                             <option selected>Sveg</option>
@@ -685,19 +728,24 @@
                                     </div></div>
                                     <div class="col-xl-9"><img class="img-fluid" src="assets/img/prognos.jpg"></div>
                                     <div class="col-xl-2 my-auto" style="color: black; font-size: 0.93vw; align-items: stretch;">
-                                        <div class="form-check" style="font-size: 0.93vw; padding-bottom: 0px; margin-top: 10px; margin-bottom: 0px;">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin-top: 2px;">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                              Historiskt snitt
-                                            </label>
-                                        </div>
-                                        <p><i id="starGoal" class="bi bi-star" style="font-size: 1.1vw; padding-left: 1px; padding-right: 6px;"></i>Målöversikt
-                                        </p>
+                                        <div class="myTest custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1" />
+                                            <label class="custom-control-label" for="customCheck1" style="padding-top:3px;">Historiskt snitt</label>
+                                          </div>
+                                          <a class="purple-head hover-black" onclick="changeIcon(this)" id="myBtn">
+                                            <i class="bi-star" style="color: #FFBE4D; font-size: 1.3vw; margin-right: 5px;"></i>
+                                            <span>Målöversikt</span>
+                                          </a>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col d-xl-flex justify-content-xl-end">
-                                        <div class="btn-group" role="group"><button class="btn btn-primary" type="button">Button 1</button><button class="btn btn-primary" type="button">Button 2</button></div>
+                                <div class="row" style="margin-bottom: 2%;">
+                                    <div class="col d-xl-flex justify-content-xl-end" style="margin-right: 2%;">
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <button id="1year" class="btn btn-sm" type="button" style="font-size: 0.85vw;background: #f1f0f4;" onclick="myYearFunction(this)">1 år</button>
+                                            <button id="2year" class="btn btn-sm" type="button" style="font-size: 0.85vw;background: #f1f0f4;" onclick="myYearFunction(this)">2 år</button>
+                                            <button id="5year" class="btn btn-sm" type="button" style="font-size: 0.85vw;background: #D6E4F7;;" onclick="myYearFunction(this)">5 år</button>
+                                            <button id="10year" class="btn btn-sm" type="button" style="font-size: 0.85vw;background: #f1f0f4;" onclick="myYearFunction(this)">10 år</button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -711,7 +759,7 @@
                                                         Kommande åtgärder
                                                     </div>
                                                     <div class="col-xl-5" style="margin-right: 0px; text-align: right">
-                                                        <div class="btn btn-primary btn-sm" type="button" style="padding: 5px;">Lägg till åtgärd</div>
+                                                        <div class="btn btn-primary btn-sm" type="button" style="padding: 5px;" onclick="newMeasure()">Lägg till åtgärd</div>
                                                     </div>
                                                 </div>
                                             <th class="fw-bold" scope="col" style="font-size: 1.13vw;">Föreslagna åtgärder</th>
