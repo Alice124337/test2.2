@@ -278,7 +278,8 @@
                                                 <div class="btn-group btn-group-sm" role="group" style="padding-top: 6px;margin-top: -6px;padding-bottom: 7px;margin-bottom: -1px;padding-left: 0px;"><button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xxl-center" type="button" style="padding-top: 2px;padding-left: 1px;padding-right: 1px;margin-right: -1px;margin-left: -1px;background: rgb(214,228,247);border-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="d-xxl-flex align-items-xxl-center" style="font-size: 1.6vw;color: #0f1d2a;">
                                                             <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                                             <path d="M160 80C160 53.49 181.5 32 208 32H240C266.5 32 288 53.49 288 80V432C288 458.5 266.5 480 240 480H208C181.5 480 160 458.5 160 432V80zM0 272C0 245.5 21.49 224 48 224H80C106.5 224 128 245.5 128 272V432C128 458.5 106.5 480 80 480H48C21.49 480 0 458.5 0 432V272zM400 96C426.5 96 448 117.5 448 144V432C448 458.5 426.5 480 400 480H368C341.5 480 320 458.5 320 432V144C320 117.5 341.5 96 368 96H400z"></path>
-                                                        </svg></button><button class="btn btn-primary d-xl-flex d-xxl-flex align-items-xxl-center" type="button" style="padding-right: 0px;padding-left: 1px;background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);"><i class="fas fa-map-marker-alt d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;"></i></button></div>
+                                                        </svg></button><button class="btn btn-primary d-xl-flex d-xxl-flex align-items-xxl-center" type="button" style="padding-right: 0px;padding-left: 1px;background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);"><i class="fas fa-map-marker-alt d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;"></i></button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -340,9 +341,20 @@
          x: {
             stacked:true
           }
+      }, plugins: {
+        legend: {
+            display: true,
+            position: 'bottom',
+            labels: {
+                usePointStyle: true, 
+                pointStyle:'circle', 
+                padding: 10,
+           }
+       }
+       
+   }, 
       }
-    }
-  });
+    });
 </script>
 </div>
                                 </div>
@@ -350,106 +362,416 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- stora komponenten -->
                 <div class="row" style="margin-bottom: 12px;">
                     <div class="col" style="padding-right: 0px;padding-left: 0px;">
                         <div class="card">
                             <div class="card-header" style="text-align: left;">
-                                <div class="row d-xl-flex align-items-xl-center">
+                                <div class="row d-xl-flex justify-content-xl-end align-items-xl-center">
                                     <div class="col d-lg-flex align-items-lg-center">
-                                        <h1 class="text-secondary d-xl-flex justify-content-xl-start align-items-xl-center" style="font-family: Roboto, sans-serif;margin-bottom: 0;font-size: 24px;">Modul 1<button class="btn" type="button"><i class="icon ion-ios-information-outline" style="font-size: 24px;"></i></button></h1>
+                                        <h1 id="rubricBigComp" class="text-secondary d-xl-flex justify-content-xl-start align-items-xl-center" style="font-family: Roboto, sans-serif;margin-bottom: 0;font-size: 24px;">Slutenergianvändning<button class="btn" type="button"><i class="icon ion-ios-information-outline" style="font-size: 24px;"></i></button></h1>
                                     </div>
-                                    <div class="col d-lg-flex d-xl-flex justify-content-lg-end justify-content-xl-end"><button class="btn" type="button"><i class="icon ion-close-round" style="font-size: 24px;"></i></button></div>
+                                    <!-- <div class="col d-xl-flex justify-content-xl-end">
+                                        <div class="btn-group" role="group"><button class="btn btn-secondary" type="button">Slutenergianvändning</button><button class="btn btn-outline-secondary" type="button">Tillförd energi</button><button class="btn btn-outline-secondary" type="button">Förbrukad effekt</button><button class="btn btn-outline-secondary" type="button">Sankey</button></div>
+                                    </div> -->
+                                    <div class="col-xl-1 d-lg-flex d-xl-flex justify-content-lg-end justify-content-xl-end"><button class="btn" type="button"><i class="icon ion-close-round" style="font-size: 24px;"></i></button></div>
                                 </div>
                             </div>
-                            <div class="card-body">
+                            
+                            <div class="card-body" style="padding: 1vw; padding-top:0px;">
+
                                 <div class="row">
-                                    <div class="col-xl-1">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <h1 style="color: var(--bs-blue);">1</h1>
+                                    <!-- start -->
+                                    <div class="col-xl-2" style="padding-left: 0px;padding-right: 0px; background-color: rgba(0,0,0,.03); border-right-style: solid; border-right-color: #dee2e6; border-width: 0.5px; margin-bottom:-1vw">
+                                        <div id="accordion-1" class="accordion" role="tablist">
+                                            <div class="accordion-item">
+                                                <h2 style="color: white;" class="accordion-header" role="tab"><button id="bigdrop" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-1" aria-expanded="true" aria-controls="accordion-1 .item-1">Tidsperiod</button></h2>
+                                                <div class="accordion-collapse collapse show item-1" role="tabpanel" data-bs-parent="#accordion-1">
+                                                    <div class="accordion-body" style="margin: 0vw;padding:0.65vw">
+                                                        <div class="btn-group" role="group"><button id="yearbutton" class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;">År</button><button class="btn btn-primary" type="button" style="background: #d6e4f7;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;">Månad</button><button class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;">Vecka</button><button class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;">Dag</button></div>
+                                                        
+                                                        <div class="input-group input-group-sm mb-3">
+                                                            <span style="background-color:#d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;" class="input-group-text"><i class="icon ion-android-menu" style="font-size: 0.85vw;"></i></button></span>
+                                                            <input style="background-color: #d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;" class="form-control form-control-sm" type="text" placeholder="Sök efter tidsperiod">                                                       
+                                                         </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li id="bigliitem" class="list-group-item">Januari 2020<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
+                                                            <li id="bigliitem" class="list-group-item">Januari 2019<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
+                                                            <li id="bigliitem" class="list-group-item">Februari 2020<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
+                                                            <li id="bigliitem" class="list-group-item">Februari 2019<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
+                                                            <li id="bigliitem" class="list-group-item">Mars 2020<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
+                                                            <li id="bigliitem" class="list-group-item">Mars 2019<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
+                                                        </ul>
                                                     </div>
                                                 </div>
-                                                <div class="row" style="color: var(--bs-blue);">
-                                                    <div class="col" style="color: var(--bs-blue);">
-                                                        <h1 style="color: var(--bs-blue);">2</h1>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2  class="accordion-header" role="tab"><button id="bigdrop" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-2" aria-expanded="false" aria-controls="accordion-1 .item-2">Anläggning</button></h2>
+                                                <div class="accordion-collapse collapse item-2" role="tabpanel" data-bs-parent="#accordion-1">
+                                                    <div class="accordion-body" style="margin: 0vw;padding:0.65vw">
+                                                        <p style="margin-bottom: 0.65vw; font-size: 0.85vw;">Välj anläggningar att visa</p>
+                                                        <div style="border-top-style: solid; border-top-color: #C2C7CF;" id="bigcheck"  class="form-check">
+                                                            <input style="margin-bottom: 1vw;"class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                                            <label class="form-check-label" for="flexSwitchCheckDefault">Narvik </label>
+                                                        </div>
+                                                        <div id="bigcheck" class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                                            <label class="form-check-label" for="flexSwitchCheckDefault">Oslo</label>
+                                                        </div>
+                                                        <div style="border-bottom-style: solid; border-bottom-color: #C2C7CF;" id="bigcheck" class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                                            <label class="form-check-label" for="flexSwitchCheckDefault">Sveg</label>
+                                                        </div>
+                
                                                     </div>
                                                 </div>
-                                                <div class="row" style="color: var(--bs-blue);">
-                                                    <div class="col" style="color: var(--bs-blue);">
-                                                        <h1 style="color: var(--bs-blue);">3</h1>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" role="tab"><button  id="bigdrop" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-4" aria-expanded="false" aria-controls="accordion-1 .item-4">Funktion</button></h2>
+                                                <div class="accordion-collapse collapse item-4" role="tabpanel" data-bs-parent="#accordion-1">
+                                                    <div class="accordion-body" style="margin: 0vw;padding:0.65vw">
+                                                        <div class="input-group input-group-sm mb-3">
+                                                            <span style="background-color:#d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;" class="input-group-text"><i class="icon ion-android-menu" style="font-size: 0.85vw;"></i></button></span>
+                                                            <input style="background-color: #d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;" class="form-control form-control-sm" type="text" placeholder="Sök efter funktion">                                                       
+                                                         </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li id="bigliitem" class="list-group-item">Varmvatten<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
+                                                            <li id="bigliitem" class="list-group-item">Tryckluft<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
+                                                        </ul>
                                                     </div>
                                                 </div>
-                                                <div class="row" style="color: var(--bs-blue);">
-                                                    <div class="col" style="color: var(--bs-blue);">
-                                                        <h1 style="color: var(--bs-blue);">4</h1>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" role="tab"><button id="bigdrop" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-5" aria-expanded="false" aria-controls="accordion-1 .item-4">Trend</button></h2>
+                                                <div class="accordion-collapse collapse item-5" role="tabpanel" data-bs-parent="#accordion-1">
+                                                    <div class="accordion-body" style="margin: 0vw;padding:0.65vw">
+                                                        <p style="margin-bottom: 0.65vw; font-size: 0.85vw;">Välj anläggningar att visa</p>
+                                                        <div style="border-top-style: solid; border-top-color: #C2C7CF;" id="bigcheck"  class="form-check">
+                                                            <input style="margin-bottom: 1vw;"class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                                            <label class="form-check-label" for="flexSwitchCheckDefault">Historiskt snitt </label>
+                                                        </div>
+                                                        <div style="border-bottom-style: solid; border-bottom-color: #C2C7CF;" id="bigcheck" class="form-check">
+                                                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                                            <label class="form-check-label" for="flexSwitchCheckDefault">Justerat historiskt snitt</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" role="tab"><button id="bigdrop" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-6" aria-expanded="false" aria-controls="accordion-1 .item-4">Referens</button></h2>
+                                                <div class="accordion-collapse collapse item-6" role="tabpanel" data-bs-parent="#accordion-1">
+                                                    <div class="accordion-body" style="margin: 0vw;padding:0.65vw">
+                                                        <p style="margin-bottom: 0.65vw; font-size: 0.85vw;">Lägg till</p>
+                                                        <div class="input-group input-group-sm mb-3">
+                                                            <input style="background-color: #d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;" class="form-control form-control-sm" type="text" placeholder="Ange värde">
+                                                            <span style="background-color:#d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;" class="input-group-text">MWh</span>
+                                                            <span style="background-color: #F1F0F4; margin-top: 0.65vw; font-size: 0.85vw;" class="input-group-text">+</span>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li id="bigliitem" class="list-group-item">Ref 1: 100 Mwh<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">Dropdown </button>
-                                                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">Dropdown </button>
-                                                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">Dropdown </button>
-                                                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">Dropdown </button>
-                                                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">Dropdown </button>
-                                                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">Dropdown </button>
-                                                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                                                </div>
-                                            </div>
+
+                                    <!-- end -->
+                                    <div class="col-xl-10">
+                                        <div class="row" >
+                                            <div class="col d-xl-flex justify-content-xl-end" style="border-bottom-style: solid; border-bottom-color: #C2C7CF; border-width: 0.5px; background-color: rgba(0,0,0,.03);">
+                                            <ul class="nav nav-tabs">
+                                                <li class="nav-item">
+                                                    <a style="color:#73777F" id="endusetab" class="nav-link active" onclick="changeToEndusage()">Slutenergianvändning</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a  style="color:#73777F" id="supliedenergytab" class="nav-link" onclick="changeToSupliedEnergy()" >Tillförd energi</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a  style="color:#73777F" id ="effecttab" class="nav-link" onclick="changeToEfect()">Förbrukad effekt</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a  style="color:#73777F" id="sankeytab" class="nav-link" onclick="changeToSankey()">Sankey</a>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
-                                    <div class="col-xl-9">
+
                                         <div class="row">
-                                            <div class="col d-xl-flex justify-content-xl-end">
-                                                <div class="btn-group btn-group-sm" role="group" style="padding-top: 6px;margin-top: -6px;padding-bottom: 7px;margin-bottom: -1px;padding-left: 0px;"><button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xxl-center" type="button" style="padding-top: 2px;padding-left: 1px;padding-right: 1px;margin-right: -1px;margin-left: -1px;background: rgb(214,228,247);border-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="d-xxl-flex align-items-xxl-center" style="font-size: 1.6vw;color: #0f1d2a;">
-                                                            <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
-                                                            <path d="M160 80C160 53.49 181.5 32 208 32H240C266.5 32 288 53.49 288 80V432C288 458.5 266.5 480 240 480H208C181.5 480 160 458.5 160 432V80zM0 272C0 245.5 21.49 224 48 224H80C106.5 224 128 245.5 128 272V432C128 458.5 106.5 480 80 480H48C21.49 480 0 458.5 0 432V272zM400 96C426.5 96 448 117.5 448 144V432C448 458.5 426.5 480 400 480H368C341.5 480 320 458.5 320 432V144C320 117.5 341.5 96 368 96H400z"></path>
-                                                        </svg></button><button class="btn btn-primary d-xl-flex d-xxl-flex align-items-xxl-center" type="button" style="padding-right: 0px;padding-left: 1px;background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);"><i class="fas fa-map-marker-alt d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;"></i></button></div>
+                                            <div class="col d-xl-flex justify-content-xl-end" style="margin-top: 1vw;">
+                                                <div class="btn-group btn-group-sm" role="group" style="padding-top: 6px;margin-top: -6px;padding-bottom: 7px;margin-bottom: -1px;padding-left: 0px; width: 4vw;">
+                                                    <button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xxl-center" type="button" style="padding-top: 2px;padding-left: 1px;padding-right: 1px;margin-right: -1px;margin-left: -1px;background: rgb(214,228,247);border-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="d-xxl-flex align-items-xxl-center" style="font-size: 1.6vw;color: #0f1d2a;">
+                                                    <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                                    <path d="M160 80C160 53.49 181.5 32 208 32H240C266.5 32 288 53.49 288 80V432C288 458.5 266.5 480 240 480H208C181.5 480 160 458.5 160 432V80zM0 272C0 245.5 21.49 224 48 224H80C106.5 224 128 245.5 128 272V432C128 458.5 106.5 480 80 480H48C21.49 480 0 458.5 0 432V272zM400 96C426.5 96 448 117.5 448 144V432C448 458.5 426.5 480 400 480H368C341.5 480 320 458.5 320 432V144C320 117.5 341.5 96 368 96H400z"></path>
+                                                         </svg>
+                                                    </button>
+                                                    <button class="btn btn-primary d-xl-flex d-xxl-flex align-items-xxl-center" type="button" style="padding-right: 0px;padding-left: 1px;background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" class="d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;">
+                                                        <path d="M3 4C3 3.44772 3.44772 3 4 3H16C16.5523 3 17 3.44772 17 4V6C17 6.55228 16.5523 7 16 7H4C3.44772 7 3 6.55228 3 6V4Z" fill="currentColor"></path>
+                                                        <path d="M3 10C3 9.44771 3.44772 9 4 9H10C10.5523 9 11 9.44771 11 10V16C11 16.5523 10.5523 17 10 17H4C3.44772 17 3 16.5523 3 16V10Z" fill="currentColor"></path>
+                                                        <path d="M14 9C13.4477 9 13 9.44771 13 10V16C13 16.5523 13.4477 17 14 17H16C16.5523 17 17 16.5523 17 16V10C17 9.44771 16.5523 9 16 9H14Z" fill="currentColor"></path>
+                                                    </svg></button>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-xl-1 offset-xl-0"><div class="btn-group-vertical btn-group-sm" role="group">
-    <button id="MWhbtn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="myFunction(this)">MWh</button>
-    <button id="TSEKbtn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myFunction(this)" >TSEK</button>
-    <button id="KgCO2btn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myFunction(this)" >kgCO<sub>2</sub></button>
-</div></div>
+                                        <div id="bigboxROW" class="row">
+                                            <div class="col-xl-1 offset-xl-0">
+                                                <div class="btn-group-vertical btn-group-sm" role="group"><button id="MWhbtn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;">MWh</button><button id="TSEKbtn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;">TSEK</button><button id="KgCO2btn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;">kgCO<sub>2</sub></button></div>
+                                            </div>
                                             <div class="col-xl-11">
-                                                <div><canvas data-bss-chart="{&quot;type&quot;:&quot;bar&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;January&quot;,&quot;February&quot;,&quot;March&quot;,&quot;April&quot;,&quot;May&quot;,&quot;June&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Revenue&quot;,&quot;backgroundColor&quot;:&quot;#4e73df&quot;,&quot;borderColor&quot;:&quot;#4e73df&quot;,&quot;data&quot;:[&quot;4500&quot;,&quot;5300&quot;,&quot;6250&quot;,&quot;7800&quot;,&quot;9800&quot;,&quot;15000&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:true,&quot;legend&quot;:{&quot;display&quot;:false,&quot;labels&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}},&quot;title&quot;:{&quot;fontStyle&quot;:&quot;bold&quot;},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;ticks&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}}],&quot;yAxes&quot;:[{&quot;ticks&quot;:{&quot;fontStyle&quot;:&quot;normal&quot;}}]}}}"></canvas></div>
+                                                <div>
+                                                    <canvas id="bigChart" style="margin-left:0px;margin-right:0px;padding-left:0px;padding-right:0px;width:100%">
+                                                        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels" type="text/javascript"></script>
+
+                                                        <script>
+                                                            // const big = document.getElementById('bigChart');
+                                                            const data = {
+                                                                labels: ['Varmvatten', 'Tryckluft', 'Varmvatten', 'Tryckluft', 'Varmvatten', 'Tryckluft'],
+                                                                datasets: [
+                                                                {
+                                                                    type: 'line',
+                                                                    label: 'Ref1',
+                                                                    borderWidth: 2, 
+                                                                    data: [10, 10, 10, 10, 10, 10],
+                                                                    backgroundColor: ['#42474E'],
+                                                                    borderWidth: 2, 
+                                                                    borderColor: '#42474E',
+                                                                    backgroundColor: '#42474E',
+                                                                    
+                                                                },
+                                                                {
+                                                                    type: 'bar', 
+                                                                    label: 'El',
+                                                                    data: [12, 19, 3, 5, 2, 3],
+                                                                    borderWidth: 0,
+                                                                    backgroundColor:'#FFB4AB',
+                                                                    borderColor:'#FFB4AB',
+                                                                    stack: 'Stack 0', 
+                                                                }, {
+                                                                    type: 'bar', 
+                                                                    label: 'Kol',
+                                                                    data: [14, 16, 5, 4, 5, 6],
+                                                                    borderWidth: 0, 
+                                                                    backgroundColor:'#4B9200',
+                                                                    stack: 'Stack 0'
+                                                                }, {
+                                                                    type: 'bar', 
+                                                                    label: 'Koks',
+                                                                    data: [14, 16, 5, 4, 5, 6],
+                                                                    borderWidth: 0, 
+                                                                    backgroundColor:'#920028',
+                                                                    stack: 'Stack 1', 
+                                                                },{
+                                                                    type: 'bar', 
+                                                                    label: 'Naturgas',
+                                                                    data: [14, 16, 5, 4, 5, 6],
+                                                                    borderWidth: 0, 
+                                                                    backgroundColor:'#9ACBFF',
+                                                                    stack: 'Stack 1', 
+                                                                },{
+                                                                    type: 'bar', 
+                                                                    label: 'Olja',
+                                                                    data: [14, 16, 5, 4, 5, 6],
+                                                                    borderWidth: 0, 
+                                                                    backgroundColor:'#6750A4',
+                                                                    stack: 'Stack 1', 
+                                                                },
+                                                                ]
+                                                                };
+
+
+                                                                //top label plugin block 
+                                                                const topLabels = {
+                                                                    id: 'topLabels', 
+                                                                    afterDatasetDraw(chart, args, pluginOptions){
+                                                                        const {ctx, scales: {x,y}} = chart; 
+
+                                                                        ctx.font = '1.3vw roboto';
+                                                                        ctx.fillStyle = '#333333';
+                                                                        ctx.textAlign= 'center';
+
+                                                                        ctx.fillText('Jan', x.getPixelForValue(0.5), chart.chartArea.bottom + 30)
+                                                                        ctx.fillText('Feb', x.getPixelForValue( 2.5), chart.chartArea.bottom + 30)
+                                                                        ctx.fillText('Mar', x.getPixelForValue(4.5), chart.chartArea.bottom + 30)
+
+                                                                        ctx.font = '0.85vw roboto';
+                                                                        ctx.fillStyle = '#333333';
+                                                                        ctx.textAlign= 'center';
+                                                                        
+                                                                        for (let i = 0; i < 6; i ++){
+                                                                            ctx.fillText('2020', chart.getDatasetMeta(2).data[i].x, chart.getDatasetMeta(2).data[i].y - 15);
+                                                                            
+                                                                            ctx.fillText('2019', chart.getDatasetMeta(5).data[i].x, chart.getDatasetMeta(5).data[i].y - 15);
+                                                                        }
+                                                                    }
+                                                                }
+
+                                                                const config = {
+                                                                type: 'bar',
+                                                                data,
+                                                                options: {
+                                                                    parsing:{
+                                                                    xAxisKey:'id'
+                                                                    },
+                                                                    scales: {
+                                                                        y: {
+                                                                            beginAtZero: true,
+                                                                            display:true,
+                                                                            stacked:true
+                                                                         }, 
+                                                                         x: {
+                                                                             stacked:true, 
+                                                                            display:true, 
+                                                                        }
+                                                                    }, 
+                                                                     events: ['mousemove','click'],
+                                                                
+                                                                    // onClick: (e) => {
+                                                                    // alert("Du klicka på grafen"); 
+                                                                    // },        
+                                                                     elements: {
+                                                                        point: {
+                                                                        radius: 0,
+                                                                        }, 
+                                                                    }, plugins:{
+                                                                        legend: {
+                                                                            display: true,
+                                                                            position: 'bottom',
+                                                                            labels: {
+                                                                                usePointStyle: true, 
+                                                                                pointStyle:'circle', 
+                                                                                padding: 35,
+                                                                            }
+                                                                     },           
+
+                                                                }, 
+                                                                    responsive: true,
+                                                                    animation: {
+                                                                        duration: 1,
+                                                                        onComplete: function () {
+                                                                        console.log(this.data);
+                                                                        }
+                                                                    }
+                                                                       
+                                                                }, plugins: [ topLabels],
+                                                                
+                                                                };
+
+                                                                // render init block
+                                                                const myChart = new Chart(
+                                                                document.getElementById('bigChart'),
+                                                                config
+                                                                );
+
+                                                                // Instantly assign Chart.js version
+                                                                const chartVersion = document.getElementById('bigChart');
+                                                                chartVersion.innerText = Chart.version;
+            
+                                                            // new Chart(big, {
+                                                            // data: {
+                                                            //     labels: ['Varmvatten', 'Tryckluft', 'Varmvatten', 'Tryckluft', 'Varmvatten', 'Tryckluft', 'Varmvatten', 'Tryckluft','Varmvatten', 'Tryckluft', 'Varmvatten', 'Tryckluft'],
+                                                            //     datasets: [
+                                                            //     {
+                                                            //         type: 'line',
+                                                            //         label: 'Ref1',
+                                                            //         borderWidth: 2, 
+                                                            //         data: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,10],
+                                                            //         backgroundColor: ['#42474E'],
+                                                                   
+        
+                                                                    
+                                                            //     },
+                                                            //     {
+                                                            //         type: 'bar', 
+                                                            //         label: 'El',
+                                                            //         data: [12, 19, 3, 5, 2, 3, 5, 9, 0, 23, 6,11],
+                                                            //         borderWidth: 0,
+                                                            //         backgroundColor:'#FFB4AB',
+                                                            //         borderColor:'#FFB4AB',
+                                                            //         stack: 'Stack 0', 
+                                                            //     }, {
+                                                            //         type: 'bar', 
+                                                            //         label: 'Kol',
+                                                            //         data: [14, 16, 5, 4, 5, 6, 5,6, 6, 11, 14, 45],
+                                                            //         borderWidth: 0, 
+                                                            //         backgroundColor:'#4B9200',
+                                                            //         stack: 'Stack 0'
+                                                            //     }, {
+                                                            //         type: 'bar', 
+                                                            //         label: 'Koks',
+                                                            //         data: [14, 16, 5, 4, 5, 6, 5,6, 16, 3 , 15, 23],
+                                                            //         borderWidth: 0, 
+                                                            //         backgroundColor:'#920028',
+                                                            //         stack: 'Stack 1', 
+                                                            //     },{
+                                                            //         type: 'bar', 
+                                                            //         label: 'Naturgas',
+                                                            //         data: [14, 16, 5, 4, 5, 6, 5,6, 11, 12, 6, 6],
+                                                            //         borderWidth: 0, 
+                                                            //         backgroundColor:'#9ACBFF',
+                                                            //         stack: 'Stack 1', 
+                                                            //     },{
+                                                            //         type: 'bar', 
+                                                            //         label: 'Olja',
+                                                            //         data: [14, 16, 5, 4, 5, 6, 5,6, 7, 13, 8, 4],
+                                                            //         borderWidth: 0, 
+                                                            //         backgroundColor:'#6750A4',
+                                                            //         stack: 'Stack 1', 
+                                                            //     },
+                                                            // ]
+                                                            // },
+                                                            // options: {
+                                                                // parsing:{
+                                                                //     xAxisKey:'id'
+                                                                // },
+                                                                // scales: {
+                                                                //     y: {
+                                                                //         beginAtZero: true,
+                                                                //         display:true,
+                                                                //         stacked:true
+                                                                //     }, 
+                                                                //     x: {
+                                                                //         stacked:true, 
+                                                                //         display:true, 
+                                                                //     }
+                                                                // }, 
+                                                                // events: ['mousemove','click'],
+                                                                
+                                                                // onClick: (e) => {
+                                                                //     alert("Du klicka på grafen"); 
+                                                                // }, 
+                                                                // plugins:{
+                                                                //     subtitle: {
+                                                                //         display: true,
+                                                                //         text: '          Varmvatten                                 Trycklyft                                       Varmvatten                                Trycklyft                                       Varmvatten                                 Trycklyft ', 
+                                                                //         position: 'bottom',
+                                                                //         padding: -50,
+                                                                //         font:{weight: 'bold'},
+                                                                //     },
+                                                                    // legend: {
+                                                                    //     display: true,
+                                                                    //     position: 'bottom',
+                                                                    //     labels: {
+                                                                    //         usePointStyle: true, 
+                                                                    //         pointStyle:'circle', 
+                                                                    //         padding: 35,
+                                                                    //     }
+                                                                    // }
+                                                                // }, 
+                                                                // responsive: true,
+                                                                // animation: {
+                                                                //     duration: 1,
+                                                                //     onComplete: function () {
+                                                                //         console.log(this.data);
+                                                                //         this.fillText("tja");
+                                                                //     }
+                                                                // }
+                                                            // }, 
+                                                            // });
+                                                        </script>
+            
+                                                    </canvas>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -578,7 +900,7 @@
                                                     <path d="M160 80C160 53.49 181.5 32 208 32H240C266.5 32 288 53.49 288 80V432C288 458.5 266.5 480 240 480H208C181.5 480 160 458.5 160 432V80zM0 272C0 245.5 21.49 224 48 224H80C106.5 224 128 245.5 128 272V432C128 458.5 106.5 480 80 480H48C21.49 480 0 458.5 0 432V272zM400 96C426.5 96 448 117.5 448 144V432C448 458.5 426.5 480 400 480H368C341.5 480 320 458.5 320 432V144C320 117.5 341.5 96 368 96H400z"></path>
                                                 </svg></button>
                                                 <button class="btn btn-primary d-xl-flex d-xxl-flex align-items-xxl-center" type="button" style="background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);"><i class="fas fa-map-marker-alt d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;"></i></button></div>
-                                    </div>
+                                        </div>
                                 </div>
                                 <!-- MWH/TSEK/kgCO" Knappar  -->
                                 <div class="row">
@@ -629,8 +951,19 @@
                                                     
                                                     onClick: (e) => {
                                                         alert("Du klicka på grafen"); 
+                                                    }, 
+                                                    plugins: {
+                                                    legend: {
+                                                        display: true,
+                                                        position: 'top',
+                                                        labels: {
+                                                            usePointStyle: true, 
+                                                            pointStyle:'circle', 
+                                                            padding: 10,
                                                     }
                                                 }
+                                                }
+                                                }, 
                                                 });
                                             </script>
 
@@ -643,7 +976,7 @@
                                 <div class="row">
 
                                 <!-- Footer  -->
-                                    <div class="col" style="margin-top:12px">
+                                    <div class="col" style="margin-top:6px">
                                         <h1 style="color:#0f1d2a; font-size: 0.85vw;">Plåt AB har hitills förbrukat <b>80%</b> av sin budget i <b>MWh</b> under <b>2023</b>. Förbrukningen översteg prognos under <b>Mars</b>, <b>Oktober</b> och <b>September</b> månad. </h1>
                                     </div>
                                 </div>
@@ -1099,7 +1432,9 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>    <!-- <script src="assets/bootstrap/js/bootstrap.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script> -->
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/script.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
