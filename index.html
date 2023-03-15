@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <title>Prototyp</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">    
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -269,6 +271,7 @@
 
                         </div>
                     </div>
+
                     <div class="col" style="padding-right: 0px;padding-left: 6px;padding-bottom: 0px;margin-bottom: -1px;">
                         <div class="card">
                             <div class="card-header" style="text-align: left;">
@@ -279,129 +282,181 @@
                                     <div class="col d-lg-flex d-xl-flex justify-content-lg-end justify-content-xl-end"><button class="btn" type="button"><i class="icon ion-close-round" style="font-size: 24px;"></i></button></div>
                                 </div>
                             </div>
-                            <div class="card-body" style="padding-bottom: 28px;margin-bottom: -4px;"><div class="row" style="padding-bottom: 3px;">
-    <div class="col-xxl-7" style="font-size: 0.85vw;width: 100%;">
-        <div class="row d-xl-flex" style="font-size: 0.85vw;margin-bottom: 3px;">
-            <div class="col-xl-3 d-flex flex-column-reverse" style="padding-right: 61px;margin-right: -41px;"><button id="yearSelect" onclick="YearMonthSelect(this)" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-left: 0px;margin-right: -9px;background: #f1f0f4;">År</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="YMSelect(this)">2017</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">2018</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">2019</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">2020</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">2021</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">2022</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">2023</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">2024</button></div>
-        </div>
-        <div class="row d-xl-flex" style="font-size: 0.85vw;">
-            <div class="col-xl-3 d-flex flex-column-reverse" style="padding-right: 61px;margin-right: -41px;"><button id="monthSelect" onclick="YearMonthSelect(this)" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-left: 0px;margin-right: -9px;background: #D6E4F7;" onclick="YMSelect(this)">Mån</button></div>
-            <div id="monthSelectDiv1" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="YMSelect(this)">Jan</button></div>
-            <div  id="monthSelectDiv2" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">Feb</button></div>
-            <div  id="monthSelectDiv3" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">Mar</button></div>
-            <div  id="monthSelectDiv4" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">Apr</button></div>
-            <div  id="monthSelectDiv5" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">Maj</button></div>
-            <div  id="monthSelectDiv6" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">Jun</button></div>
-            <div  id="monthSelectDiv7" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">Jul</button></div>
-            <div  id="monthSelectDiv8" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YMSelect(this)">Sep</button></div>
-        </div>
-    </div>
-</div>
+                            <div id="geocard" class="card-body" style="padding-bottom: 28px;margin-bottom: -4px;">
+                                <div class="row" style="padding-bottom: 3px;">
+                                <!-- year month select -->
+                                    <div class="col-xxl-7" style="font-size: 0.85vw;width: 100%;">
+                                        <div class="row d-xl-flex" style="font-size: 0.85vw;margin-bottom: 3px;">
+                                            <div class="col-xl-3 d-flex flex-column-reverse" style="padding-right: 61px;margin-right: -41px;"><button id="yearSelect" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-left: 0px;margin-right: -9px;background: #f1f0f4;">År</button></div>
+                                            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" >2017</button></div>
+                                            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >2018</button></div>
+                                            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >2019</button></div>
+                                            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >2020</button></div>
+                                            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >2021</button></div>
+                                            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >2022</button></div>
+                                            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >2023</button></div>
+                                            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >2024</button></div>
+                                        </div>
+                                        <div class="row d-xl-flex" style="font-size: 0.85vw;">
+                                            <div class="col-xl-3 d-flex flex-column-reverse" style="padding-right: 61px;margin-right: -41px;"><button id="monthSelect" onclick="YearMonthSelect(this)" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-left: 0px;margin-right: -9px;background: #D6E4F7;" >Mån</button></div>
+                                            <div id="monthSelectDiv1" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" >Jan</button></div>
+                                            <div  id="monthSelectDiv2" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >Feb</button></div>
+                                            <div  id="monthSelectDiv3" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >Mar</button></div>
+                                            <div  id="monthSelectDiv4" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >Apr</button></div>
+                                            <div  id="monthSelectDiv5" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >Maj</button></div>
+                                            <div  id="monthSelectDiv6" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >Jun</button></div>
+                                            <div  id="monthSelectDiv7" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >Jul</button></div>
+                                            <div  id="monthSelectDiv8" class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >Sep</button></div>
+                                        </div>
+                                    </div>
+                                <!-- year month select end -->
+                                </div>
+                                <!-- Narvik/Chart/Map Row -->
                                 <div class="row justify-content-xl-start align-items-xl-center align-items-xxl-center" style="margin-bottom: 0;">
                                     <div class="col">
                                         <div class="row d-xl-flex" style="font-size: 0.85vw;margin-right: -5px;margin-top: 6px;">
-                                            <div class="col-xl-3 d-flex flex-column-reverse" style="padding-right: 0px;margin-right: -1px;"><a class="navbar-brand d-flex align-items-center" href="#" style="margin-left: 0px;"><button class="btn" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor">
-                                                            <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
-                                                            <path d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"></path>
-                                                        </svg></button><span style="color: rgb(33,36,41);font-size: 1.06vw;">Narvik</span></a></div>
-                                            <div class="col-xl-7" style="margin-right: 24px;">
+                                            <!-- Narvik rubric and return button -->
+                                            <div class="col-xl-3 d-flex flex-column-reverse" style="padding-right: 0px;margin-right: -1px;">
+                                                <a class="navbar-brand d-flex align-items-center" href="#" style="margin-left: 0px;">
+                                                    <span style="color: rgb(33,36,41);font-size: 1.06vw;">Plåt AB</span>
+                                                </a>
                                             </div>
+                                            <!-- END Narvik rubric and return button -->
+                                            <div class="col-xl-7" style="margin-right: 24px;"> </div>
+                                            <!-- Map/chart btn -->
                                             <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;padding-left: 8px;padding-right: 8px;margin-right: -8px;margin-left: 10px;">
-                                                <div class="btn-group btn-group-sm" role="group" style="padding-top: 6px;margin-top: -6px;padding-bottom: 7px;margin-bottom: -1px;padding-left: 0px;"><button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xxl-center" type="button" style="padding-top: 2px;padding-left: 1px;padding-right: 1px;margin-right: -1px;margin-left: -1px;background: rgb(214,228,247);border-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="d-xxl-flex align-items-xxl-center" style="font-size: 1.6vw;color: #0f1d2a;">
+                                                <div class="btn-group btn-group-sm" role="group" style="padding-top: 6px;margin-top: -6px;padding-bottom: 7px;margin-bottom: -1px;padding-left: 0px;">
+                                                    <button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xxl-center" type="button" style="padding-top: 2px;padding-left: 1px;padding-right: 1px;margin-right: -1px;margin-left: -1px;background: rgb(214,228,247);border-color: rgb(214,228,247);">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="d-xxl-flex align-items-xxl-center" style="font-size: 1.6vw;color: #0f1d2a;">
                                                             <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                                             <path d="M160 80C160 53.49 181.5 32 208 32H240C266.5 32 288 53.49 288 80V432C288 458.5 266.5 480 240 480H208C181.5 480 160 458.5 160 432V80zM0 272C0 245.5 21.49 224 48 224H80C106.5 224 128 245.5 128 272V432C128 458.5 106.5 480 80 480H48C21.49 480 0 458.5 0 432V272zM400 96C426.5 96 448 117.5 448 144V432C448 458.5 426.5 480 400 480H368C341.5 480 320 458.5 320 432V144C320 117.5 341.5 96 368 96H400z"></path>
-                                                        </svg></button><button class="btn btn-primary d-xl-flex d-xxl-flex align-items-xxl-center" type="button" style="padding-right: 0px;padding-left: 1px;background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);"><i class="fas fa-map-marker-alt d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;"></i></button>
+                                                        </svg>
+                                                    </button>
+                                                    <button class="btn btn-primary d-xl-flex d-xxl-flex align-items-xxl-center" type="button" style="padding-right: 0px;padding-left: 1px;background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);">
+                                                        <i class="fas fa-map-marker-alt d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;"></i>
+                                                    </button>
                                                 </div>
                                             </div>
+                                            <!-- END Map/chart btn -->
                                         </div>
                                     </div>
                                 </div>
+                                <!-- BigMapChart/MWH/TSEK/kgco2 ROW -->
                                 <div class="row">
-                                    <div class="col-xxl-1 offset-xxl-0"><div class="btn-group-vertical btn-group-sm" role="group">
-    <button id="MWhbtn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="myFunction(this,'bigMapChartDiv')">MWh</button>
-    <button id="TSEKbtn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myFunction(this,'bigMapChartDiv')" >TSEK</button>
-    <button id="KgCO2btn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myFunction(this,'bigMapChartDiv')" >kgCO<sub>2</sub></button>
-</div></div>
-                                    <div class="col-xxl-10" id="bigMapChartDiv"><div>
-  <canvas id="myChart" onload="renderMapChart"></canvas>
-</div>
+                                    <!-- <div class="col-xl-2 offset-xl-0">
+                                        <div class="btn-group-vertical btn-group-sm" role="group">
+                                        <button id="MWhbtn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;">MWh</button>
+                                        <button id="TSEKbtn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;">TSEK</button>
+                                        <button id="KgCO2btn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;">kgCO<sub>2</sub></button>
+                                        </div>
+                                    </div> -->
+                                <!-- BigMapChart-->
+                                <div class="col-xl-10" id="bigMapChartDiv" style="padding: 0px; padding-left: 1vw;">
+                                    <div>
+                                        <canvas id="myChart" onload="renderMapChart"></canvas>
+                                    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 
-<script>
-  const ctx = document.getElementById('myChart');
+                                    <script>
+                                        // const ctx = document.getElementById('myChart');
 
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Kontor', 'Pumprum', 'Fläktrum', 'Matsal', 'Kök', 'Ventilationscentral', 'Fabrik 1', 'Fabrik 2'],
-      datasets: [{
-        label: 'El',
-        data: [12, 19, 3, 5, 2, 3, 5,6],
-        borderWidth: 0,
-        backgroundColor:'#FFB4AB',
-      }, 
-        {
-        label: 'Kol',
-        data: [14, 16, 5, 4, 5, 6, 5,6],
-        borderWidth: 0, 
-        backgroundColor:'#4B9200',
-      }, {
-        label: 'Koks',
-        data: [14, 16, 5, 4, 5, 6, 5,6],
-        borderWidth: 0, 
-        backgroundColor:'#920028',
-      },{
-        label: 'Naturgas',
-        data: [14, 16, 5, 4, 5, 6, 5,6],
-        borderWidth: 0, 
-        backgroundColor:'#9ACBFF',
-      },
-                        {
-        label: 'Olja',
-        data: [14, 16, 5, 4, 5, 6, 5,6],
-        borderWidth: 0, 
-        backgroundColor:'#6750A4',
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-            beginAtZero: true,
-            stacked: true
-        }, 
-         x: {
-            stacked:true
-          }
-      }, plugins: {
-        legend: {
-            display: true,
-            position: 'bottom',
-            labels: {
-                usePointStyle: true, 
-                pointStyle:'circle', 
-                padding: 10,
-           }
-       }
-       
-   }, 
-      }
-    });
-</script>
-</div>
+                                        const data1 = {
+                                            labels: ['Narvik', 'Oslo', 'Sveg'],
+                                            datasets: [{
+                                                label: 'El',
+                                                data: [12, 19, 3, 5, 2, 3, 5,6],
+                                                borderWidth: 0,
+                                                backgroundColor:'#FFB4AB',
+                                            },{
+                                                label: 'Kol',
+                                                data: [14, 16, 5, 4, 5, 6, 5,6],
+                                                borderWidth: 0, 
+                                                backgroundColor:'#4B9200',
+                                            },{
+                                                label: 'Koks',
+                                                data: [14, 16, 5, 4, 5, 6, 5,6],
+                                                borderWidth: 0, 
+                                                backgroundColor:'#920028',
+                                            },{
+                                                label: 'Naturgas',
+                                                data: [14, 16, 5, 4, 5, 6, 5,6],
+                                                borderWidth: 0, 
+                                                backgroundColor:'#9ACBFF',
+                                            },{
+                                                label: 'Olja',
+                                                data: [14, 16, 5, 4, 5, 6, 5,6],
+                                                borderWidth: 0, 
+                                                backgroundColor:'#6750A4',
+                                            }]
+
+                                        }
+
+                                        const config1 = {
+                                            type: 'bar',
+                                            data: data1,
+                                            options: {
+                                                indexAxis: 'y',
+                                                scales: {
+                                                    y: {
+                                                        beginAtZero: true,
+                                                        stacked: true
+                                                    }, 
+                                                    x: {
+                                                        stacked:true
+                                                    }
+                                                }, 
+                                            plugins: {
+                                                legend: {
+                                                    display: true,
+                                                    position: 'bottom',
+                                                    labels: {
+                                                        usePointStyle: true, 
+                                                        pointStyle:'circle', 
+                                                        padding: 10,
+                                                    }
+                                                }
+                                            }, 
+                                            }
+
+                                        }
+
+                                        const myChart2 = new Chart(
+                                        document.getElementById('myChart'),
+                                        config1
+                                        );
+
+                                        function clickHandler(click){
+                                            const points = myChart2.getElementsAtEventForMode(click,'nearest', {intersect:true},true);
+                                            if (points[0]){
+                                                clickedGeo(myChart2.config.data.labels[points[0].index]);
+                                            }
+                                        }
+
+                                        myChart2.canvas.onclick = clickHandler;
+
+                                        // Instantly assign Chart.js version
+                                        const chartVersion2 = document.getElementById('myChart');
+                                        chartVersion2.innerText = Chart.version;
+
+
+                                        
+
+                            
+                                    </script>
+                                </div>
+                                <div class="col-xl-2 offset-xl-0 " style = "padding-top: 14vw;" >
+                                    <div class="btn-group-vertical btn-group-sm" role="group">
+                                    <button id="MWhbtn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;">MWh</button>
+                                    <button id="TSEKbtn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;">TSEK</button>
+                                    <button id="KgCO2btn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;">kgCO<sub>2</sub></button>
+                                </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+            </div>
+        </div>
 
                 <!-- stora komponenten -->
                 <div class="row" style="margin-bottom: 12px;">
