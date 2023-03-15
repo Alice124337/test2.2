@@ -886,8 +886,8 @@
             <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2019</button></div>
             <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2020</button></div>
             <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2021</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2022</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="YSelectBudget(this)">2023</button></div>
+            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="YSelectBudget(this)">2022</button></div>
+            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2023</button></div>
             <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2024</button></div>
         </div>
 
@@ -897,21 +897,27 @@
                                 
                                 <div class="row">
                                     <div class="col d-xl-flex justify-content-xl-end" style="margin-right: 18px;margin-top:2vw; margin-bottom: 2vw;">
-                                        <div class="btn-group btn-group-sm" role="group" ><button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xxl-center" type="button" style="background: rgb(214,228,247);border-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="d-xxl-flex align-items-xxl-center" style="font-size: 1.6vw;color: #0f1d2a;">
+                                        <div class="btn-group btn-group-sm" role="group" >
+                                            <button id="buttonChangeGraph" class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xxl-center" type="button" style="background: rgb(214,228,247);border-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="d-xxl-flex align-items-xxl-center" style="font-size: 1.6vw;color: #0f1d2a;">
                                                     <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                                     <path d="M160 80C160 53.49 181.5 32 208 32H240C266.5 32 288 53.49 288 80V432C288 458.5 266.5 480 240 480H208C181.5 480 160 458.5 160 432V80zM0 272C0 245.5 21.49 224 48 224H80C106.5 224 128 245.5 128 272V432C128 458.5 106.5 480 80 480H48C21.49 480 0 458.5 0 432V272zM400 96C426.5 96 448 117.5 448 144V432C448 458.5 426.5 480 400 480H368C341.5 480 320 458.5 320 432V144C320 117.5 341.5 96 368 96H400z"></path>
                                                 </svg></button>
-                                                <button class="btn btn-primary d-xl-flex d-xxl-flex align-items-xxl-center" type="button" style="background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);"><i class="fas fa-map-marker-alt d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;"></i></button></div>
+                                                <button class="btn btn-primary d-xl-flex d-xxl-flex align-items-xxl-center" type="button" style="background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);" onclick="changeBudgetTable(this)"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" class="d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;">
+                                                    <path d="M3 4C3 3.44772 3.44772 3 4 3H16C16.5523 3 17 3.44772 17 4V6C17 6.55228 16.5523 7 16 7H4C3.44772 7 3 6.55228 3 6V4Z" fill="currentColor"></path>
+                                                    <path d="M3 10C3 9.44771 3.44772 9 4 9H10C10.5523 9 11 9.44771 11 10V16C11 16.5523 10.5523 17 10 17H4C3.44772 17 3 16.5523 3 16V10Z" fill="currentColor"></path>
+                                                    <path d="M14 9C13.4477 9 13 9.44771 13 10V16C13 16.5523 13.4477 17 14 17H16C16.5523 17 17 16.5523 17 16V10C17 9.44771 16.5523 9 16 9H14Z" fill="currentColor"></path>
+                                                </svg></button></div>
                                         </div>
                                 </div>
                                 <!-- MWH/TSEK/kgCO" Knappar  -->
-                                <div class="row">
-                                    <div class="col-xl-2"><div class="btn-group-vertical btn-group-sm" role="group" style="margin-left:0px;margin-right:0px;padding-left:0px;padding-right:0px;">
-                                        <button  id="MWHBudget" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background:#f1f0f4;" onclick="myBudgetFunction(this)">MWh</button>
-                                        <button  id="TSEKBudget" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="myBudgetFunction(this)" >TSEK</button>
-                                        <button  id="kgCO2Budget" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myBudgetFunction(this)" >kgCO<sub>2</sub></button>
+                                <div class="row" id="bigBudgetRow">
+                                    <div class="col-xl-2">
+                                        <div class="btn-group-vertical btn-group-sm" role="group" style="margin-left:0px;margin-right:0px;padding-left:0px;padding-right:0px;">
+                                            <button  id="MWHBudget" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background:#f1f0f4;" onclick="myBudgetFunction(this)">MWh</button>
+                                            <button  id="TSEKBudget" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="myBudgetFunction(this)" >TSEK</button>
+                                            <button  id="kgCO2Budget" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myBudgetFunction(this)" >kgCO<sub>2</sub></button>
+                                        </div>
                                     </div>
-                                </div>
                                 <div class="col-xl-8" style="margin-left:-30px;margin-right:0px;padding-left:0px;padding-right:0px;width:100%">
                                     <!-- Chart  -->
                                     <div id="bigBudgetDiv">
@@ -946,7 +952,7 @@
                                                         }, 
                                                         x: {
                                                             stacked:false, 
-                                                            display:false
+                                                            display:true
                                                         }
                                                     }, 
                                                     events: ['mousemove','click'],
@@ -975,7 +981,7 @@
                                 <div class="col-xl-2" style="margin-left:0px;margin-right:0px;margin-bottom:20px;padding-left:15px;padding-right:0px;width:100%">
                                     <img class="img-fluid" src="assets/img/newMesurement.jpg"></div>
                             </div>
-                                <div class="row">
+                                <div class="row" id="budgetTextrow">
 
                                 <!-- Footer  -->
                                     <div class="col" style="margin-top:6px">
