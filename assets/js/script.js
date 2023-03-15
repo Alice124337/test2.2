@@ -728,7 +728,7 @@
               }, 
               x: {
                   stacked:false, 
-                  display:false
+                  display:true,
               }
           },
           plugins: {
@@ -799,7 +799,7 @@ function RandomeChart(indiv){
     new Chart(x, {
     type: 'bar',
     data: {
-      labels: ['Administration', 'Kompressor rum', 'Maskinhall', 'Interntransport', 'Processteg A', 'Processteg B', 'Processteg C', 'Processteg D'],
+      labels: ['Administration', 'Kompressor rum', 'Maskinhall', 'Intern transport', 'Processteg A', 'Processteg B', 'Processteg C', 'Processteg D'],
       datasets: [{
         label: 'El',
         data: data1,
@@ -1121,4 +1121,18 @@ function newActivity() {
 
 function newMeasure() {
   alert("Du har lagt till en ny åtgärd!");
+}
+
+function changeBudgetTable(invar) {
+
+    invar.style.background = "rgb(214, 228, 247)";
+    document.getElementById('buttonChangeGraph').style.background = "rgb(241, 240, 244)";
+    
+    document.getElementById("bigBudgetRow").innerHTML = "";
+    document.getElementById("budgetTextrow").innerHTML = "";
+    document.getElementById("bigBudgetRow").style ="margin:-15px";
+
+    var elem = document.createElement("img");
+    elem.setAttribute("src", "assets/img/budgettable7.jpg");
+    document.getElementById("bigBudgetRow").appendChild(elem);
 }
