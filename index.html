@@ -367,27 +367,27 @@
                                             labels: ['Narvik', 'Oslo', 'Sveg'],
                                             datasets: [{
                                                 label: 'El',
-                                                data: [12, 19, 3, 5, 2, 3, 5,6],
+                                                data: [4200, 4900, 4500, 4500, 5000, 5300, 4300, 5000],
                                                 borderWidth: 0,
                                                 backgroundColor:'#FFB4AB',
                                             },{
                                                 label: 'Kol',
-                                                data: [14, 16, 5, 4, 5, 6, 5,6],
+                                                data: [1400, 1600, 2000, 2400, 1500, 1600, 1500, 2000],
                                                 borderWidth: 0, 
                                                 backgroundColor:'#4B9200',
                                             },{
                                                 label: 'Koks',
-                                                data: [14, 16, 5, 4, 5, 6, 5,6],
+                                                data: [1400, 2600, 3000, 4000, 3500, 1600, 17000, 2000],
                                                 borderWidth: 0, 
                                                 backgroundColor:'#920028',
                                             },{
                                                 label: 'Naturgas',
-                                                data: [14, 16, 5, 4, 5, 6, 5,6],
+                                                data: [3400, 3600, 4000, 4500, 3500, 1600, 4000, 3000],
                                                 borderWidth: 0, 
                                                 backgroundColor:'#9ACBFF',
                                             },{
                                                 label: 'Olja',
-                                                data: [14, 16, 5, 4, 5, 6, 5,6],
+                                                data: [1400, 1600, 2000, 2400, 1500, 1600, 1500, 2000],
                                                 borderWidth: 0, 
                                                 backgroundColor:'#6750A4',
                                             }]
@@ -454,7 +454,11 @@
                                     <button id="KgCO2btn" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;">kgCO<sub>2</sub></button>
                                 </div>
                                 </div>
-                                <p style="color: rgb(33,37,41);font-size: 1vw;text-align: center;margin-bottom: 0px; margin-top: 1vw;">Plåt AB:s anläggning i <strong>Oslo</strong> förbrukade under perioden mest energi: <strong>83 MWh</strong></p>
+                                <div class="row" style="padding: 2vw; margin: 0px;" >
+                                    <div class="alert alert-secondary" style="background-color:#fefefe; display: flex; font-size: 1.2vw;" role="alert">
+                                        <i class="fa-sharp fa-solid fa-chalkboard-user" style="margin-right:1vw"></i> <p style="color:#73777F;font-size: 0.85vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;"> Här kommer ngt du kan lära dig av kopplat till ämnet</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -567,7 +571,7 @@
                                                             <span style="background-color: #F1F0F4; margin-top: 0.65vw; font-size: 0.85vw;" class="input-group-text">+</span>
                                                         </div>
                                                         <ul class="list-group list-group-flush">
-                                                            <li id="bigliitem" class="list-group-item">Ref 1: 100 Mwh<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
+                                                            <li id="bigliitem" class="list-group-item">Ref 1: 1000 Mwh<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -624,13 +628,13 @@
                                                         <script>
                                                             // const big = document.getElementById('bigChart');
                                                             const data = {
-                                                                labels: ['Varmvatten', 'Tryckluft', 'Varmvatten', 'Tryckluft', 'Varmvatten', 'Tryckluft'],
+                                                                labels: ['Slipning', 'Pumpning', 'Slipning', 'Pumpning', 'Slipning', 'Pumpning'],
                                                                 datasets: [
                                                                 {
                                                                     type: 'line',
                                                                     label: 'Ref1',
                                                                     borderWidth: 2, 
-                                                                    data: [10, 10, 10, 10, 10, 10],
+                                                                    data: [1000, 1000, 1000, 1000, 1000, 1000],
                                                                     backgroundColor: ['#42474E'],
                                                                     borderWidth: 2, 
                                                                     borderColor: '#42474E',
@@ -640,7 +644,7 @@
                                                                 {
                                                                     type: 'bar', 
                                                                     label: 'El',
-                                                                    data: [12, 19, 3, 5, 2, 3],
+                                                                    data: [1500, 2200, 1700, 1900, 2200, 1700],
                                                                     borderWidth: 0,
                                                                     backgroundColor:'#FFB4AB',
                                                                     borderColor:'#FFB4AB',
@@ -648,28 +652,35 @@
                                                                 }, {
                                                                     type: 'bar', 
                                                                     label: 'Kol',
-                                                                    data: [14, 16, 5, 4, 5, 6],
+                                                                    data: [800, 600, 700, 400, 0, 0],
                                                                     borderWidth: 0, 
                                                                     backgroundColor:'#4B9200',
                                                                     stack: 'Stack 0'
                                                                 }, {
                                                                     type: 'bar', 
+                                                                    label: 'Pellets',
+                                                                    data: [0, 0, 0, 100, 400, 300],
+                                                                    borderWidth: 0, 
+                                                                    backgroundColor:'#00629F',
+                                                                    stack: 'Stack 0', 
+                                                                },{
+                                                                    type: 'bar', 
                                                                     label: 'Koks',
-                                                                    data: [14, 16, 5, 4, 5, 6],
+                                                                    data: [600, 700, 500, 700, 600, 700],
                                                                     borderWidth: 0, 
                                                                     backgroundColor:'#920028',
                                                                     stack: 'Stack 1', 
                                                                 },{
                                                                     type: 'bar', 
                                                                     label: 'Naturgas',
-                                                                    data: [14, 16, 5, 4, 5, 6],
+                                                                    data: [1000, 1100, 1500, 1100, 1000, 900],
                                                                     borderWidth: 0, 
                                                                     backgroundColor:'#9ACBFF',
                                                                     stack: 'Stack 1', 
                                                                 },{
                                                                     type: 'bar', 
                                                                     label: 'Olja',
-                                                                    data: [14, 16, 5, 4, 5, 6],
+                                                                    data: [1000, 900, 1100, 900, 1000, 1200],
                                                                     borderWidth: 0, 
                                                                     backgroundColor:'#6750A4',
                                                                     stack: 'Stack 1', 
@@ -684,7 +695,7 @@
                                                                     afterDatasetDraw(chart, args, pluginOptions){
                                                                         const {ctx, scales: {x,y}} = chart; 
 
-                                                                        ctx.font = '1.3vw roboto';
+                                                                        ctx.font = '1vw roboto';
                                                                         ctx.fillStyle = '#333333';
                                                                         ctx.textAlign= 'center';
 
@@ -697,9 +708,9 @@
                                                                         ctx.textAlign= 'center';
                                                                         
                                                                         for (let i = 0; i < 6; i ++){
-                                                                            ctx.fillText('2020', chart.getDatasetMeta(2).data[i].x, chart.getDatasetMeta(2).data[i].y - 15);
+                                                                            ctx.fillText('2020', chart.getDatasetMeta(3).data[i].x, chart.getDatasetMeta(3).data[i].y - 15);
                                                                             
-                                                                            ctx.fillText('2019', chart.getDatasetMeta(5).data[i].x, chart.getDatasetMeta(5).data[i].y - 15);
+                                                                            ctx.fillText('2019', chart.getDatasetMeta(6).data[i].x, chart.getDatasetMeta(6).data[i].y - 15);
                                                                         }
                                                                     }
                                                                 }
@@ -765,107 +776,6 @@
                                                                 const chartVersion = document.getElementById('bigChart');
                                                                 chartVersion.innerText = Chart.version;
             
-                                                            // new Chart(big, {
-                                                            // data: {
-                                                            //     labels: ['Varmvatten', 'Tryckluft', 'Varmvatten', 'Tryckluft', 'Varmvatten', 'Tryckluft', 'Varmvatten', 'Tryckluft','Varmvatten', 'Tryckluft', 'Varmvatten', 'Tryckluft'],
-                                                            //     datasets: [
-                                                            //     {
-                                                            //         type: 'line',
-                                                            //         label: 'Ref1',
-                                                            //         borderWidth: 2, 
-                                                            //         data: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,10],
-                                                            //         backgroundColor: ['#42474E'],
-                                                                   
-        
-                                                                    
-                                                            //     },
-                                                            //     {
-                                                            //         type: 'bar', 
-                                                            //         label: 'El',
-                                                            //         data: [12, 19, 3, 5, 2, 3, 5, 9, 0, 23, 6,11],
-                                                            //         borderWidth: 0,
-                                                            //         backgroundColor:'#FFB4AB',
-                                                            //         borderColor:'#FFB4AB',
-                                                            //         stack: 'Stack 0', 
-                                                            //     }, {
-                                                            //         type: 'bar', 
-                                                            //         label: 'Kol',
-                                                            //         data: [14, 16, 5, 4, 5, 6, 5,6, 6, 11, 14, 45],
-                                                            //         borderWidth: 0, 
-                                                            //         backgroundColor:'#4B9200',
-                                                            //         stack: 'Stack 0'
-                                                            //     }, {
-                                                            //         type: 'bar', 
-                                                            //         label: 'Koks',
-                                                            //         data: [14, 16, 5, 4, 5, 6, 5,6, 16, 3 , 15, 23],
-                                                            //         borderWidth: 0, 
-                                                            //         backgroundColor:'#920028',
-                                                            //         stack: 'Stack 1', 
-                                                            //     },{
-                                                            //         type: 'bar', 
-                                                            //         label: 'Naturgas',
-                                                            //         data: [14, 16, 5, 4, 5, 6, 5,6, 11, 12, 6, 6],
-                                                            //         borderWidth: 0, 
-                                                            //         backgroundColor:'#9ACBFF',
-                                                            //         stack: 'Stack 1', 
-                                                            //     },{
-                                                            //         type: 'bar', 
-                                                            //         label: 'Olja',
-                                                            //         data: [14, 16, 5, 4, 5, 6, 5,6, 7, 13, 8, 4],
-                                                            //         borderWidth: 0, 
-                                                            //         backgroundColor:'#6750A4',
-                                                            //         stack: 'Stack 1', 
-                                                            //     },
-                                                            // ]
-                                                            // },
-                                                            // options: {
-                                                                // parsing:{
-                                                                //     xAxisKey:'id'
-                                                                // },
-                                                                // scales: {
-                                                                //     y: {
-                                                                //         beginAtZero: true,
-                                                                //         display:true,
-                                                                //         stacked:true
-                                                                //     }, 
-                                                                //     x: {
-                                                                //         stacked:true, 
-                                                                //         display:true, 
-                                                                //     }
-                                                                // }, 
-                                                                // events: ['mousemove','click'],
-                                                                
-                                                                // onClick: (e) => {
-                                                                //     alert("Du klicka på grafen"); 
-                                                                // }, 
-                                                                // plugins:{
-                                                                //     subtitle: {
-                                                                //         display: true,
-                                                                //         text: '          Varmvatten                                 Trycklyft                                       Varmvatten                                Trycklyft                                       Varmvatten                                 Trycklyft ', 
-                                                                //         position: 'bottom',
-                                                                //         padding: -50,
-                                                                //         font:{weight: 'bold'},
-                                                                //     },
-                                                                    // legend: {
-                                                                    //     display: true,
-                                                                    //     position: 'bottom',
-                                                                    //     labels: {
-                                                                    //         usePointStyle: true, 
-                                                                    //         pointStyle:'circle', 
-                                                                    //         padding: 35,
-                                                                    //     }
-                                                                    // }
-                                                                // }, 
-                                                                // responsive: true,
-                                                                // animation: {
-                                                                //     duration: 1,
-                                                                //     onComplete: function () {
-                                                                //         console.log(this.data);
-                                                                //         this.fillText("tja");
-                                                                //     }
-                                                                // }
-                                                            // }, 
-                                                            // });
                                                         </script>
             
                                                     </canvas>
@@ -924,7 +834,7 @@
                                     </div>
                                 </div>
                                 <div class="row d-xl-flex justify-content-xl-center align-items-xl-center">
-                                    <div class="col-xl-6 d-xl-flex" style="background: url(&quot;assets/img/newwheel.jpg&quot;) center / contain no-repeat, rgba(255,255,255,0);border-radius: 0px;height: 23vw;width: 23vw;">
+                                    <div class="col-xl-6 d-xl-flex" style="background: url(&quot;assets/img/wheel4.jpg&quot;) center / contain no-repeat, rgba(255,255,255,0);border-radius: 0px;height: 23vw;width: 23vw;">
                                         <div class="col d-xl-flex justify-content-xl-start align-items-xl-center" style="margin-left: 16vw; margin-top:9vw">
                                             <!-- <button class="btn btn-info" style="height: 13px; width: 13px; padding: 0px; border-radius: 10px;" type="button" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"></button> -->
                                             <input type="button" style="height: 1.13vw; width: 1.13vw; padding: 0px; border-radius: 10px; background-color:#6750A4" class="btn btn-secondary" data-html="true" title="                                                
@@ -986,7 +896,7 @@
 
                                 
                                 <div class="row">
-                                    <div class="col d-xl-flex justify-content-xl-end" style="margin-right: 18px;margin-top:12px; margin-bottom: 12px;">
+                                    <div class="col d-xl-flex justify-content-xl-end" style="margin-right: 18px;margin-top:2vw; margin-bottom: 2vw;">
                                         <div class="btn-group btn-group-sm" role="group" ><button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xxl-center" type="button" style="background: rgb(214,228,247);border-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="d-xxl-flex align-items-xxl-center" style="font-size: 1.6vw;color: #0f1d2a;">
                                                     <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                                     <path d="M160 80C160 53.49 181.5 32 208 32H240C266.5 32 288 53.49 288 80V432C288 458.5 266.5 480 240 480H208C181.5 480 160 458.5 160 432V80zM0 272C0 245.5 21.49 224 48 224H80C106.5 224 128 245.5 128 272V432C128 458.5 106.5 480 80 480H48C21.49 480 0 458.5 0 432V272zM400 96C426.5 96 448 117.5 448 144V432C448 458.5 426.5 480 400 480H368C341.5 480 320 458.5 320 432V144C320 117.5 341.5 96 368 96H400z"></path>
@@ -997,8 +907,8 @@
                                 <!-- MWH/TSEK/kgCO" Knappar  -->
                                 <div class="row">
                                     <div class="col-xl-2"><div class="btn-group-vertical btn-group-sm" role="group" style="margin-left:0px;margin-right:0px;padding-left:0px;padding-right:0px;">
-                                        <button  id="MWHBudget" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="myBudgetFunction(this)">MWh</button>
-                                        <button  id="TSEKBudget" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myBudgetFunction(this)" >TSEK</button>
+                                        <button  id="MWHBudget" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background:#f1f0f4;" onclick="myBudgetFunction(this)">MWh</button>
+                                        <button  id="TSEKBudget" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="myBudgetFunction(this)" >TSEK</button>
                                         <button  id="kgCO2Budget" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myBudgetFunction(this)" >kgCO<sub>2</sub></button>
                                     </div>
                                 </div>
@@ -1015,13 +925,13 @@
                                                     datasets: [                                            {
                                                     type: 'line',
                                                     label: 'Budget',
-                                                    data: [12, 19, 3, 5, 2, 5, 4, 7, 5, 6, 7 ,8 ,9],
+                                                    data: [2500, 2900, 3000, 3000, 2900, 3500, 4000, 3300, 3000, 3000, 3500],
                                                     borderWidth: 1, 
                                                     backgroundColor: '#42474E',
                                                     },{
                                                     type: 'bar',
                                                     label: 'Utfall',
-                                                    data: [12, 19, 10, 5, 2, 3, 7, 8, 9],
+                                                    data: [2500, 2900, 3400, 3000, 2900, 3000, 4200, 3000, 3300],
                                                     borderWidth: 1, 
                                                     backgroundColor: ['#9ACBFF', '#9ACBFF', '#ED9080', '#9ACBFF','#9ACBFF', '#9ACBFF','#ED9080', '#9ACBFF','#ED9080', '#ED9080','#9ACBFF', '#9ACBFF'],
                                                     }
@@ -1051,7 +961,7 @@
                                                         labels: {
                                                             usePointStyle: true, 
                                                             pointStyle:'circle', 
-                                                            padding: 10,
+                                                            padding: 15,
                                                     }
                                                 }
                                                 }
@@ -1069,7 +979,7 @@
 
                                 <!-- Footer  -->
                                     <div class="col" style="margin-top:6px">
-                                        <h1 style="color:#0f1d2a; font-size: 0.85vw;">Plåt AB har hitills förbrukat <b>80%</b> av sin budget i <b>MWh</b> under <b>2023</b>. Förbrukningen översteg prognos under <b>Mars</b>, <b>Oktober</b> och <b>September</b> månad. </h1>
+                                        <p style="color: rgb(33,37,41);font-size: 1vw;text-align: left;margin-bottom: 0px;">Plåt AB har hitills förbrukat  <strong>80%</strong> av sin budget i <strong>TSEK</strong> under <strong>2023</strong>. Förbrukningen översteg prognos under <strong>mars</strong>, <strong>oktober</strong> och <strong>september</strong> månad.</p>
                                     </div>
                                 </div>
                             </div>
