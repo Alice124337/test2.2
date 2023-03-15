@@ -838,7 +838,16 @@ function RandomeChart(indiv){
 function changeSelect() {
    $('.selectpicker').on('change', function(){
     var selected = $(this).val();
-    alert(selected);
+
+    if (selected == "MWh/omsatt TSEK") {
+      document.getElementById("benchmark").innerHTML=""; 
+      var elem = document.createElement("img");
+      elem.setAttribute("src", "assets/img/benchmark-mwh-omsatt-tsek.jpg");
+      elem.setAttribute("class", "img-fluid")
+      document.getElementById("benchmark").appendChild(elem);
+
+      document.getElementById("benchmark-info").innerHTML="<p id='benchmark-info' style='color: rgb(33,37,41);font-size: 1vw;text-align: center;margin-bottom: 0px;'>Plåt AB:s <strong>energiförbrukning (MWh) per anställd</strong> är <strong>17% lägre än genomsnittet</strong> inom branschen.</p>";
+    }
   });
 };
 
@@ -865,12 +874,59 @@ function myMeasureFunction(invar){
         
 };
 
-function showGoal(x) {
+function myScopeFunction(invar){
 
-  alert(x.classList); 
+  if (invar.innerText == "År"){
+        
+    invar.style.background = "rgb(214, 228, 247)"; 
+    document.getElementById("month").style.background = "rgb(241, 240, 244)";  
+    document.getElementById("week").style.background = "rgb(241, 240, 244)";  
+        
+    } else if (invar.innerText == "Månad"){
+    invar.style.background = "rgb(214, 228, 247)"; 
+    document.getElementById("year").style.background = "rgb(241, 240, 244)";  
+    document.getElementById("week").style.background = "rgb(241, 240, 244)";  
+        
+    } else {
+        
+    invar.style.background = "rgb(214, 228, 247)"; 
+    document.getElementById("year").style.background = "rgb(241, 240, 244)";  
+    document.getElementById("month").style.background = "rgb(241, 240, 244)";   
+        
+    }
+        
+};
 
-  x.classList.toggle("bi-star-fill");
+function myYearFunction(invar){
 
+  if (invar.innerText == "1 år"){
+        
+    invar.style.background = "rgb(214, 228, 247)"; 
+    document.getElementById("2year").style.background = "rgb(241, 240, 244)";  
+    document.getElementById("5year").style.background = "rgb(241, 240, 244)";  
+    document.getElementById("10year").style.background = "rgb(241, 240, 244)"; 
+        
+    } else if (invar.innerText == "2 år"){
+    invar.style.background = "rgb(214, 228, 247)"; 
+    document.getElementById("1year").style.background = "rgb(241, 240, 244)";  
+    document.getElementById("5year").style.background = "rgb(241, 240, 244)";  
+    document.getElementById("10year").style.background = "rgb(241, 240, 244)"; 
+    
+  } else if (invar.innerText == "5 år"){
+    invar.style.background = "rgb(214, 228, 247)"; 
+    document.getElementById("2year").style.background = "rgb(241, 240, 244)";  
+    document.getElementById("1year").style.background = "rgb(241, 240, 244)";  
+    document.getElementById("10year").style.background = "rgb(241, 240, 244)";  
+
+    } else {
+        
+    invar.style.background = "rgb(214, 228, 247)"; 
+    document.getElementById("1year").style.background = "rgb(241, 240, 244)";  
+    document.getElementById("2year").style.background = "rgb(241, 240, 244)";  
+    document.getElementById("5year").style.background = "rgb(241, 240, 244)";    
+        
+    }
+        
 };
 
 function returnGeo(){
@@ -1021,3 +1077,18 @@ function clickedGeo(indata){
 }
 
 
+
+function changeIcon(anchor) {
+  var icon = anchor.querySelector("i");
+  icon.classList.toggle('bi-star');
+  icon.classList.toggle('bi-star-fill');
+}
+
+
+function newActivity() {
+  alert("Du har lagt till en ny aktivitet!");
+}
+
+function newMeasure() {
+  alert("Du har lagt till en ny åtgärd!");
+}
