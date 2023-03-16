@@ -1136,3 +1136,20 @@ function changeBudgetTable(invar) {
     elem.setAttribute("src", "assets/img/budgettable7.jpg");
     document.getElementById("bigBudgetRow").appendChild(elem);
 }
+
+function changetositesmap(){
+
+    onclick="myScopeFunction(this)"
+    document.getElementById("siteschartandbuttonsrow").innerHTML = "\
+    <img src='assets/img/sitesMap2.jpg'/>\
+        <button type='button' class='btn btn-secondary' style='height: 1.13vw; width: 1.13vw; padding: 0px; border-radius: 10px; background-color:#6750A4; margin-top:-8vw; margin-left:30vw' data-toggle='tooltip' title='Narvik' onclick='clickedGeo(this.title)'></button> \
+        <button class='btn btn-secondary' style='height: 1.5vw; width: 1.5vw; padding: 0px; border-radius: 20px; background-color:#6750A4; margin-top:-17vw; margin-left:40vw' type='button' data-toggle='tooltip' title='Oslo' onclick='clickedGeo(this.title)'></button> \
+        <button class='btn btn-secondary' style='height: 2vw; width: 2vw; padding: 0px; border-radius: 20px; background-color:#6750A4; margin-top:-21vw; margin-left:25vw' type='button' data-toggle='tooltip' title='Sveg' onclick='clickedGeo(this.title)'></button> \
+    ";
+
+  
+
+
+    
+}
+
