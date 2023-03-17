@@ -1104,7 +1104,7 @@ function clickedGeo(indata){
     k.style = "padding: 2vw; margin: 0px;"
     k.innerHTML = "\
     <div class='alert alert-secondary' style='background-color:#fefefe; display: flex; font-size: 1.2vw;' role='alert'>\
-    <i class='fa-sharp fa-solid fa-chalkboard-user' style='margin-right:1vw'></i> <p style='color:#73777F;font-size: 0.85vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;'> Här kommer ngt du kan lära dig av kopplat till ämnet</p>\
+    <i class='fa-sharp fa-solid fa-chalkboard-user' style='margin-right:1vw'></i> <p style='color:#73777F;font-size: 0.85vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;'> Visste du att en minskning av elanvändningen med 10 procent beräknas resultera i att elpriset i södra Sverige sjunker med upp till 40 procent.</p>\
     </div>\
     "; 
 
