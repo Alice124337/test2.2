@@ -865,8 +865,20 @@ function changeSelect() {
       elem.setAttribute("class", "img-fluid")
       document.getElementById("benchmark").appendChild(elem);
 
-      document.getElementById("benchmark-info").innerHTML="<p id='benchmark-info' style='color: rgb(33,37,41);font-size: 1vw;text-align: center;margin-bottom: 0px;'>Plåt AB:s <strong>energiförbrukning (MWh) per anställd</strong> är <strong>17% lägre än genomsnittet</strong> inom branschen.</p>";
+      document.getElementById("benchmark-info").innerHTML="<p id='benchmark-info' style='color: rgb(33,37,41);font-size: 1vw;text-align: center;margin-bottom: 0px;'>Plåt AB:s <strong>energiförbrukning (MWh) per omsatt TSEK</strong> är <strong>70% lägre än genomsnittet</strong> inom branschen.</p>";
     }
+
+    if (selected == "MWh/m²") {
+        document.getElementById("benchmark").innerHTML=""; 
+        var elem = document.createElement("img");
+        elem.setAttribute("src", "assets/img/benchmark-co2-externt.jpg");
+        elem.setAttribute("class", "img-fluid")
+        document.getElementById("benchmark").appendChild(elem);
+  
+        document.getElementById("benchmark-info").innerHTML="<p id='benchmark-info' style='color: rgb(33,37,41);font-size: 1vw;text-align: center;margin-bottom: 0px;'>Plåt AB:s <strong>energiförbrukning per m<sub><strong>2</strong></sub></strong> är <strong>11% högre än genomsnittet</strong> inom branschen.</p>";
+      }
+
+    
   });
 };
 
@@ -1106,12 +1118,47 @@ function clickedGeo(indata){
 
 }
 
+function checkboxCheck() {
 
+    const icon = document.getElementById("goal");
+
+    if ($("#customCheck1").is(":checked") && icon.className == "bi-star-fill") {
+        document.getElementById("checkboxID").innerHTML=""; 
+        var elem = document.createElement("img");
+        elem.setAttribute("src", "assets/img/prognos.jpg");
+        elem.setAttribute("class", "img-fluid");
+        document.getElementById("checkboxID").appendChild(elem);
+      
+    } else if ($("#customCheck1").is(":checked") && icon.className == "bi-star"){
+        document.getElementById("checkboxID").innerHTML=""; 
+        var elem = document.createElement("img");
+        elem.setAttribute("src", "assets/img/prognos-minus-goal.jpg");
+        elem.setAttribute("class", "img-fluid");
+        document.getElementById("checkboxID").appendChild(elem);
+
+    } else if ($("#customCheck1").prop('checked', false) && icon.className == "bi-star-fill"){
+        document.getElementById("checkboxID").innerHTML=""; 
+        var elem = document.createElement("img");
+        elem.setAttribute("src", "assets/img/prognos-minus-historic.jpg");
+        elem.setAttribute("class", "img-fluid");
+        document.getElementById("checkboxID").appendChild(elem);
+
+    } else if ($("#customCheck1").prop('checked', false) && icon == "bi-star"){
+        document.getElementById("checkboxID").innerHTML=""; 
+        var elem = document.createElement("img");
+        elem.setAttribute("src", "assets/img/prognos-minus-all.jpg");
+        elem.setAttribute("class", "img-fluid");
+        document.getElementById("checkboxID").appendChild(elem);
+    }
+  };
 
 function changeIcon(anchor) {
   var icon = anchor.querySelector("i");
   icon.classList.toggle('bi-star');
   icon.classList.toggle('bi-star-fill');
+
+  checkboxCheck();
+
 }
 
 
@@ -1122,6 +1169,15 @@ function newActivity() {
 function newMeasure() {
   alert("Du har lagt till en ny åtgärd!");
 }
+
+function newSchedule() {
+    alert("Du har schemalagt åtgärden!");
+}
+
+function newMadeMeasure() {
+    alert("Du har nu genomfört!");
+}
+
 
 function changeBudgetTable(invar) {
 
