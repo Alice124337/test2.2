@@ -115,7 +115,7 @@
                                                             <span style='background-color: #F1F0F4; margin-top: 0.65vw; font-size: 0.85vw;' class='input-group-text'>+</span>\
                                                         </div>\
                                                         <ul class='list-group list-group-flush'>\
-                                                            <li id='bigliitem' class='list-group-item'>Ref 1: 100 Mwh<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
+                                                            <li id='bigliitem' class='list-group-item'>Ref 1: 1000 Mwh<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
                                                         </ul>\
                                                     </div>\
                                                 </div>\
@@ -126,7 +126,7 @@
     // function to change the big component into the sankey chart 
     function changeToSankey(){
       document.getElementById("bigboxROW").innerHTML=""; 
-      document.getElementById("rubricBigComp").innerHTML="Sankey"; 
+      document.getElementById("rubricBigComp").innerHTML="Sankey<button class='btn' type='button'><i class='icon ion-ios-information-outline' style='font-size: 1.6vw;'></i></button>";
       document.getElementById("endusetab").className = "nav-link"; 
       document.getElementById("effecttab").className = "nav-link";
       document.getElementById("supliedenergytab").className = "nav-link";
@@ -135,7 +135,7 @@
       reducedAcordion();
       
       var elem = document.createElement("img");
-      elem.setAttribute("src", "assets/img/sankey1.jpg");
+      elem.setAttribute("src", "assets/img/sankey3.jpg");
       document.getElementById("bigboxROW").appendChild(elem);
     }
 
@@ -143,7 +143,7 @@
     // function to change the big component into the efect chart 
     function changeToEfect(){
       document.getElementById("bigboxROW").innerHTML=""; 
-      document.getElementById("rubricBigComp").innerHTML="Förbrukad effekt"; 
+      document.getElementById("rubricBigComp").innerHTML="Förbrukad effekt<button class='btn' type='button'><i class='icon ion-ios-information-outline' style='font-size: 1.6vw;'></i></button>"; 
       document.getElementById("endusetab").className = "nav-link"; 
       document.getElementById("sankeytab").className = "nav-link";
       document.getElementById("supliedenergytab").className = "nav-link";
@@ -155,7 +155,7 @@
 
       var y = document.createElement("DIV");
       y.className = "col-xl-1 offset-xl-0";
-      y.innerHTML = "<div class='btn-group-vertical btn-group-sm' role='group'><button id='MWhbtn' class='btn btn-sm' type='button' style='font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;'>MWh</button><button id='TSEKbtn' class='btn btn-sm' type='button' style='font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;'>TSEK</button></div>"
+      y.innerHTML = "<div class='btn-group-vertical btn-group-sm' role='group'><button id='MWhbtn' class='btn btn-sm' type='button' style='font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;'>MW</button><button id='TSEKbtn' class='btn btn-sm' type='button' style='font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;'>TSEK</button></div>"
       document.getElementById("bigboxROW").appendChild(y);
 
       var z = document.createElement("DIV");
@@ -167,15 +167,15 @@
          
      let data = [12, 19, 3, 5, 2, 5, 4, 7, 5, 6, 7 ,8 ,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
        
-     let data1 = data.map(x => Math.floor(Math.random() * 50));    
-     let data2 = data1.map(x => Math.floor(Math.random() * 50));
+     let data1 = data.map(x => Math.floor(Math.random() * 20)+ 30);    
+     let data2 = data1.map(x => Math.floor(Math.random() * 20) +30);
      // sets data to constant 
      let data3 = data1.map(x => 45);
  
      // chart for effect
      new Chart(x, {
        data: {
-           labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'],
+           labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32', '33', '34', '35', '36', '37', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'],
            datasets: [  
             {
               type: 'line',
@@ -231,8 +231,13 @@
               labels: {
                   usePointStyle: true, 
                   pointStyle:'circle', 
-                  padding: 35,
+                  padding: 40,
               }
+          }, subtitle : {
+            display : true, 
+            text: "Timmar", 
+            position: 'bottom',
+            padding: -50,
           }
            }
        }
@@ -243,7 +248,7 @@
     function changeToSupliedEnergy() {
 
         document.getElementById("bigboxROW").innerHTML=""; 
-        document.getElementById("rubricBigComp").innerHTML="Förbrukad effekt"; 
+        document.getElementById("rubricBigComp").innerHTML="Tillförd energi<button class='btn' type='button'><i class='icon ion-ios-information-outline' style='font-size: 1.6vw;'></i></button>"; 
         document.getElementById("endusetab").className = "nav-link"; 
         document.getElementById("sankeytab").className = "nav-link";
         document.getElementById("effecttab").className = "nav-link";
@@ -274,7 +279,7 @@
             type: 'line',
             label: 'Ref1',
             borderWidth: 2, 
-            data: [10, 10, 10, 10, 10, 10],
+            data: [1000, 1000, 1000, 1000, 1000, 1000],
             backgroundColor: ['#42474E'],
             borderWidth: 2, 
             borderColor: '#42474E',
@@ -289,50 +294,57 @@
           type: 'line',
           label: 'Historiskt snitt',
           borderWidth: 2, 
-          data: [10, 5, 7],
+          data: [2700, 2900, 2900],
           backgroundColor: ['#00629F'],
           borderWidth: 2, 
           borderColor: '#00629F',
           backgroundColor: '#00629F',
           
       },
-        {
-            type: 'bar', 
-            label: 'El',
-            data: [12, 19, 3],
-            borderWidth: 0,
-            backgroundColor:'#FFB4AB',
-            borderColor:'#FFB4AB',
-            stack: 'Stack 0', 
-        }, {
-            type: 'bar', 
-            label: 'Kol',
-            data: [14, 16, 5, 4, 5, 6],
-            borderWidth: 0, 
-            backgroundColor:'#4B9200',
-            stack: 'Stack 0'
-        }, {
-            type: 'bar', 
-            label: 'Koks',
-            data: [14, 16, 5, 4, 5, 6],
-            borderWidth: 0, 
-            backgroundColor:'#920028',
-            stack: 'Stack 1', 
-        },{
-            type: 'bar', 
-            label: 'Naturgas',
-            data: [14, 16, 5, 4, 5, 6],
-            borderWidth: 0, 
-            backgroundColor:'#9ACBFF',
-            stack: 'Stack 1', 
-        },{
-            type: 'bar', 
-            label: 'Olja',
-            data: [14, 16, 5, 4, 5, 6],
-            borderWidth: 0, 
-            backgroundColor:'#6750A4',
-            stack: 'Stack 1', 
-        },
+      {
+        type: 'bar', 
+        label: 'El',
+        data: [2500, 2600, 2700],
+        borderWidth: 0,
+        backgroundColor:'#FFB4AB',
+        borderColor:'#FFB4AB',
+        stack: 'Stack 0', 
+    }, {
+        type: 'bar', 
+        label: 'Kol',
+        data: [1800, 1600, 0],
+        borderWidth: 0, 
+        backgroundColor:'#4B9200',
+        stack: 'Stack 0'
+    }, {
+        type: 'bar', 
+        label: 'Pellets',
+        data: [0, 0, 1000],
+        borderWidth: 0, 
+        backgroundColor:'#00629F',
+        stack: 'Stack 0', 
+    },{
+        type: 'bar', 
+        label: 'Koks',
+        data: [1600, 1700, 1500],
+        borderWidth: 0, 
+        backgroundColor:'#920028',
+        stack: 'Stack 1', 
+    },{
+        type: 'bar', 
+        label: 'Naturgas',
+        data: [1000, 1100, 1500],
+        borderWidth: 0, 
+        backgroundColor:'#9ACBFF',
+        stack: 'Stack 1', 
+    },{
+        type: 'bar', 
+        label: 'Olja',
+        data: [1000, 900, 1100],
+        borderWidth: 0, 
+        backgroundColor:'#6750A4',
+        stack: 'Stack 1', 
+    },
         ]
         };
 
@@ -352,9 +364,9 @@
                 ctx.textAlign= 'center';
                 
                 for (let i = 0; i < 3; i ++){
-                    ctx.fillText('2020', chart.getDatasetMeta(3).data[i].x, chart.getDatasetMeta(3).data[i].y - 15);
+                    ctx.fillText('2020', chart.getDatasetMeta(4).data[i].x, chart.getDatasetMeta(4).data[i].y - 15);
                     
-                    ctx.fillText('2019', chart.getDatasetMeta(6).data[i].x, chart.getDatasetMeta(6).data[i].y - 15);
+                    ctx.fillText('2019', chart.getDatasetMeta(7).data[i].x, chart.getDatasetMeta(7).data[i].y - 15);
                 }
             }
         }
@@ -429,7 +441,7 @@
     function changeToEndusage(){
 
       document.getElementById("bigboxROW").innerHTML=""; 
-      document.getElementById("rubricBigComp").innerHTML="Slutenergianvändning"; 
+      document.getElementById("rubricBigComp").innerHTML="Slutenergianvändning<button class='btn' type='button'><i class='icon ion-ios-information-outline' style='font-size: 1.6vw;'></i></button>"; 
       document.getElementById("endusetab").className = "nav-link active"; 
       document.getElementById("sankeytab").className = "nav-link";
       document.getElementById("effecttab").className = "nav-link";
@@ -454,56 +466,63 @@
 
 
     const data = {
-      labels: ['Varmvatten', 'Tryckluft', 'Varmvatten', 'Tryckluft', 'Varmvatten', 'Tryckluft'],
+      labels: ['Slipning', 'Pumpning', 'Slipning', 'Pumpning', 'Slipning', 'Pumpning'],
       datasets: [
-      {
-          type: 'line',
-          label: 'Ref1',
-          borderWidth: 2, 
-          data: [10, 10, 10, 10, 10, 10],
-          backgroundColor: ['#42474E'],
-          borderWidth: 2, 
-          borderColor: '#42474E',
-          backgroundColor: '#42474E',
-          
-      },
-      {
-          type: 'bar', 
-          label: 'El',
-          data: [12, 19, 3, 5, 2, 3],
-          borderWidth: 0,
-          backgroundColor:'#FFB4AB',
-          borderColor:'#FFB4AB',
-          stack: 'Stack 0', 
-      }, {
-          type: 'bar', 
-          label: 'Kol',
-          data: [14, 16, 5, 4, 5, 6],
-          borderWidth: 0, 
-          backgroundColor:'#4B9200',
-          stack: 'Stack 0'
-      }, {
-          type: 'bar', 
-          label: 'Koks',
-          data: [14, 16, 5, 4, 5, 6],
-          borderWidth: 0, 
-          backgroundColor:'#920028',
-          stack: 'Stack 1', 
-      },{
-          type: 'bar', 
-          label: 'Naturgas',
-          data: [14, 16, 5, 4, 5, 6],
-          borderWidth: 0, 
-          backgroundColor:'#9ACBFF',
-          stack: 'Stack 1', 
-      },{
-          type: 'bar', 
-          label: 'Olja',
-          data: [14, 16, 5, 4, 5, 6],
-          borderWidth: 0, 
-          backgroundColor:'#6750A4',
-          stack: 'Stack 1', 
-      },
+        {
+            type: 'line',
+            label: 'Ref1',
+            borderWidth: 2, 
+            data: [1000, 1000, 1000, 1000, 1000, 1000],
+            backgroundColor: ['#42474E'],
+            borderWidth: 2, 
+            borderColor: '#42474E',
+            backgroundColor: '#42474E',
+            
+        },
+        {
+            type: 'bar', 
+            label: 'El',
+            data: [1500, 2200, 1700, 1900, 2200, 1700],
+            borderWidth: 0,
+            backgroundColor:'#FFB4AB',
+            borderColor:'#FFB4AB',
+            stack: 'Stack 0', 
+        }, {
+            type: 'bar', 
+            label: 'Kol',
+            data: [800, 600, 700, 400, 0, 0],
+            borderWidth: 0, 
+            backgroundColor:'#4B9200',
+            stack: 'Stack 0'
+        }, {
+            type: 'bar', 
+            label: 'Pellets',
+            data: [0, 0, 0, 100, 400, 300],
+            borderWidth: 0, 
+            backgroundColor:'#00629F',
+            stack: 'Stack 0', 
+        },{
+            type: 'bar', 
+            label: 'Koks',
+            data: [600, 700, 500, 700, 600, 700],
+            borderWidth: 0, 
+            backgroundColor:'#920028',
+            stack: 'Stack 1', 
+        },{
+            type: 'bar', 
+            label: 'Naturgas',
+            data: [1000, 1100, 1500, 1100, 1000, 900],
+            borderWidth: 0, 
+            backgroundColor:'#9ACBFF',
+            stack: 'Stack 1', 
+        },{
+            type: 'bar', 
+            label: 'Olja',
+            data: [1000, 900, 1100, 900, 1000, 1200],
+            borderWidth: 0, 
+            backgroundColor:'#6750A4',
+            stack: 'Stack 1', 
+        },
       ]
     };
 
@@ -514,7 +533,7 @@
           afterDatasetDraw(chart, args, pluginOptions){
               const {ctx, scales: {x,y}} = chart; 
 
-              ctx.font = '1.3vw roboto';
+              ctx.font = '1vw roboto';
               ctx.fillStyle = '#333333';
               ctx.textAlign= 'center';
 
@@ -527,9 +546,9 @@
               ctx.textAlign= 'center';
               
               for (let i = 0; i < 6; i ++){
-                  ctx.fillText('2020', chart.getDatasetMeta(2).data[i].x, chart.getDatasetMeta(2).data[i].y - 15);
+                  ctx.fillText('2020', chart.getDatasetMeta(3).data[i].x, chart.getDatasetMeta(3).data[i].y - 15);
                   
-                  ctx.fillText('2019', chart.getDatasetMeta(5).data[i].x, chart.getDatasetMeta(5).data[i].y - 15);
+                  ctx.fillText('2019', chart.getDatasetMeta(6).data[i].x, chart.getDatasetMeta(6).data[i].y - 15);
               }
           }
       }
@@ -676,9 +695,9 @@
         
     document.getElementById(indiv).appendChild(x);
         
-    let data = [12, 19, 3, 5, 2, 5, 4, 7, 5, 6, 7 ,8 ,9];
+    let data = [1, 8, 3, 5, 2, 5, 4, 7, 5, 6, 7 ,8 ,9];
       
-    let data1 = data.map(x => Math.floor(Math.random() * 50));    
+    let data1 = data.map(x => Math.floor(Math.random() * 1500) + 3000);    
     let data2 = data1; 
 
     
@@ -709,7 +728,7 @@
               }, 
               x: {
                   stacked:false, 
-                  display:false
+                  display:true,
               }
           },
           plugins: {
@@ -719,7 +738,7 @@
                 labels: {
                     usePointStyle: true, 
                     pointStyle:'circle', 
-                    padding: 10,
+                    padding: 15,
                }
             }
            },
@@ -769,18 +788,18 @@ function RandomeChart(indiv){
         
     document.getElementById(indiv).appendChild(x);
         
-    let data = [1, 10, 5, 2, 20, 30, 45, 3];
+    let data = [1, 5, 30, 10, 20, 10, 10, 3];
       
-    let data1 = data.map(x => Math.floor(Math.random() * 50));    
-    let data2 = data.map(x => Math.floor(Math.random() * 50));
-    let data3 = data.map(x => Math.floor(Math.random() * 50));
-    let data4 = data.map(x => Math.floor(Math.random() * 50));
-    let data5 = data.map(x => Math.floor(Math.random() * 50));
+    let data1 = data.map(x => Math.floor(Math.random() * 1000));    
+    let data2 = data.map(x => Math.floor(Math.random() * 1000));
+    let data3 = data.map(x => Math.floor(Math.random() * 1000));
+    let data4 = data.map(x => Math.floor(Math.random() * 1000));
+    let data5 = data.map(x => Math.floor(Math.random() * 1000));
     
     new Chart(x, {
     type: 'bar',
     data: {
-      labels: ['Kontor', 'Pumprum', 'Fläktrum', 'Matsal', 'Kök', 'Ventilationscentral', 'Fabrik 1', 'Fabrik 2'],
+      labels: ['Administration', 'Kompressor rum', 'Maskinhall', 'Intern transport', 'Processteg A', 'Processteg B', 'Processteg C', 'Processteg D'],
       datasets: [{
         label: 'El',
         data: data1,
@@ -998,7 +1017,7 @@ function clickedGeo(indata){
 
     var a = document.createElement("DIV");
     a.className ="row d-xl-flex"; 
-    a.style = "font-size: 0.85vw;margin-right: -5px;margin-top: 6px;"; 
+    a.style = "font-size: 0.85vw;margin-right: -5px;margin-top: 2vw;"; 
 
     w.appendChild(a);
 
@@ -1074,11 +1093,22 @@ function clickedGeo(indata){
     var h = document.createElement("DIV");
     h.className = "col-xl-10";
     h.id = "bigMapChartDiv";
-    h.style = "margin-left: -1vw; padding: 0px";
+    h.style = "margin-left: -1vw; padding: 0px;padding-top: 1vw;";
     h.innerHTML = "<div><canvas id='myChart' onload='renderMapChart'></canvas></div>"
                                     
 
     g.appendChild(h); 
+
+    var k = document.createElement("DIV");
+    k.className = "row";
+    k.style = "padding: 2vw; margin: 0px;"
+    k.innerHTML = "\
+    <div class='alert alert-secondary' style='background-color:#fefefe; display: flex; font-size: 1.2vw;' role='alert'>\
+    <i class='fa-sharp fa-solid fa-chalkboard-user' style='margin-right:1vw'></i> <p style='color:#73777F;font-size: 0.85vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;'> Här kommer ngt du kan lära dig av kopplat till ämnet</p>\
+    </div>\
+    "; 
+
+    a.appendChild(k)
 
 
     document.getElementById("geocard").appendChild(z);
@@ -1149,4 +1179,33 @@ function newMadeMeasure() {
 }
 
 
+function changeBudgetTable(invar) {
+
+    invar.style.background = "rgb(214, 228, 247)";
+    document.getElementById('buttonChangeGraph').style.background = "rgb(241, 240, 244)";
+    
+    document.getElementById("bigBudgetRow").innerHTML = "";
+    document.getElementById("budgetTextrow").innerHTML = "";
+    document.getElementById("bigBudgetRow").style ="margin:-15px";
+
+    var elem = document.createElement("img");
+    elem.setAttribute("src", "assets/img/budgettable7.jpg");
+    document.getElementById("bigBudgetRow").appendChild(elem);
+}
+
+function changetositesmap(){
+
+    onclick="myScopeFunction(this)"
+    document.getElementById("siteschartandbuttonsrow").innerHTML = "\
+    <img src='assets/img/sitesMap2.jpg'/>\
+        <button type='button' class='btn btn-secondary' style='height: 1.13vw; width: 1.13vw; padding: 0px; border-radius: 10px; background-color:#6750A4; margin-top:-8vw; margin-left:30vw' data-toggle='tooltip' title='Narvik' onclick='clickedGeo(this.title)'></button> \
+        <button class='btn btn-secondary' style='height: 1.5vw; width: 1.5vw; padding: 0px; border-radius: 20px; background-color:#6750A4; margin-top:-17vw; margin-left:40vw' type='button' data-toggle='tooltip' title='Oslo' onclick='clickedGeo(this.title)'></button> \
+        <button class='btn btn-secondary' style='height: 2vw; width: 2vw; padding: 0px; border-radius: 20px; background-color:#6750A4; margin-top:-21vw; margin-left:25vw' type='button' data-toggle='tooltip' title='Sveg' onclick='clickedGeo(this.title)'></button> \
+    ";
+
+  
+
+
+    
+}
 
