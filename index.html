@@ -439,7 +439,38 @@
                                             }
                                         }
 
+                                        function clicableScales(chart, click){
+                                        
+
+                                            const {ctx, canvas, scales:{x, y}} = chart; 
+                                            const top = y.top;
+                                            const left = y.left;
+                                            const right = y.right;
+                                            const bottom = y.bottom;
+                                            const height = y.height / y.ticks.length;
+
+                                            let rect = canvas.getBoundingClientRect();
+
+                                            const xCoor = click.clientX - rect.left; 
+                                            const yCoor = click.clientY - rect.top; 
+
+                                           
+                                            // console.log(rect);
+
+                                            for(let i = 0; i < y.ticks.length; i++){
+                                                if(xCoor >= left && xCoor <= right && yCoor >= top + (height * i) && yCoor <= top + height + (height * i)){
+                                                    // console.log(chart.data.labels[i]);
+                                                    clickedGeo(chart.data.labels[i]);
+                                                }
+                                            }
+
+
+                                        }
+
                                         myChart2.canvas.onclick = clickHandler;
+                                        myChart2.canvas.addEventListener('click', (e)=> {
+                                            clicableScales(myChart2,e)
+                                        })
 
                                         // Instantly assign Chart.js version
                                         const chartVersion2 = document.getElementById('myChart');
