@@ -928,30 +928,39 @@
                                                 new Chart(ct, {
                                                 data: {
                                                     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Sep', 'Okt', 'Nov', 'Dec'],
-                                                    datasets: [                                            {
+                                                    datasets: [
+                                                    {
                                                     type: 'line',
                                                     label: 'Budget',
-                                                    data: [2500, 2900, 3000, 3000, 2900, 3500, 4000, 3300, 3000, 3000, 3500],
-                                                    borderWidth: 1, 
+                                                    data: [2500, 2900, 3000, 3000, 2900, 3500, 3900, 3300, 3000, 3000, 3500],
+                                                    borderWidth: 1.5, 
                                                     backgroundColor: '#42474E',
+                                                    borderColor:'#42474E', 
+                                                    
                                                     },{
                                                     type: 'bar',
                                                     label: 'Utfall',
-                                                    data: [2500, 2900, 3400, 3000, 2900, 3000, 4200, 3000, 3300],
-                                                    borderWidth: 1, 
-                                                    backgroundColor: ['#9ACBFF', '#9ACBFF', '#ED9080', '#9ACBFF','#9ACBFF', '#9ACBFF','#ED9080', '#9ACBFF','#ED9080', '#ED9080','#9ACBFF', '#9ACBFF'],
+                                                    data: [2500, 2900, 3000, 3000, 2900, 3500, 3900, 3300, 3000],
+                                                    borderWidth: 0, 
+                                                    backgroundColor: '#9ACBFF',
+                                                    },{
+                                                    type: 'bar',
+                                                    label: 'Utfall över budget',
+                                                    data: [0, 0, 500, 0, 0, 0, 0, 300, 400],
+                                                    borderWidth: 0, 
+                                                    backgroundColor: '#ED9080',
                                                     }
-                                                
                                                 ]
                                                 },
                                                 options: {
                                                     scales: {
                                                         y: {
                                                             beginAtZero: true,
-                                                            display:true
+                                                            display:true,
+                                                            stacked: true,
                                                         }, 
                                                         x: {
-                                                            stacked:false, 
+                                                            stacked:true, 
                                                             display:true
                                                         }
                                                     }, 
@@ -966,9 +975,9 @@
                                                         position: 'top',
                                                         labels: {
                                                             usePointStyle: true, 
-                                                            pointStyle:'circle', 
+                                                            pointStyle: "circle", 
                                                             padding: 15,
-                                                    }
+                                                        }
                                                 }
                                                 }
                                                 }, 

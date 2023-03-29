@@ -702,53 +702,62 @@
 
     
     new Chart(x, {
-      data: {
-          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Sep', 'Okt', 'Nov', 'Dec'],
-          datasets: [                                            {
-          type: 'line',
-          label: 'Budget',
-          data: data1,
-          borderWidth: 1, 
-          backgroundColor: '#42474E',
-          },{
-          type: 'bar',
-          label: 'Utfall',
-          data: data1,
-          borderWidth: 1, 
-          backgroundColor: ['#9ACBFF', '#9ACBFF', '#9ACBFF', '#9ACBFF','#9ACBFF', '#9ACBFF','#9ACBFF', '#9ACBFF','#9ACBFF', '#9ACBFF','#9ACBFF', '#9ACBFF'],
-          }
-      
-      ]
-      },
-      options: {
-          scales: {
-              y: {
-                  beginAtZero: true,
-                  display:true
-              }, 
-              x: {
-                  stacked:false, 
-                  display:true,
-              }
-          },
-          plugins: {
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Sep', 'Okt', 'Nov', 'Dec'],
+            datasets: [
+            {
+            type: 'line',
+            label: 'Budget',
+            data: data1,
+            borderWidth: 1.5, 
+            backgroundColor: '#42474E',
+            borderColor:'#42474E', 
+            
+            },{
+            type: 'bar',
+            label: 'Utfall',
+            data: data1,
+            borderWidth: 0, 
+            backgroundColor: '#9ACBFF',
+            },{
+            type: 'bar',
+            label: 'Utfall över budget',
+            data: [0, 0, 500, 0, 0, 0, 0, 300, 400],
+            borderWidth: 0, 
+            backgroundColor: '#ED9080',
+            }
+        ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    display:true,
+                    stacked: true,
+                }, 
+                x: {
+                    stacked:true, 
+                    display:true
+                }
+            }, 
+            events: ['mousemove','click'],
+            
+            onClick: (e) => {
+                alert("Du klicka på grafen"); 
+            }, 
+            plugins: {
             legend: {
                 display: true,
                 position: 'top',
                 labels: {
                     usePointStyle: true, 
-                    pointStyle:'circle', 
+                    pointStyle: "circle", 
                     padding: 15,
-               }
-            }
-           },
-          events: ['mousemove','click'],
-          
-          onClick: (e) => {
-              alert("Du klicka på grafen"); 
-          }
-      }
-      });
+                }
+        }
+        }
+        }, 
+        });
     
 };
 
