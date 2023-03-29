@@ -852,17 +852,53 @@
                                                 <p >Kostnad: 30 TSEK<br>
                                                 Tidsåtgång: 30 h<br>
                                                 Klart: 2023-04-01</p>
-                                                <a href='#'' class='btn btn-primary'>Mer Info</a>
+                                                <a class='btn btn-primary' data-toggle='modal' data-target='#yearlyModal'>Mer Info</a>
                                             </div>" data-toggle="popover"/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col d-xl-flex justify-content-xl-start align-items-xl-center"><button id="selectbtn" class="btn btn-info" type="button" onclick="newActivity()">Ny aktivitet</button></div>
+                                    <div class="col d-xl-flex justify-content-xl-start align-items-xl-center"><button id="selectbtn" class="btn btn-info" style="background-color: #00629F; color: white" type="button" onclick="newActivity()">Ny aktivitet</button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="modal fade" id="yearlyModal"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9999">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel" style="color: black;">Pumpoptimering</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div id="yearlyModal" class="modal-body">
+                                <h6>Projektbeskrivning</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;">Optimering av kylpumpar i Narviks slipfabrik. Kylpump AB är kontrakterade för installation. Observera att pumpen vid ingång B ska behållas.</p>
+                                <h6>Kategori</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left;margin-top: 0vw;">Teknisk åtgärd</p>
+                                <h6>Tidsram</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left;margin-top: 0vw;">2023-01-01 – 2023-02-01 </p>
+                                <h6>Kostnad</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;">40 TSEK</p>
+                                <h6>Tidsåtgång</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;">300 h</p>
+                                <h6>Ansvarig</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;">Alice Elkjaer, Projektledare huvudkontoret i Narvik <br>
+                                    A.E@mail.com, 0722 22 22 22</p>
+                                <h6>Länkar</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;"> <a style="color:#00629F" href="url"> Projektplan </a><br> <a style="color:#00629F" href="url"> Budget </a><br> <a style="color:#00629F" href="url"> Riskhanteringsplan </a></p>
+                                <h6>Kommentarer</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;">Offert erhållen</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" >Ändra</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
 
 
