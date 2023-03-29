@@ -171,6 +171,7 @@
      let data2 = data1.map(x => Math.floor(Math.random() * 20) +30);
      // sets data to constant 
      let data3 = data1.map(x => 45);
+     let data4 = data1.map(x => 39);
  
      // chart for effect
      new Chart(x, {
@@ -184,7 +185,15 @@
               borderWidth: 2, 
               borderColor: '#42474E',
               backgroundColor: '#42474E',
-              },                                         
+              },
+              {
+                type: 'line',
+                label: 'Baslast',
+                data: data4,
+                borderWidth: 2, 
+                borderColor: '#00629F',
+                backgroundColor: '#00629F',
+                },                                            
             {
            type: 'line',
            label: 'Januari 2020',
