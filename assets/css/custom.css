@@ -137,3 +137,18 @@
    display: flex;
    flex-wrap: wrap;
  }
+
+ #supliedenergytab:hover {
+   border-color: #00629F;
+}
+#effecttab:hover {
+   border-color: #00629F;
+}
+#endusetab:hover {
+   border-color: #00629F;
+}
+
+#sankeytab:hover {
+   border-color: #00629F;
+}
+

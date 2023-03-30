@@ -126,11 +126,14 @@
     // function to change the big component into the sankey chart 
     function changeToSankey(){
       document.getElementById("bigboxROW").innerHTML=""; 
-      document.getElementById("rubricBigComp").innerHTML="Sankey<button class='btn' type='button'><i class='icon ion-ios-information-outline' style='font-size: 1.6vw;'></i></button>";
       document.getElementById("endusetab").className = "nav-link"; 
       document.getElementById("effecttab").className = "nav-link";
       document.getElementById("supliedenergytab").className = "nav-link";
+      document.getElementById("endusetab").style.color = "#00629F";
+      document.getElementById("supliedenergytab").style.color = "#00629F";
+      document.getElementById("effecttab").style.color = "#00629F";
       document.getElementById("sankeytab").className = "nav-link active";
+      document.getElementById("sankeytab").style.color = "#42474e"; 
 
       reducedAcordion();
       
@@ -143,11 +146,14 @@
     // function to change the big component into the efect chart 
     function changeToEfect(){
       document.getElementById("bigboxROW").innerHTML=""; 
-      document.getElementById("rubricBigComp").innerHTML="Förbrukad effekt<button class='btn' type='button'><i class='icon ion-ios-information-outline' style='font-size: 1.6vw;'></i></button>"; 
       document.getElementById("endusetab").className = "nav-link"; 
       document.getElementById("sankeytab").className = "nav-link";
       document.getElementById("supliedenergytab").className = "nav-link";
+      document.getElementById("endusetab").style.color = "#00629F";
+      document.getElementById("sankeytab").style.color = "#00629F";
+      document.getElementById("supliedenergytab").style.color = "#00629F";
       document.getElementById("effecttab").className = "nav-link active";
+      document.getElementById("effecttab").style.color = "#42474e"; 
 
       reducedAcordion();
 
@@ -257,11 +263,14 @@
     function changeToSupliedEnergy() {
 
         document.getElementById("bigboxROW").innerHTML=""; 
-        document.getElementById("rubricBigComp").innerHTML="Tillförd energi<button class='btn' type='button'><i class='icon ion-ios-information-outline' style='font-size: 1.6vw;'></i></button>"; 
         document.getElementById("endusetab").className = "nav-link"; 
         document.getElementById("sankeytab").className = "nav-link";
         document.getElementById("effecttab").className = "nav-link";
+        document.getElementById("endusetab").style.color = "#00629F"; 
+        document.getElementById("sankeytab").style.color = "#00629F";
+        document.getElementById("effecttab").style.color = "#00629F";
         document.getElementById("supliedenergytab").className = "nav-link active";
+        document.getElementById("supliedenergytab").style.color = "#42474e"; 
 
         resetAccordion();
 
@@ -450,11 +459,15 @@
     function changeToEndusage(){
 
       document.getElementById("bigboxROW").innerHTML=""; 
-      document.getElementById("rubricBigComp").innerHTML="Slutenergianvändning<button class='btn' type='button'><i class='icon ion-ios-information-outline' style='font-size: 1.6vw;'></i></button>"; 
       document.getElementById("endusetab").className = "nav-link active"; 
+      document.getElementById("endusetab").style.color = "#42474e"; 
       document.getElementById("sankeytab").className = "nav-link";
       document.getElementById("effecttab").className = "nav-link";
       document.getElementById("supliedenergytab").className = "nav-link";
+      document.getElementById("sankeytab").style.color = "#00629F";
+      document.getElementById("effecttab").style.color = "#00629F";
+      document.getElementById("supliedenergytab").style.color = "#00629F";
+
 
       resetAccordion();
 
