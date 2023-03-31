@@ -4,7 +4,6 @@
       console.log("loaded");
     }
 
-
     // function to change the accordion to the reduced version used in sankey and efect 
     function reducedAcordion(){
       document.getElementById("accordion-1").innerHTML= "\
