@@ -1209,6 +1209,16 @@ function newMadeMeasure() {
     alert("Du har nu genomfört!");
 }
 
+function changeAnnual() {
+    // document.getElementById("annualDiv").setAttribute("style", "background: url(assets/img/wheel5.jpg) center / contain no-repeat, rgba(255,255,255,0);border-radius: 0px;height: 29vw;width: 29vw; margin-left:2vw;");
+    document.getElementById("annualDiv").style.backgroundImage ="url(assets/img/wheel7.jpg)";
+    document.getElementById("yearannual21").style.background = "rgb(214, 228, 247)"; 
+    document.getElementById("yearannual22").style.background = "rgb(241, 240, 244)"; 
+    document.getElementById("julbtn").style.display = "unset";
+    document.getElementById("marbtn").style.display = "none";
+
+}
+
 
 function changeBudgetTable(invar) {
 
@@ -1238,5 +1248,9 @@ function changetositesmap(){
 
 
     
+}
+
+function showMe(){
+    console.log("hej");
 }
 
