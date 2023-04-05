@@ -8,9 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <title>Prototyp</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
@@ -371,22 +371,22 @@
                                             },{
                                                 label: 'Kol',
                                                 data: [1400, 1600, 2000, 2400, 1500, 1600, 1500, 2000],
-                                                borderWidth: 0, 
+                                                borderWidth: 0,
                                                 backgroundColor:'#4B9200',
                                             },{
                                                 label: 'Koks',
                                                 data: [1400, 2600, 3000, 4000, 3500, 1600, 17000, 2000],
-                                                borderWidth: 0, 
+                                                borderWidth: 0,
                                                 backgroundColor:'#920028',
                                             },{
                                                 label: 'Naturgas',
                                                 data: [3400, 3600, 4000, 4500, 3500, 1600, 4000, 3000],
-                                                borderWidth: 0, 
+                                                borderWidth: 0,
                                                 backgroundColor:'#9ACBFF',
                                             },{
                                                 label: 'Olja',
                                                 data: [1400, 1600, 2000, 2400, 1500, 1600, 1500, 2000],
-                                                borderWidth: 0, 
+                                                borderWidth: 0,
                                                 backgroundColor:'#6750A4',
                                             }]
 
@@ -401,22 +401,22 @@
                                                     y: {
                                                         beginAtZero: true,
                                                         stacked: true
-                                                    }, 
+                                                    },
                                                     x: {
                                                         stacked:true
                                                     }
-                                                }, 
+                                                },
                                             plugins: {
                                                 legend: {
                                                     display: true,
                                                     position: 'bottom',
                                                     labels: {
-                                                        usePointStyle: true, 
-                                                        pointStyle:'circle', 
+                                                        usePointStyle: true,
+                                                        pointStyle:'circle',
                                                         padding: 15,
                                                     }
                                                 }
-                                            }, 
+                                            },
                                             }
 
                                         }
@@ -434,9 +434,9 @@
                                         }
 
                                         function clicableScales(chart, click){
-                                        
 
-                                            const {ctx, canvas, scales:{x, y}} = chart; 
+
+                                            const {ctx, canvas, scales:{x, y}} = chart;
                                             const top = y.top;
                                             const left = y.left;
                                             const right = y.right;
@@ -445,10 +445,10 @@
 
                                             let rect = canvas.getBoundingClientRect();
 
-                                            const xCoor = click.clientX - rect.left; 
-                                            const yCoor = click.clientY - rect.top; 
+                                            const xCoor = click.clientX - rect.left;
+                                            const yCoor = click.clientY - rect.top;
 
-                                           
+
                                             // console.log(rect);
 
                                             for(let i = 0; i < y.ticks.length; i++){
@@ -471,9 +471,9 @@
                                         chartVersion2.innerText = Chart.version;
 
 
-                                        
 
-                            
+
+
                                     </script>
                                 </div>
                                 <div class="col-xl-2 offset-xl-0 " style = "padding-top: 14vw;" >
@@ -524,7 +524,7 @@
                                 </ul>
                                 </div>
                             </div>
-                            
+
                             <div class="card-body" style="padding: 13.5px; padding-top:0px;">
 
                                 <div class="row">
@@ -536,10 +536,10 @@
                                                 <div class="accordion-collapse collapse show item-1" role="tabpanel" data-bs-parent="#accordion-1">
                                                     <div class="accordion-body" style="margin: 0vw;padding:0.65vw">
                                                         <div class="btn-group" role="group"><button id="yearbutton" class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;">År</button><button class="btn btn-primary" type="button" style="background: #d6e4f7;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;">Månad</button><button class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;">Vecka</button><button class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;">Dag</button></div>
-                                                        
+
                                                         <div class="input-group input-group-sm mb-3">
                                                             <span style="background-color:#d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;" class="input-group-text"><i class="icon ion-android-menu" style="font-size: 0.85vw;"></i></button></span>
-                                                            <input style="background-color: #d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;" class="form-control form-control-sm" type="text" placeholder="Sök efter tidsperiod">                                                       
+                                                            <input style="background-color: #d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;" class="form-control form-control-sm" type="text" placeholder="Sök efter tidsperiod">
                                                          </div>
                                                         <ul class="list-group list-group-flush">
                                                             <li id="bigliitem" class="list-group-item">Januari 2020<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
@@ -569,7 +569,7 @@
                                                             <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                                                             <label class="form-check-label" for="flexSwitchCheckDefault">Sveg</label>
                                                         </div>
-                
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -579,7 +579,7 @@
                                                     <div class="accordion-body" style="margin: 0vw;padding:0.65vw">
                                                         <div class="input-group input-group-sm mb-3">
                                                             <span style="background-color:#d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;" class="input-group-text"><i class="icon ion-android-menu" style="font-size: 0.85vw;"></i></button></span>
-                                                            <input style="background-color: #d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;" class="form-control form-control-sm" type="text" placeholder="Sök efter funktion">                                                       
+                                                            <input style="background-color: #d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;" class="form-control form-control-sm" type="text" placeholder="Sök efter funktion">
                                                          </div>
                                                         <ul class="list-group list-group-flush">
                                                             <li id="bigliitem" class="list-group-item">Varmvatten<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
@@ -676,67 +676,67 @@
                                                                 {
                                                                     type: 'line',
                                                                     label: 'Ref1',
-                                                                    borderWidth: 2, 
+                                                                    borderWidth: 2,
                                                                     data: [1000, 1000, 1000, 1000, 1000, 1000],
                                                                     backgroundColor: ['#42474E'],
-                                                                    borderWidth: 2, 
+                                                                    borderWidth: 2,
                                                                     borderColor: '#42474E',
                                                                     backgroundColor: '#42474E',
-                                                                    
+
                                                                 },
                                                                 {
-                                                                    type: 'bar', 
+                                                                    type: 'bar',
                                                                     label: 'El',
                                                                     data: [1500, 2200, 1700, 1900, 2200, 1700],
                                                                     borderWidth: 0,
                                                                     backgroundColor:'#FFB4AB',
                                                                     borderColor:'#FFB4AB',
-                                                                    stack: 'Stack 0', 
+                                                                    stack: 'Stack 0',
                                                                 }, {
-                                                                    type: 'bar', 
+                                                                    type: 'bar',
                                                                     label: 'Kol',
                                                                     data: [800, 600, 700, 400, 0, 0],
-                                                                    borderWidth: 0, 
+                                                                    borderWidth: 0,
                                                                     backgroundColor:'#4B9200',
                                                                     stack: 'Stack 0'
                                                                 }, {
-                                                                    type: 'bar', 
+                                                                    type: 'bar',
                                                                     label: 'Pellets',
                                                                     data: [0, 0, 0, 100, 400, 300],
-                                                                    borderWidth: 0, 
+                                                                    borderWidth: 0,
                                                                     backgroundColor:'#00629F',
-                                                                    stack: 'Stack 0', 
+                                                                    stack: 'Stack 0',
                                                                 },{
-                                                                    type: 'bar', 
+                                                                    type: 'bar',
                                                                     label: 'Koks',
                                                                     data: [600, 700, 500, 700, 600, 700],
-                                                                    borderWidth: 0, 
+                                                                    borderWidth: 0,
                                                                     backgroundColor:'#920028',
-                                                                    stack: 'Stack 1', 
+                                                                    stack: 'Stack 1',
                                                                 },{
-                                                                    type: 'bar', 
+                                                                    type: 'bar',
                                                                     label: 'Naturgas',
                                                                     data: [1000, 1100, 1500, 1100, 1000, 900],
-                                                                    borderWidth: 0, 
+                                                                    borderWidth: 0,
                                                                     backgroundColor:'#9ACBFF',
-                                                                    stack: 'Stack 1', 
+                                                                    stack: 'Stack 1',
                                                                 },{
-                                                                    type: 'bar', 
+                                                                    type: 'bar',
                                                                     label: 'Olja',
                                                                     data: [1000, 900, 1100, 900, 1000, 1200],
-                                                                    borderWidth: 0, 
+                                                                    borderWidth: 0,
                                                                     backgroundColor:'#6750A4',
-                                                                    stack: 'Stack 1', 
+                                                                    stack: 'Stack 1',
                                                                 },
                                                                 ]
                                                                 };
 
 
-                                                                //top label plugin block 
+                                                                //top label plugin block
                                                                 const topLabels = {
-                                                                    id: 'topLabels', 
+                                                                    id: 'topLabels',
                                                                     afterDatasetDraw(chart, args, pluginOptions){
-                                                                        const {ctx, scales: {x,y}} = chart; 
+                                                                        const {ctx, scales: {x,y}} = chart;
 
                                                                         ctx.font = '1vw roboto';
                                                                         ctx.fillStyle = '#333333';
@@ -749,10 +749,10 @@
                                                                         ctx.font = '0.85vw roboto';
                                                                         ctx.fillStyle = '#333333';
                                                                         ctx.textAlign= 'center';
-                                                                        
+
                                                                         for (let i = 0; i < 6; i ++){
                                                                             ctx.fillText('2020', chart.getDatasetMeta(3).data[i].x, chart.getDatasetMeta(3).data[i].y - 15);
-                                                                            
+
                                                                             ctx.fillText('2019', chart.getDatasetMeta(6).data[i].x, chart.getDatasetMeta(6).data[i].y - 15);
                                                                         }
                                                                     }
@@ -770,33 +770,33 @@
                                                                             beginAtZero: true,
                                                                             display:true,
                                                                             stacked:true
-                                                                         }, 
+                                                                         },
                                                                          x: {
-                                                                             stacked:true, 
-                                                                            display:true, 
+                                                                             stacked:true,
+                                                                            display:true,
                                                                         }
-                                                                    }, 
+                                                                    },
                                                                      events: ['mousemove','click'],
-                                                                
+
                                                                     // onClick: (e) => {
-                                                                    // alert("Du klicka på grafen"); 
-                                                                    // },        
+                                                                    // alert("Du klicka på grafen");
+                                                                    // },
                                                                      elements: {
                                                                         point: {
                                                                         radius: 0,
-                                                                        }, 
+                                                                        },
                                                                     }, plugins:{
                                                                         legend: {
                                                                             display: true,
                                                                             position: 'bottom',
                                                                             labels: {
-                                                                                usePointStyle: true, 
-                                                                                pointStyle:'circle', 
+                                                                                usePointStyle: true,
+                                                                                pointStyle:'circle',
                                                                                 padding: 35,
                                                                             }
-                                                                     },           
+                                                                     },
 
-                                                                }, 
+                                                                },
                                                                     responsive: true,
                                                                     animation: {
                                                                         duration: 1,
@@ -804,9 +804,9 @@
                                                                         console.log(this.data);
                                                                         }
                                                                     }
-                                                                       
+
                                                                 }, plugins: [ topLabels],
-                                                                
+
                                                                 };
 
                                                                 // render init block
@@ -818,9 +818,9 @@
                                                                 // Instantly assign Chart.js version
                                                                 const chartVersion = document.getElementById('bigChart');
                                                                 chartVersion.innerText = Chart.version;
-            
+
                                                         </script>
-            
+
                                                     </canvas>
                                                 </div>
                                             </div>
@@ -880,10 +880,10 @@
                                     <div class="col-xl-6 d-xl-flex" style="background: url(&quot;assets/img/wheel4.jpg&quot;) center / contain no-repeat, rgba(255,255,255,0);border-radius: 0px;height: 23vw;width: 23vw;">
                                         <div class="col d-xl-flex justify-content-xl-start align-items-xl-center" style="margin-left: 16vw; margin-top:9vw">
                                             <!-- <button class="btn btn-info" style="height: 13px; width: 13px; padding: 0px; border-radius: 10px;" type="button" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"></button> -->
-                                            <input type="button" style="height: 1.13vw; width: 1.13vw; padding: 0px; border-radius: 10px; background-color:#6750A4" class="btn btn-secondary" data-html="true" title="                                                
-                                                <h5 class='card-title' style='margin:0;'>Pumpoptimering      
-                                                
-                                                <img class='img-fluid' src='assets/img/namelogga.jpg' style='height: 2.3vw; width: 2.3vw; border-radius: 2vw; margin-top:-0.2vw; float: right;padding-bottom:0vw'></h5>" 
+                                            <input type="button" style="height: 1.13vw; width: 1.13vw; padding: 0px; border-radius: 10px; background-color:#6750A4" class="btn btn-secondary" data-html="true" title="
+                                                <h5 class='card-title' style='margin:0;'>Pumpoptimering
+
+                                                <img class='img-fluid' src='assets/img/namelogga.jpg' style='height: 2.3vw; width: 2.3vw; border-radius: 2vw; margin-top:-0.2vw; float: right;padding-bottom:0vw'></h5>"
                                                 data-content="
                                                 <div class='card-body' style='padding: 0.5vw'>
 
@@ -942,7 +942,7 @@
 
 
 <!--! BUDGET  -->
-                    
+
                     <div class="col" style="padding-right: 0px;padding-left: 6px; width: 24vw;">
                         <div class="card" style="height: 38vw;">
                             <div class="card-header" style="text-align: left; padding-top: 0.3vw; padding-bottom: 0.3vw;">
@@ -973,7 +973,7 @@
     </div>
 </div>
 </div>
-                                
+
                                 <div class="row" style="margin-left: 0.1vw; margin-top: 1.4vw; margin-bottom: 1vw; ">
                                     <!-- <div class="col">
                                         <div class="alert alert-secondary" style="background-color:#fefefe; display: flex; font-size: 1.2vw; margin-left: 0vw" role="alert">
@@ -994,7 +994,7 @@
                                         <div class="col-2" style="display:grid; justify-content:center; align-content: center; margin-right: 1vw ;  ">
                                             <button type="button" class="btn btn-danger btn-sm" style="background-color: #ED9080;border-color: #ED9080; color: #711301"  disabled>+ 236%</button>
                                         </div>
-                                    
+
                                     </div>
 
                                     <div class="alert alert-secondary" style="background-color:#fefefe; display:flex; font-size: 1.2vw; width:30%; padding: 0.1vw; margin-left: 1vw;" role="alert">
@@ -1011,7 +1011,7 @@
                                         <div class="col-2" style="display:grid; justify-content:center; align-content: center; margin-right: 0.5vw; margin-left: 0px;  ">
                                             <button type="button" class="btn btn-danger btn-sm " style="background-color: #A3C780;border-color: #A3C780; color: #053C00" disabled>- 1%</button>
                                         </div>
-                                    
+
                                     </div>
 
                                     <div class="col d-xl-flex justify-content-xl-end" style="margin-right: 18px;">
@@ -1055,21 +1055,21 @@
                                                     type: 'line',
                                                     label: 'Budget',
                                                     data: [2500, 2900, 3000, 3000, 2900, 3500, 3900, 3300, 3000, 3000, 3500],
-                                                    borderWidth: 1.5, 
+                                                    borderWidth: 1.5,
                                                     backgroundColor: '#42474E',
-                                                    borderColor:'#42474E', 
-                                                    
+                                                    borderColor:'#42474E',
+
                                                     },{
                                                     type: 'bar',
                                                     label: 'Utfall',
                                                     data: [2500, 2900, 3000, 3000, 2900, 3500, 3900, 3300, 3000],
-                                                    borderWidth: 0, 
+                                                    borderWidth: 0,
                                                     backgroundColor: '#9ACBFF',
                                                     },{
                                                     type: 'bar',
                                                     label: 'Utfall över budget',
                                                     data: [0, 0, 500, 0, 0, 0, 0, 300, 400],
-                                                    borderWidth: 0, 
+                                                    borderWidth: 0,
                                                     backgroundColor: '#ED9080',
                                                     }
                                                 ]
@@ -1080,29 +1080,29 @@
                                                             beginAtZero: true,
                                                             display:true,
                                                             stacked: true,
-                                                        }, 
+                                                        },
                                                         x: {
-                                                            stacked:true, 
+                                                            stacked:true,
                                                             display:true
                                                         }
-                                                    }, 
+                                                    },
                                                     events: ['mousemove','click'],
-                                                    
+
                                                     onClick: (e) => {
-                                                        alert("Du klicka på grafen"); 
-                                                    }, 
+                                                        alert("Du klicka på grafen");
+                                                    },
                                                     plugins: {
                                                     legend: {
                                                         display: true,
                                                         position: 'top',
                                                         labels: {
-                                                            usePointStyle: true, 
-                                                            pointStyle: "circle", 
+                                                            usePointStyle: true,
+                                                            pointStyle: "circle",
                                                             padding: 15,
                                                         }
                                                 }
                                                 }
-                                                }, 
+                                                },
                                                 });
                                             </script>
 
@@ -1116,7 +1116,7 @@
                             </div>
 
                             <!-- <div class="row" style="margin-left: 0vw;">
-                               
+
                                 <div class="alert alert-secondary" style="background-color:#fefefe; display:flex; font-size: 1.2vw; width:37%; padding: 0.5vw; " role="alert">
                                     <div class="col" style="width: 2vw; ">
                                         <div class="row" >
@@ -1131,7 +1131,7 @@
                                     <div class="col-2" style="display:grid; justify-content:center; align-content: center; margin-right: 1vw; margin-left: 0vw; ">
                                         <button type="button" class="btn btn-danger btn-sm"  disabled>+ 236%</button>
                                     </div>
-                                
+
                                 </div>
 
                                 <div class="alert alert-secondary" style="background-color:#fefefe; display:flex; font-size: 1.2vw; width:37%; padding: 0.5vw; margin-left: 2vw;" role="alert">
@@ -1148,9 +1148,9 @@
                                     <div class="col-2" style="display:grid; justify-content:center; align-content: center; margin-right: 1vw; margin-left: 0vw; ">
                                         <button type="button" class="btn btn-danger btn-sm"  disabled>+ 236%</button>
                                     </div>
-                                
+
                                 </div>
-                            
+
                             </div> -->
                                 <div class="row" id="budgetTextrow" >
                                 <!-- Footer  -->
@@ -1159,15 +1159,13 @@
                                     </div>
                                 </div>
 
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
 
 <!--! END BUDGET  -->
-                
-
 
                 <div class="row" style="margin-bottom: 12px;">
                     <div class="col" style="padding-right: 0px; padding-left: 0px;">
@@ -1195,20 +1193,82 @@
                                         <button id="MWHMeasure" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="myMeasureFunction(this)">MWh</button>
                                         <button id="TSEKMeasure" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myMeasureFunction(this)" >TSEK</button>
                                         <button id="kgCO2Measure" class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="myMeasureFunction(this)" >kgCO<sub>2</sub></button>
-                                    </div></div>
-                                    <div id="checkboxID"class="col-xl-9"><img class="img-fluid" src="assets/img/prognos-minus-goal.jpg"></div>
-                                    <div class="col-xl-2 my-auto" style="color: black; font-size: 0.93vw; align-items: stretch;">
-                                        <div class="myTest custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1" onchange="checkboxCheck(this)" checked/>
-                                            <label class="custom-control-label" for="customCheck1" style="padding-top:3px;">Historiskt snitt</label>
-                                          </div>
-                                          <a class="purple-head hover-black" onclick="changeIcon(this)" id="myBtn">
-                                            <i id="goal" class="bi-star" style="color: #FFBE4D; font-size: 1.3vw; margin-right: 5px;"></i>
-                                            <span>Målöversikt</span>
-                                          </a>
                                     </div>
                                 </div>
-                                <div class="row" style="margin-bottom: 2%;">
+                                    <div id="checkboxID" class="col" style="background: url(&quot;assets/img/prognos-utan-effekt.jpg&quot;) center / contain no-repeat, rgba(255,255,255,0);border-radius: 0px;height: 23vw;width: 23vw; margin-right: 10vw;">
+                                        <div class="row">
+                                            <div class="col" style="margin-left: 96%; margin-top:12.5vw; font-size: 1.6vw;">
+                                                <a id="popstar" class="pop" role="button" data-html="true" data-toggle="popover" data-placement="bottom"
+                                                    data-content="
+                                                    <div class='card-body' style='padding: 0.5vw'>
+
+                                                    <h6 class='card-text'><center>Energiförbrukning (MWh/år)</center></h6>
+                                                    <div class='row' style='margin-top: 2vw; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding: 0px;'>
+                                                        <div class='col-xl-5' style='margin: 0px; padding: 0px;'>
+                                                            <center><p style='color: #dd2400; font-size: 2.3vw; margin: 0px; padding: 0px;'>9945</p></center>
+                                                            <center><p style='font-size: 0.82vw;'>Prognos 2025</p></center>
+                                                        </div>
+                                                        <div class='col-xl-2' style='margin: 0px; padding: 0px;'>
+                                                            <center><img src='assets\img\linje.png' style='height: 5vw;'></center>
+                                                        </div>
+                                                        <div class='col-xl-5' style='padding: 0vw; margin: 0px;'>
+                                                            <center><p style='font-size: 2.3vw; margin: 0px; padding: 0px;'>6000</p></center>
+                                                            <center><p style='font-size: 0.82vw;'><i class='fa-sharp fa-solid fa-star fa-lg' style='color: #ffdfa6; margin-right: 5px;'></i>Mål 2025</p></center>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                    <button type='button' class='btn btn-block' data-bs-toggle='modal' href='#exampleModalToggle' style='background:#f1f0f4;white-space:normal;display:inline-flex; margin-top: 1vw; text-align: left;'>
+                                                        <span class='pull-left'><i class='icon ion-ios-information-outline' style='margin-top: 0px; margin-right: 0.8vw; padding-top: 0px; font-size: 1.5vw;'></i></span><span class='pull-right' style='padding-top: 0.2vw; font-size: 0.9vw;'>Målet beräknas inte nås enligt prognos</span>
+                                                    </button>
+                                                </div>">
+                                                <i class="fa-sharp fa-solid fa-star" style="color: #ffdfa6;"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalToggleLabel">Information</h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p><b>Målet beräknas inte nås enligt aktuell prognos</b></p>
+
+                                            <p>Att målet inte beräknas nås enligt aktuell prognos innebär att de historiskt genomförda händelserna tillsammans med kommande åtgärder samt eventuell prognotisering av föreslagna åtgärder, tillsammans inte beräknas bidra med tillräckliga besparingar för att uppnå målet.</p>
+
+                                            <p>Genom att genomföra, schemalägga eller prognotisera andra/fler åtgärder kan du se hur förändringen i besparingar kan bidra till att företaget kommer närmre sitt uppsatta mål.</p>
+
+                                            <p>För att hitta inspiration till allmänna åtgärder, klicka nedan:</p>
+
+                                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Allmänna åtgärder</button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Stäng</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalToggleLabel2">Allmänna åtgärder</h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div id="modalMeasureInfo" class="modal-body">
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Tillbaka</button> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Stäng</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                <div class="row" style="margin-bottom: 1vw;">
                                     <div class="col d-xl-flex justify-content-xl-end" style="margin-right: 2%;">
                                         <div class="btn-group btn-group-sm" role="group">
                                             <button id="1year" class="btn btn-sm" type="button" style="font-size: 0.85vw;background: #f1f0f4;" onclick="myYearFunction(this)">1 år</button>
@@ -1218,21 +1278,23 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row" style="margin-bottom: 1vw;">
+                                <div class="row">
                                     <table class="table" style="table-layout: fixed;">
                                         <thead>
                                           <tr style="padding:0px;">
-                                            <th class="fw-bold" scope="col" style="font-size: 1.13vw;">Historiska händelser</th>
-                                            <th scope="col">
-                                                <div class="row">
-                                                    <div class="col-xl-7 fw-bold" style="font-size: 1.13vw; padding: 0px;">
+                                            <th class="fw-bold" scope="col" style="font-size: 1.13vw; border-top: none;">Historiska händelser</th>
+                                            <!-- <th class="fw-bold" scope="col" style="font-size: 1.13vw; border-top: none;"><span class="pull-left" style="vertical-align: bottom;">Kommande åtgärder</span><span class="pull-right"><div class="btn btn-primary btn-sm" type="button" style="padding: 1px; margin: 0px;" onclick="newMeasure()">Lägg till åtgärd</div></span></th> -->
+                                            <!-- <span class='pull-left'><i class='icon ion-ios-information-outline' style='margin-top: 0px; padding-top: 0px; font-size: 1.5vw;'></i></span><span class='pull-right' style='padding-top: 0.2vw; font-size: 14px;'>Målet beräknas inte nås enligt prognos</span> -->
+                                            <th scope="col" style="border-top: none;">
+                                                <div class="row" style="padding: 0px; margin: 0px;">
+                                                    <div class="col-xl-7 fw-bold" style="font-size: 1.13vw; padding: 0px; margin:0px;">
                                                         Kommande åtgärder
                                                     </div>
-                                                    <div class="col-xl-5" style="margin-right: 0px; text-align: right">
-                                                        <div class="btn btn-primary btn-sm" type="button" style="padding: 5px;" onclick="newMeasure()">Lägg till åtgärd</div>
+                                                    <div class="col-xl-5" style="margin: 0px; padding: 0px; text-align: right">
+                                                        <div class="btn btn-primary btn-sm" type="button" style="padding-top: 1px; padding-bottom:1px; margin: 0px; vertical-align: top;" onclick="newMeasure()">Lägg till åtgärd</div>
                                                     </div>
                                                 </div>
-                                            <th class="fw-bold" scope="col" style="font-size: 1.13vw;">Föreslagna åtgärder</th>
+                                            <th class="fw-bold" scope="col" style="font-size: 1.13vw; border-top: none;">Föreslagna åtgärder</th>
                                           </tr>
                                         </thead>
                                         <tbody>
@@ -1244,10 +1306,10 @@
                                                           <h2 class="accordion-header" id="flush-headingOne">
                                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne2" aria-expanded="false" aria-controls="flush-collapseOne" style="padding-top: 7px; padding-bottom: 7px; padding-left: 7px;">
                                                               <div class="col-xl-1" style="padding-left: 0px;">
-                                                                <img src="assets\img\1.png" width="35">
+                                                                <img src="assets\img\1.png" width="30">
                                                               </div>
                                                               <div class="col-xl-11" margin-left="20px;">
-                                                                <b class="fw-semibold" style="font-size:1vw; margin-left: 10px;">Infört nytt energiledningsprotokoll</b>
+                                                                <b class="fw-semibold" style="font-size:1vw; margin-left: 10px;">Lansering av ny produktkategori</b>
                                                               </div>
                                                             </button>
                                                           </h2>
@@ -1255,15 +1317,15 @@
                                                             <div class="accordion-body" style="padding-left: 7px;">
                                                                 <div class="row">
                                                                     <div class="col-xl-1">
-                                                                        <img src="assets\img\EH_initials.png" width="35">
+                                                                        <img src="assets\img\EH_initials.png" width="30">
                                                                     </div>
                                                                     <div class="col" style="margin-left: 20px;">
                                                                         <div class="row">
                                                                             <div class="col">
                                                                                 <p style="font-size: 0.93vw; margin-bottom: 0px;"><b>Kommentar:</b> Enligt vårens workshop <br>
-                                                                                <b>Energibesparing:</b> 0.3 MWh/år <br>
-                                                                                <b>Kostnadsbesparing:</b> 192 TSEK/år <br>
-                                                                                <b>CO<sub>2</sub>-besparing:</b> 23 kgCO<sub>2</sub>/år <br>
+                                                                                <b>Energibesparing:</b> -20 MWh/år <br>
+                                                                                <b>Kostnadsbesparing:</b> -121 TSEK/år <br>
+                                                                                <b>CO<sub>2</sub>-besparing:</b> -23 kgCO<sub>2</sub>/år <br>
                                                                                 <b>Investeringskostnad:</b> 20 TSEK
                                                                                 </p>
                                                                             </div>
@@ -1277,7 +1339,7 @@
                                                             <h2 class="accordion-header" id="flush-headingTwo">
                                                               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo2" aria-expanded="false" aria-controls="flush-collapseTwo" style="padding-top: 7px; padding-bottom: 7px; padding-left: 7px;">
                                                                 <div class="col-xl-1" style="padding-left: 0px;">
-                                                                  <img src="assets\img\2.png" width="35">
+                                                                  <img src="assets\img\2.png" width="30">
                                                                 </div>
                                                                 <div class="col-xl-11" margin-left="20px;">
                                                                   <b class="fw-semibold" style="font-size:1vw; margin-left: 10px;">Tidsstyrning varmvattencirkulation</b>
@@ -1288,7 +1350,7 @@
                                                               <div class="accordion-body" style="padding-left: 7px;">
                                                                   <div class="row">
                                                                       <div class="col-xl-1">
-                                                                          <img src="assets\img\EH_initials.png" width="35">
+                                                                          <img src="assets\img\EH_initials.png" width="30">
                                                                       </div>
                                                                       <div class="col" style="margin-left: 20px;">
                                                                           <div class="row">
@@ -1306,12 +1368,12 @@
                                                               </div>
                                                             </div>
                                                           </div>
-            
+
                                                         <div class="accordion-item">
                                                           <h2 class="accordion-header" id="flush-headingThree">
                                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree2" aria-expanded="false" aria-controls="flush-collapseThree" style="padding-top: 7px; padding-bottom: 7px; padding-left: 7px;">
                                                                 <div class="col-xl-1" style="padding-left: 0px;">
-                                                                    <img src="assets\img\3.png" width="35">
+                                                                    <img src="assets\img\3.png" width="30">
                                                                   </div>
                                                                   <div class="col-xl-11" margin-left="20px;">
                                                                     <b class="fw-semibold" style="font-size:1vw; margin-left: 10px;">Minimerat nedblåsningsförluster</b>
@@ -1322,7 +1384,7 @@
                                                             <div class="accordion-body" style="padding-left: 7px;">
                                                                 <div class="row">
                                                                     <div class="col-xl-1">
-                                                                        <img src="assets\img\AE.png" width="35">
+                                                                        <img src="assets\img\AE.png" width="30">
                                                                     </div>
                                                                     <div class="col" style="margin-left: 20px;">
                                                                         <div class="row">
@@ -1351,7 +1413,7 @@
                                                           <h2 class="accordion-header" id="flush-headingOne">
                                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne1" aria-expanded="false" aria-controls="flush-collapseOne" style="padding-top: 7px; padding-bottom: 7px; padding-left: 7px;">
                                                               <div class="col-xl-1" style="padding-left: 0px;">
-                                                                <img src="assets\img\Arrow.png" width="35">
+                                                                <img src="assets\img\4.png" width="30">
                                                               </div>
                                                               <div class="col-xl-11" margin-left="20px;">
                                                                 <b class="fw-semibold" style="font-size:1vw; margin-left: 10px;">Ny belysningsinstallation</b>
@@ -1362,12 +1424,12 @@
                                                             <div class="accordion-body" style="padding-left: 7px;">
                                                                 <div class="row">
                                                                     <div class="col-xl-1">
-                                                                        <img src="assets\img\EH_initials.png" width="35">
+                                                                        <img src="assets\img\EH_initials.png" width="30">
                                                                     </div>
                                                                     <div class="col" style="margin-left: 20px;">
                                                                         <div class="row">
                                                                             <div class="col">
-                                                                                <p style="font-size: 0.93vw; margin-bottom: 0px;"><b>Kommentar:</b> Implementeras vid årsskiftet 23/24 <br>
+                                                                                <p style="font-size: 0.93vw; margin-bottom: 1vw;"><b>Kommentar:</b> Implementeras vid årsskiftet 23/24 <br>
                                                                                     <b>Energibesparing:</b> 0.2 MWh/år <br>
                                                                                     <b>Kostnadsbesparing:</b> 56 TSEK/år <br>
                                                                                     <b>CO<sub>2</sub>-besparing:</b> 1 kgCO<sub>2</sub>/år <br>
@@ -1375,8 +1437,9 @@
                                                                                 </p>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="row" style="text-align: right">
-                                                                            <div class="col" style="text-align: right">
+                                                                        <div class="row">
+                                                                            <div class="col" style="text-align: left">
+                                                                                <p style="font-size: 0.93vw; margin-bottom: 0.2vw;">Klicka här för att registrera åtgärden:</p>
                                                                                 <div class="btn btn-primary btn-sm" type="button" onclick="newMadeMeasure()" style="padding: 5px; font-size: 0.93vw">Genomför</div>
                                                                             </div>
                                                                         </div>
@@ -1389,7 +1452,7 @@
                                                             <h2 class="accordion-header" id="flush-headingTwo">
                                                               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo1" aria-expanded="false" aria-controls="flush-collapseTwo" style="padding-top: 7px; padding-bottom: 7px; padding-left: 7px;">
                                                                 <div class="col-xl-1" style="padding-left: 0px;">
-                                                                  <img src="assets\img\Arrow.png" width="35">
+                                                                  <img src="assets\img\5.png" width="30">
                                                                 </div>
                                                                 <div class="col-xl-11" margin-left="20px;">
                                                                   <b class="fw-semibold" style="font-size:1vw; margin-left: 10px;">Utbilda personal i energibesparingar</b>
@@ -1400,12 +1463,12 @@
                                                               <div class="accordion-body" style="padding-left: 7px;">
                                                                   <div class="row">
                                                                       <div class="col-xl-1">
-                                                                          <img src="assets\img\EH_initials.png" width="35">
+                                                                          <img src="assets\img\EH_initials.png" width="30">
                                                                       </div>
                                                                       <div class="col" style="margin-left: 20px;">
                                                                           <div class="row">
                                                                               <div class="col">
-                                                                                <p style="font-size: 0.93vw; margin-bottom: 0px;"><b>Kommentar:</b> Forskning har visat på dess fördelar, implementera i aug 23<br>
+                                                                                <p style="font-size: 0.93vw; margin-bottom: 1vw;"><b>Kommentar:</b> Forskning har visat på dess fördelar, implementera i aug 23<br>
                                                                                     <b>Energibesparing:</b> 300 MWh/år <br>
                                                                                     <b>Kostnadsbesparing:</b> 250 TSEK/år <br>
                                                                                     <b>CO<sub>2</sub>-besparing:</b> 450 kgCO<sub>2</sub>/år <br>
@@ -1413,9 +1476,10 @@
                                                                                     </p>
                                                                               </div>
                                                                           </div>
-                                                                          <div class="row" style="text-align: right">
-                                                                            <div class="col" style="text-align: right">
-                                                                                <div class="btn btn-primary btn-sm" type="button" style="padding: 5px; font-size: 0.93vw">Genomför</div>
+                                                                          <div class="row">
+                                                                            <div class="col" style="text-align: left">
+                                                                                <p style="font-size: 0.93vw; margin-bottom: 0.2vw;">Klicka här för att registrera åtgärden:</p>
+                                                                                <div class="btn btn-primary btn-sm" type="button" onclick="newMadeMeasure()" style="padding: 5px; font-size: 0.93vw">Genomför</div>
                                                                             </div>
                                                                         </div>
                                                                       </div>
@@ -1423,7 +1487,7 @@
                                                               </div>
                                                             </div>
                                                           </div>
-            
+
 
                                                         </div>
                                                       </div>
@@ -1437,7 +1501,7 @@
                                                           <h2 class="accordion-header" id="flush-headingOne">
                                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne3" aria-expanded="false" aria-controls="flush-collapseOne" style="padding-top: 7px; padding-bottom: 7px; padding-left: 7px;">
                                                               <div class="col-xl-1" style="padding-left: 0px;">
-                                                                <img src="assets\img\Questionmark.png" width="35">
+                                                                <img src="assets\img\A.png" width="30">
                                                               </div>
                                                               <div class="col-xl-11" margin-left="20px;">
                                                                 <b class="fw-semibold" style="font-size:1vw; margin-left: 10px;">Frekvensstyrning av vakuumpump</b>
@@ -1449,26 +1513,34 @@
                                                                 <div class="row">
                                                                     <div class="col" style="margin-left: 20px;">
                                                                         <div class="row">
-                                                                            <div class="col">
+                                                                            <div class="col-xl-7">
                                                                                 <p style="font-size: 0.93vw; margin-bottom: 0px;">
                                                                                 <b>Energibesparing:</b> 1 MWh/år <br>
                                                                                 <b>Kostnadsbesparing:</b> 46 TSEK/år <br>
                                                                                 <b>CO<sub>2</sub>-besparing:</b> 0.9 kgCO<sub>2</sub>/år <br>
                                                                                 <b>Investeringskostnad:</b> 123 TSEK
                                                                                 </p>
-                                                                                <div class="form-check" style="font-size: 0.93vw; padding-bottom: 0px; margin-top: 10px; margin-bottom: 0px;">
-                                                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                                                                    <label class="form-check-label" for="flexRadioDefault2">
-                                                                                      Prognotisera effekter
-                                                                                    </label>
+                                                                            </div>
+                                                                            <div class="col-xl-5" style="vertical-align: baseline;">
+                                                                                <div class="form-check form-switch" style="font-size: 1vw; margin-top: 10px; margin-left: 0.5vw;">
+                                                                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onchange="changeForecastingA()" style="vertical-align: top;">
+                                                                                    <label class="form-check-label" for="flexSwitchCheckDefault" style="font-size: 0.94vw;">Prognotisera</label>
                                                                                 </div>
                                                                                 <div class="row">
                                                                                     <div class="col">
                                                                                         <input type="month" id="start1" name="start1" min="2023-03" value="2024-06" style="font-family: Roboto, sans-serif; font-size: 0.93vw; margin-top: 0px;">
                                                                                     </div>
-                                                                                    <div class="col" style="text-align: right;">
-                                                                                        <div class="btn btn-primary btn-sm" type="button" onclick="newSchedule()" style="padding: 5px; font-family: Roboto, sans-serif; font-size: 0.93vw;">Schemalägg</div>
-                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row" style="margin-top: 0.5vw;">
+                                                                                <div class="col">
+                                                                                    <img src='assets\img\liggande-linje.png' style="width:100%;">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row" style="margin-top: 0.3vw;">
+                                                                                <div class="col">
+                                                                                    <p style="font-size: 0.93vw; margin-bottom: 0.2vw;">Klicka här för att schemalägga den föreslagna åtgärden:</p>
+                                                                                    <div class="btn btn-primary btn-sm" type="button" onclick="newSchedule()" style="padding: 5px; font-size: 0.93vw">Schemalägg</div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1481,7 +1553,7 @@
                                                             <h2 class="accordion-header" id="flush-headingTwo">
                                                               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo3" aria-expanded="false" aria-controls="flush-collapseTwo" style="padding-top: 7px; padding-bottom: 7px; padding-left: 7px;">
                                                                 <div class="col-xl-1" style="padding-left: 0px;">
-                                                                  <img src="assets\img\Questionmark.png" width="35">
+                                                                  <img src="assets\img\B.png" width="30">
                                                                 </div>
                                                                 <div class="col-xl-11" margin-left="20px;">
                                                                   <b class="fw-semibold" style="font-size:1vw; margin-left: 10px;">Stänga av cirkulationspumpar på kvällen</b>
@@ -1493,43 +1565,51 @@
                                                                   <div class="row">
                                                                       <div class="col" style="margin-left: 20px;">
                                                                           <div class="row">
-                                                                              <div class="col">
+                                                                              <div class="col-xl-7">
                                                                                 <p style="font-size: 0.93vw; margin-bottom: 0px;">
                                                                                     <b>Energibesparing:</b> 0.1 MWh/år <br>
                                                                                     <b>Kostnadsbesparing:</b> 2 TSEK/år <br>
                                                                                     <b>CO<sub>2</sub>-besparing:</b> 0.3 kgCO<sub>2</sub>/år <br>
                                                                                     <b>Investeringskostnad:</b> -
                                                                                     </p>
-                                                                                    <div class="form-check" style="font-size: 0.93vw; padding-bottom: 0px; margin-top: 10px; margin-bottom: 0px;">
-                                                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2" style="margin-top: 2px;" disabled>
-                                                                                        <label class="form-check-label" for="flexCheckDefault2">
-                                                                                          Prognotisera effekter
-                                                                                        </label>
+                                                                                </div>
+                                                                                <div class="col-xl-5" style="vertical-align: baseline;">
+                                                                                    <div class="form-check form-switch" style="font-size: 1vw; margin-top: 10px; margin-left: 0.5vw;">
+                                                                                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onchange="changeForecastingB()" style="vertical-align: top;">
+                                                                                        <label class="form-check-label" for="flexSwitchCheckDefault" style="font-size: 0.94vw;">Prognotisera</label>
                                                                                     </div>
                                                                                     <div class="row">
                                                                                         <div class="col">
-                                                                                            <input type="month" id="start2" name="start2" min="2023-03" value="2024-06" style="font-family: Roboto, sans-serif; font-size: 0.93vw; margin-top: 0px;">
-                                                                                        </div>
-                                                                                        <div class="col" style="text-align: right;">
-                                                                                            <div class="btn btn-primary btn-sm" type="button" style="padding: 5px; font-family: Roboto, sans-serif; font-size: 0.93vw;">Schemalägg</div>
+                                                                                            <input type="month" id="start1" name="start1" min="2023-03" value="2024-10" style="font-family: Roboto, sans-serif; font-size: 0.93vw; margin-top: 0px;">
                                                                                         </div>
                                                                                     </div>
-                                                                              </div>
+                                                                                </div>
+                                                                                <div class="row" style="margin-top: 0.5vw;">
+                                                                                    <div class="col">
+                                                                                        <img src='assets\img\liggande-linje.png' style="width:100%;">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="row" style="margin-top: 0.3vw;">
+                                                                                    <div class="col">
+                                                                                        <p style="font-size: 0.93vw; margin-bottom: 0.2vw;">Klicka här för att schemalägga den föreslagna åtgärden:</p>
+                                                                                        <div class="btn btn-primary btn-sm" type="button" onclick="newSchedule()" style="padding: 5px; font-size: 0.93vw">Schemalägg</div>
+                                                                                    </div>
+                                                                                </div>
                                                                           </div>
                                                                       </div>
                                                                   </div>
                                                               </div>
                                                             </div>
                                                           </div>
-            
+
                                                         <div class="accordion-item">
                                                           <h2 class="accordion-header" id="flush-headingThree">
                                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree3" aria-expanded="false" aria-controls="flush-collapseThree" style="padding-top: 7px; padding-bottom: 7px; padding-left: 7px;">
                                                                 <div class="col-xl-1" style="padding-left: 0px;">
-                                                                    <img src="assets\img\Questionmark.png" width="35">
+                                                                    <img src="assets\img\C.png" width="30">
                                                                   </div>
                                                                   <div class="col-xl-11" margin-left="20px;">
-                                                                    <b class="fw-semibold" style="font-size:1vw; margin-left: 10px;">Avstänging av skrivare efter stängning</b>
+                                                                    <b class="fw-semibold" style="font-size:1vw; margin-left: 10px;">Avstängning av skrivare efter stängning</b>
                                                                   </div>
                                                             </button>
                                                           </h2>
@@ -1538,29 +1618,36 @@
                                                                 <div class="row">
                                                                     <div class="col" style="margin-left: 20px;">
                                                                         <div class="row">
-                                                                            <div class="col">
+                                                                            <div class="col-xl-7">
                                                                                 <p style="font-size: 0.93vw; margin-bottom: 0px;">
                                                                                 <b>Energibesparing:</b> 0.05 MWh/år <br>
                                                                                 <b>Kostnadsbesparing:</b> 2 TSEK/år <br>
                                                                                 <b>CO<sub>2</sub>-besparing:</b> 1 kgCO<sub>2</sub>/år <br>
                                                                                 <b>Investeringskostnad:</b> -
                                                                                 </p>
-                                                                                <div class="form-check" style="font-size: 0.93vw; padding-bottom: 0px; margin-top: 10px; margin-bottom: 0px;">
-                                                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3" style="margin-top: 2px;" disabled>
-                                                                                    <label class="form-check-label" for="flexCheckDefault3">
-                                                                                      Prognotisera effekter
-                                                                                    </label>
+                                                                            </div>
+                                                                            <div class="col-xl-5" style="vertical-align: baseline;">
+                                                                                <div class="form-check form-switch" style="font-size: 1vw; margin-top: 10px; margin-left: 0.5vw;">
+                                                                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onchange="changeForecastingC()" style="vertical-align: top;">
+                                                                                    <label class="form-check-label" for="flexSwitchCheckDefault" style="font-size: 0.94vw;">Prognotisera</label>
                                                                                 </div>
                                                                                 <div class="row">
                                                                                     <div class="col">
-                                                                                        <input type="month" id="start2" value="2026-06" style="font-family: Roboto, sans-serif; font-size: 0.93vw; margin-top: 0px;">
-                                                                                    </div>
-                                                                                    <div class="col" style="text-align: right;">
-                                                                                        <div class="btn btn-primary btn-sm" type="button" style="padding: 5px; font-family: Roboto, sans-serif; font-size: 0.93vw;">Schemalägg</div>
+                                                                                        <input type="month" id="start1" name="start1" min="2023-03" value="2024-06" style="font-family: Roboto, sans-serif; font-size: 0.93vw; margin-top: 0px;">
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
+                                                                            <div class="row" style="margin-top: 0.5vw;">
+                                                                                <div class="col">
+                                                                                    <img src='assets\img\liggande-linje.png' style="width:100%;">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row" style="margin-top: 0.3vw;">
+                                                                                <div class="col">
+                                                                                    <p style="font-size: 0.93vw; margin-bottom: 0.2vw;">Klicka här för att schemalägga den föreslagna åtgärden:</p>
+                                                                                    <div class="btn btn-primary btn-sm" type="button" onclick="newSchedule()" style="padding: 5px; font-size: 0.93vw">Schemalägg</div>
+                                                                                </div>
+                                                                            </div>                                                                       </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
