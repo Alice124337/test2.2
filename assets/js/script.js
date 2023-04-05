@@ -302,9 +302,9 @@ let forecastingC = false;
       document.getElementById("endusetab").className = "nav-link"; 
       document.getElementById("effecttab").className = "nav-link";
       document.getElementById("supliedenergytab").className = "nav-link";
-      document.getElementById("endusetab").style.color = "#00629F";
-      document.getElementById("supliedenergytab").style.color = "#00629F";
-      document.getElementById("effecttab").style.color = "#00629F";
+      document.getElementById("endusetab").style.color = "#f1f0f4";
+      document.getElementById("supliedenergytab").style.color = "#f1f0f4";
+      document.getElementById("effecttab").style.color = "#f1f0f4";
       document.getElementById("sankeytab").className = "nav-link active";
       document.getElementById("sankeytab").style.color = "#42474e"; 
 
@@ -518,9 +518,9 @@ let forecastingC = false;
       document.getElementById("endusetab").className = "nav-link"; 
       document.getElementById("sankeytab").className = "nav-link";
       document.getElementById("supliedenergytab").className = "nav-link";
-      document.getElementById("endusetab").style.color = "#00629F";
-      document.getElementById("sankeytab").style.color = "#00629F";
-      document.getElementById("supliedenergytab").style.color = "#00629F";
+      document.getElementById("endusetab").style.color = "#f1f0f4";
+      document.getElementById("sankeytab").style.color = "#f1f0f4";
+      document.getElementById("supliedenergytab").style.color = "#f1f0f4";
       document.getElementById("effecttab").className = "nav-link active";
       document.getElementById("effecttab").style.color = "#42474e"; 
 
@@ -622,9 +622,9 @@ let forecastingC = false;
         document.getElementById("endusetab").className = "nav-link"; 
         document.getElementById("sankeytab").className = "nav-link";
         document.getElementById("effecttab").className = "nav-link";
-        document.getElementById("endusetab").style.color = "#00629F"; 
-        document.getElementById("sankeytab").style.color = "#00629F";
-        document.getElementById("effecttab").style.color = "#00629F";
+        document.getElementById("endusetab").style.color = "#f1f0f4"; 
+        document.getElementById("sankeytab").style.color = "#f1f0f4";
+        document.getElementById("effecttab").style.color = "#f1f0f4";
         document.getElementById("supliedenergytab").className = "nav-link active";
         document.getElementById("supliedenergytab").style.color = "#42474e"; 
 
@@ -831,9 +831,9 @@ let forecastingC = false;
       document.getElementById("sankeytab").className = "nav-link";
       document.getElementById("effecttab").className = "nav-link";
       document.getElementById("supliedenergytab").className = "nav-link";
-      document.getElementById("sankeytab").style.color = "#00629F";
-      document.getElementById("effecttab").style.color = "#00629F";
-      document.getElementById("supliedenergytab").style.color = "#00629F";
+      document.getElementById("sankeytab").style.color = "#f1f0f4";
+      document.getElementById("effecttab").style.color = "#f1f0f4";
+      document.getElementById("supliedenergytab").style.color = "#f1f0f4";
 
 
       resetAccordion();
