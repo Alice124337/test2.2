@@ -18,6 +18,11 @@
  }
 
 
+#btn2:focus {
+   outline: none;
+   box-shadow: none;
+ }
+
   .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
     background-color: black!important;
   }
@@ -58,6 +63,12 @@
     height: 260px;
 }
 
+#modalMeasureInfo {
+   background-image: url(../img/measure-general.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 260px;
+}
 
 
  #rotate2{

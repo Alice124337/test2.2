@@ -1,5 +1,9 @@
 
-    
+let forecastingA = false;
+let forecastingB = false;
+let forecastingC = false;
+
+
     function loadBudgetChart(){
       console.log("loaded");
     }
@@ -1569,7 +1573,7 @@ function newSchedule() {
 }
 
 function newMadeMeasure() {
-    alert("Du har nu genomfört!");
+    alert("Du har nu genomfört åtgärden!");
 }
 
 function changeAnnual() {
@@ -1613,7 +1617,158 @@ function changetositesmap(){
     
 }
 
-function showMe(){
-    console.log("hej");
+function changeForecastingA() {
+    if (forecastingA == false) {
+        document.getElementById("checkboxID").style.backgroundImage="url(assets/img/prognos-minus-goal.jpg)";
+        document.getElementById("popstar").setAttribute("data-content", "<div class='card-body' style='padding: 0.5vw'>\
+        <h6 class='card-text'><center>Energiförbrukning (MWh/år)</center></h6>\
+        <div class='row' style='margin-top: 2vw; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding: 0px;'>\
+        <div class='col-xl-5' style='margin: 0px; padding: 0px;'>\
+            <center><p style='color: #dd2400; font-size: 2.3vw; margin: 0px; padding: 0px;'>7656</p></center>\
+            <center><p style='font-size: 0.82vw;'>Prognos 2025</p></center>\
+        </div>\
+        <div class='col-xl-2' style='margin: 0px; padding: 0px;'>\
+            <center><img src='assets/img/linje.png' style='height: 5vw;'></center>\
+        </div>\
+        <div class='col-xl-5' style='padding: 0vw; margin: 0px;'>\
+            <center><p style='font-size: 2.3vw; margin: 0px; padding: 0px;'>6000</p></center>\
+            <center><p style='font-size: 0.82vw;'><i class='fa-sharp fa-solid fa-star fa-lg' style='color: #ffdfa6; margin-right: 5px;'></i>Mål 2025</p></center>\
+        </div>\
+    </div>\
+    <div\
+    <button type='button' class='btn btn-block' data-bs-toggle='modal' href='#exampleModalToggle' style='background:#f1f0f4;white-space:normal;display:inline-flex; margin-top: 1vw; text-align: left;'>\
+        <span class='pull-left'><i class='icon ion-ios-information-outline' style='margin-top: 0px; margin-right: 0.8vw; padding-top: 0px; font-size: 1.5vw;'></i></span><span class='pull-right' style='padding-top: 0.2vw; font-size: 0.9vw;'>Målet beräknas inte nås enligt prognos</span>\
+    </button>\
+    </div>")
+    } else if (forecastingA == true) {
+        document.getElementById("checkboxID").style.backgroundImage="url(assets/img/prognos-utan-effekt.jpg)";
+        document.getElementById("popstar").setAttribute("data-content", "<div class='card-body' style='padding: 0.5vw'>\
+        <h6 class='card-text'><center>Energiförbrukning (MWh/år)</center></h6>\
+        <div class='row' style='margin-top: 2vw; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding: 0px;'>\
+        <div class='col-xl-5' style='margin: 0px; padding: 0px;'>\
+            <center><p style='color: #dd2400; font-size: 2.3vw; margin: 0px; padding: 0px;'>9945</p></center>\
+            <center><p style='font-size: 0.82vw;'>Prognos 2025</p></center>\
+        </div>\
+        <div class='col-xl-2' style='margin: 0px; padding: 0px;'>\
+            <center><img src='assets/img/linje.png' style='height: 5vw;'></center>\
+        </div>\
+        <div class='col-xl-5' style='padding: 0vw; margin: 0px;'>\
+            <center><p style='font-size: 2.3vw; margin: 0px; padding: 0px;'>6000</p></center>\
+            <center><p style='font-size: 0.82vw;'><i class='fa-sharp fa-solid fa-star fa-lg' style='color: #ffdfa6; margin-right: 5px;'></i>Mål 2025</p></center>\
+        </div>\
+    </div>\
+    <div\
+    <button type='button' class='btn btn-block' data-bs-toggle='modal' href='#exampleModalToggle' style='background:#f1f0f4;white-space:normal;display:inline-flex; margin-top: 1vw; text-align: left;'>\
+        <span class='pull-left'><i class='icon ion-ios-information-outline' style='margin-top: 0px; margin-right: 0.8vw; padding-top: 0px; font-size: 1.5vw;'></i></span><span class='pull-right' style='padding-top: 0.2vw; font-size: 0.9vw;'>Målet beräknas inte nås enligt prognos</span>\
+    </button>\
+    </div>")
+    }
+
+    forecastingA = !forecastingA;
+    
 }
+
+function changeForecastingB() {
+    if (forecastingB == false) {
+        document.getElementById("checkboxID").style.backgroundImage="url(assets/img/prognos-minus-historic.jpg)";
+        document.getElementById("popstar").setAttribute("data-content", "<div class='card-body' style='padding: 0.5vw'>\
+        <h6 class='card-text'><center>Energiförbrukning (MWh/år)</center></h6>\
+        <div class='row' style='margin-top: 2vw; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding: 0px;'>\
+        <div class='col-xl-5' style='margin: 0px; padding: 0px;'>\
+            <center><p style='color: #FFBE4D; font-size: 2.3vw; margin: 0px; padding: 0px;'>6879</p></center>\
+            <center><p style='font-size: 0.82vw;'>Prognos 2025</p></center>\
+        </div>\
+        <div class='col-xl-2' style='margin: 0px; padding: 0px;'>\
+            <center><img src='assets/img/linje.png' style='height: 5vw;'></center>\
+        </div>\
+        <div class='col-xl-5' style='padding: 0vw; margin: 0px;'>\
+            <center><p style='font-size: 2.3vw; margin: 0px; padding: 0px;'>6000</p></center>\
+            <center><p style='font-size: 0.82vw;'><i class='fa-sharp fa-solid fa-star fa-lg' style='color: #ffdfa6; margin-right: 5px;'></i>Mål 2025</p></center>\
+        </div>\
+    </div>\
+    <div\
+    <button type='button' class='btn btn-block' data-bs-toggle='modal' href='#exampleModalToggle' style='background:#f1f0f4;white-space:normal;display:inline-flex; margin-top: 1vw; text-align: left;'>\
+        <span class='pull-left'><i class='icon ion-ios-information-outline' style='margin-top: 0px; margin-right: 0.8vw; padding-top: 0px; font-size: 1.5vw;'></i></span><span class='pull-right' style='padding-top: 0.2vw; font-size: 0.9vw;'>Målet beräknas inte nås enligt prognos</span>\
+    </button>\
+    </div>")
+    } else if (forecastingB == true) {
+        document.getElementById("checkboxID").style.backgroundImage="url(assets/img/prognos-utan-effekt.jpg)";
+        document.getElementById("popstar").setAttribute("data-content", "<div class='card-body' style='padding: 0.5vw'>\
+        <h6 class='card-text'><center>Energiförbrukning (MWh/år)</center></h6>\
+        <div class='row' style='margin-top: 2vw; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding: 0px;'>\
+        <div class='col-xl-5' style='margin: 0px; padding: 0px;'>\
+            <center><p style='color: #dd2400; font-size: 2.3vw; margin: 0px; padding: 0px;'>9945</p></center>\
+            <center><p style='font-size: 0.82vw;'>Prognos 2025</p></center>\
+        </div>\
+        <div class='col-xl-2' style='margin: 0px; padding: 0px;'>\
+            <center><img src='assets/img/linje.png' style='height: 5vw;'></center>\
+        </div>\
+        <div class='col-xl-5' style='padding: 0vw; margin: 0px;'>\
+            <center><p style='font-size: 2.3vw; margin: 0px; padding: 0px;'>6000</p></center>\
+            <center><p style='font-size: 0.82vw;'><i class='fa-sharp fa-solid fa-star fa-lg' style='color: #ffdfa6; margin-right: 5px;'></i>Mål 2025</p></center>\
+        </div>\
+    </div>\
+    <div\
+    <button type='button' class='btn btn-block' data-bs-toggle='modal' href='#exampleModalToggle' style='background:#f1f0f4;white-space:normal;display:inline-flex; margin-top: 1vw; text-align: left;'>\
+        <span class='pull-left'><i class='icon ion-ios-information-outline' style='margin-top: 0px; margin-right: 0.8vw; padding-top: 0px; font-size: 1.5vw;'></i></span><span class='pull-right' style='padding-top: 0.2vw; font-size: 0.9vw;'>Målet beräknas inte nås enligt prognos</span>\
+    </button>\
+    </div>")
+    }
+
+    forecastingB = !forecastingB;
+    
+}
+
+function changeForecastingC() {
+    if (forecastingC == false) {
+        document.getElementById("checkboxID").style.backgroundImage="url(assets/img/prognos-minus-all.jpg)";
+        document.getElementById("popstar").setAttribute("data-content", "<div class='card-body' style='padding: 0.5vw'>\
+        <h6 class='card-text'><center>Energiförbrukning (MWh/år)</center></h6>\
+        <div class='row' style='margin-top: 2vw; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding: 0px;'>\
+        <div class='col-xl-5' style='margin: 0px; padding: 0px;'>\
+            <center><p style='color: #dd2400; font-size: 2.3vw; margin: 0px; padding: 0px;'>9930</p></center>\
+            <center><p style='font-size: 0.82vw;'>Prognos 2025</p></center>\
+        </div>\
+        <div class='col-xl-2' style='margin: 0px; padding: 0px;'>\
+            <center><img src='assets/img/linje.png' style='height: 5vw;'></center>\
+        </div>\
+        <div class='col-xl-5' style='padding: 0vw; margin: 0px;'>\
+            <center><p style='font-size: 2.3vw; margin: 0px; padding: 0px;'>6000</p></center>\
+            <center><p style='font-size: 0.82vw;'><i class='fa-sharp fa-solid fa-star fa-lg' style='color: #ffdfa6; margin-right: 5px;'></i>Mål 2025</p></center>\
+        </div>\
+    </div>\
+    <div\
+    <button type='button' class='btn btn-block' data-bs-toggle='modal' href='#exampleModalToggle' style='background:#f1f0f4;white-space:normal;display:inline-flex; margin-top: 1vw; text-align: left;'>\
+        <span class='pull-left'><i class='icon ion-ios-information-outline' style='margin-top: 0px; margin-right: 0.8vw; padding-top: 0px; font-size: 1.5vw;'></i></span><span class='pull-right' style='padding-top: 0.2vw; font-size: 0.9vw;'>Målet beräknas inte nås enligt prognos</span>\
+    </button>\
+    </div>")
+        
+    } else if (forecastingC == true) {
+        document.getElementById("checkboxID").style.backgroundImage="url(assets/img/prognos-utan-effekt.jpg)";
+        document.getElementById("popstar").setAttribute("data-content", "<div class='card-body' style='padding: 0.5vw'>\
+        <h6 class='card-text'><center>Energiförbrukning (MWh/år)</center></h6>\
+        <div class='row' style='margin-top: 2vw; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding: 0px;'>\
+        <div class='col-xl-5' style='margin: 0px; padding: 0px;'>\
+            <center><p style='color: #dd2400; font-size: 2.3vw; margin: 0px; padding: 0px;'>9945</p></center>\
+            <center><p style='font-size: 0.82vw;'>Prognos 2025</p></center>\
+        </div>\
+        <div class='col-xl-2' style='margin: 0px; padding: 0px;'>\
+            <center><img src='assets/img/linje.png' style='height: 5vw;'></center>\
+        </div>\
+        <div class='col-xl-5' style='padding: 0vw; margin: 0px;'>\
+            <center><p style='font-size: 2.3vw; margin: 0px; padding: 0px;'>6000</p></center>\
+            <center><p style='font-size: 0.82vw;'><i class='fa-sharp fa-solid fa-star fa-lg' style='color: #ffdfa6; margin-right: 5px;'></i>Mål 2025</p></center>\
+        </div>\
+    </div>\
+    <div\
+    <button type='button' class='btn btn-block' data-bs-toggle='modal' href='#exampleModalToggle' style='background:#f1f0f4;white-space:normal;display:inline-flex; margin-top: 1vw; text-align: left;'>\
+        <span class='pull-left'><i class='icon ion-ios-information-outline' style='margin-top: 0px; margin-right: 0.8vw; padding-top: 0px; font-size: 1.5vw;'></i></span><span class='pull-right' style='padding-top: 0.2vw; font-size: 0.9vw;'>Målet beräknas inte nås enligt prognos</span>\
+    </button>\
+    </div>")
+    }
+
+    forecastingC = !forecastingC;
+    
+}
+
 
