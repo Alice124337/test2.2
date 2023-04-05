@@ -44,7 +44,8 @@
                 <div class="row d-xl-flex flex-fill align-items-xl-start" style="margin-bottom: 12px;">
                     <!-- Modul 1: Målöversikt -->
                     <div class="col" style="padding-left: 0px;padding-right: 6px;">
-                        <div class="card" style="height: 43.5vw;">
+                        <div class="row" style="margin: 0px; padding:0px">
+                            <div class="card" style="padding:0vw; margin: 0px; height: 22.5vw;">
                             <div class="card-header" style="text-align: left; padding-top: 0.3vw; padding-bottom: 0.3vw;">
                                 <div class="row d-xl-flex align-items-xl-center">
                                     <div class="col d-lg-flex align-items-lg-center">
@@ -210,7 +211,7 @@
         </div>
     </div>
     <!-- Målöversikt: Benchmarking -->
-    <div class="row">
+    <!-- <div class="row">
         <div class="col">
             <div class="row">
                 <div class="col">
@@ -230,7 +231,7 @@
                     <select class="selectpicker">
                         <option selected>Externt</option>
                         <option disabled>Internt</option>
-                      </select>
+                    </select>
                 </div>
                 <div class="col">
                     <select class="selectpicker" data-size="6" onchange="changeSelect()" data-live-search="true">
@@ -254,7 +255,7 @@
                         <optgroup label="Tappvarmvatten">
                             <option disabled>MWh/årligt antal produktionstimmar</option>
                         </optgroup>
-                      </select>
+                    </select>
                 </div>
             </div>
         </div>
@@ -268,14 +269,88 @@
         <div id="benchmark-info" class="col">
             <p style="color: rgb(33,37,41);font-size: 1vw;text-align: center;margin-bottom: 0px;">Plåt AB:s <strong>energiförbrukning per m<sub><strong>2</strong></sub></strong> är <strong>11% högre än genomsnittet</strong> inom branschen.</p>
         </div>
-    </div>
+    </div> -->
 </div>
-
+</div>
+</div>
+<div class="row" style="margin: 0px; margin-top: 1vw; padding:0px">
+    <div class="card" style="padding:0vw; margin: 0px; height: 22vw;">
+        <div class="card-header" style="text-align: left; padding-top: 0.3vw; padding-bottom: 0.3vw;">
+            <div class="row d-xl-flex align-items-xl-center">
+                <div class="col d-lg-flex align-items-lg-center">
+                    <h1 class="d-xl-flex justify-content-xl-start align-items-xl-center" style="font-family: Roboto, sans-serif;margin-bottom: 0;font-size: 1.6vw; color: black">Benchmark<button class="btn" type="button"><i class="icon ion-ios-information-outline" style="font-size: 1.6vw;"></i></button></h1>
+                </div>
+                <div class="col d-lg-flex d-xl-flex justify-content-lg-end justify-content-xl-end"><button class="btn" type="button"><i class="icon ion-close-round" style="font-size: 1.6vw;"></i></button></div>
+            </div>
+        </div>
+        <div class="card-body" style="width: 706; padding: 1vw;"> 
+            <div class="row">
+                <div class="col">
+                    <!-- <div class="row">
+                        <div class="col">
+                            <h1 class="fw-semibold" style="color: rgb(0,0,0);font-size: 1.32vw; margin-bottom: 0.5vw;">Benchmark</h1>
+                        </div>
+                    </div> -->
+                    <div class="row">
+                        <div class="col-xl-5">
+                            <h1 style="color: rgb(0,0,0);font-size: 0.85vw;">Jämför</h1>
+                        </div>
+                        <div class="col-xl-7">
+                            <h1 style="color: rgb(0,0,0);font-size: 0.85vw;">Nyckeltal</h1>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-xl-5">
+                            <select class="selectpicker">
+                                <option selected>Externt</option>
+                                <option disabled>Internt</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select class="selectpicker" data-size="6" onchange="changeSelect()" data-live-search="true">
+                                <optgroup label="Total">
+                                    <option disabled>MWh/anställd</option>
+                                    <option selected>MWh/m²</option>
+                                    <option disabled>CO₂/anställd</option>
+                                    <option disabled>Andel förnybar energi</option>
+                                    <option>MWh/omsatt TSEK</option>
+                                </optgroup>
+                                <optgroup label="Lokalvärme">
+                                    <option disabled>MWh/m²</option>
+                                </optgroup>
+                                <optgroup label="Lokalkyla">
+                                    <option disabled>MWh/m²</option>
+                                </optgroup>
+                                <optgroup label="Ventilation">
+                                    <option disabled>MWh/m²</option>
+                                    <option disabled>MWh/årligt antal produktionstimmar</option>
+                                </optgroup>
+                                <optgroup label="Tappvarmvatten">
+                                    <option disabled>MWh/årligt antal produktionstimmar</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 0.5vw; margin-bottom: 0.5vw;">
+                <div id="benchmark" class="col">
+                    <img src="assets\img\benchmark-co2-externt.JPG" class="img-fluid" >
+                </div>
+            </div>
+            <div class="row">
+                <div id="benchmark-info" class="col">
+                    <p style="color: rgb(33,37,41);font-size: 1vw;text-align: center;margin-bottom: 0px;">Plåt AB:s <strong>energiförbrukning per m<sub><strong>2</strong></sub></strong> är <strong>11% högre än genomsnittet</strong> inom branschen.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+                     
+ </div>
 
                     <div class="col" style="padding-right: 0px;padding-left: 6px;padding-bottom: 0px;margin-bottom: -1px;">
-                        <div class="card" style="height: 43.5vw;">
+                        <div class="card" style="height: 45.5vw;">
                             <div class="card-header" style="text-align: left; padding-top: 0.3vw; padding-bottom: 0.3vw;">
                                 <div class="row d-xl-flex align-items-xl-center">
                                     <div class="col-xl-10 col-xxl-6 offset-xxl-0 d-lg-flex align-items-lg-center">
@@ -756,8 +831,8 @@
 
                                                                         
                                                                         for (let i = 0; i < 6; i ++){
-                                                                            ctx.fillText('2020', chart.getDatasetMeta(3).data[i].x, chart.getDatasetMeta(3).data[i].y - 15);
-                                                                            ctx.fillText('2019', chart.getDatasetMeta(6).data[i].x, chart.getDatasetMeta(6).data[i].y - 15);
+                                                                            ctx.fillText('2019', chart.getDatasetMeta(3).data[i].x, chart.getDatasetMeta(3).data[i].y - 15);
+                                                                            ctx.fillText('2020', chart.getDatasetMeta(6).data[i].x, chart.getDatasetMeta(6).data[i].y - 15);
                                                                         }
                                                                     }
                                                                 }
@@ -1146,7 +1221,7 @@
                                             <i class="fa-sharp fa-solid fa-chalkboard-user" style="margin-right:1vw"></i> <p style="color:#73777F;font-size: 0.85vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;">  TJA</p>
                                         </div>
                                     </div> -->
-                                    <div class="alert alert-secondary" style="background-color:#fefefe; display:flex; font-size: 1.2vw; width:34%; padding: 0.1vw;" role="alert">
+                                    <div class="alert alert-secondary" style="background-color:#fefefe; display:flex; font-size: 1.2vw; width:35%; padding: 0.1vw;" role="alert">
                                         <div class="col" style="width: 2vw; ">
                                             <div class="row" >
                                                 <p style="color:#42474e;font-size: 0.85vw;text-align: left;margin-bottom: 0px; margin-top: 0vw; padding-left: 0.5vw;"> <i class="fa-solid fa-star"></i> kWh/producerad enhet</p>
@@ -1157,13 +1232,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                        <div class="col-2" style="display:grid; justify-content:center; align-content: center; margin-right: 1vw ;  ">
+                                        <div class="col-2" style="display:grid; justify-content:center; align-content: center; margin-right: 1.4vw ;  ">
                                             <button type="button" class="btn btn-danger btn-sm" style="background-color: #ED9080;border-color: #ED9080; color: #711301"  disabled>+ 236%</button>
                                         </div>
 
                                     </div>
 
-                                    <div class="alert alert-secondary" style="background-color:#fefefe; display:flex; font-size: 1.2vw; width:30%; padding: 0.1vw; margin-left: 1vw;" role="alert">
+                                    <div class="alert alert-secondary" style="background-color:#fefefe; display:flex; font-size: 1.2vw; width:32%; padding: 0.1vw; margin-left: 1vw;" role="alert">
                                         <div class="col" style="width: 2vw; ">
                                             <div class="row" >
                                                 <p style="color:#42474e;font-size: 0.85vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;  padding-left: 0.5vw;"> <i class="fa-solid fa-star"></i> kWh/ton</p>
@@ -1174,7 +1249,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                        <div class="col-2" style="display:grid; justify-content:center; align-content: center; margin-right: 0.5vw; margin-left: 0px;  ">
+                                        <div class="col-2" style="display:grid; justify-content:center; align-content: center; margin-right: 0.8vw; margin-left: 0px;  ">
                                             <button type="button" class="btn btn-danger btn-sm " style="background-color: #A3C780;border-color: #A3C780; color: #053C00" disabled>- 1%</button>
                                         </div>
 

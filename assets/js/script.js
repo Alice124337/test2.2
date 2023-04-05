@@ -741,9 +741,9 @@ let forecastingC = false;
                 ctx.textAlign= 'center';
                 
                 for (let i = 0; i < 3; i ++){
-                    ctx.fillText('2020', chart.getDatasetMeta(4).data[i].x, chart.getDatasetMeta(4).data[i].y - 15);
+                    ctx.fillText('2019', chart.getDatasetMeta(4).data[i].x, chart.getDatasetMeta(4).data[i].y - 15);
                     
-                    ctx.fillText('2019', chart.getDatasetMeta(7).data[i].x, chart.getDatasetMeta(7).data[i].y - 15);
+                    ctx.fillText('2020', chart.getDatasetMeta(7).data[i].x, chart.getDatasetMeta(7).data[i].y - 15);
                 }
             }
         }
@@ -935,9 +935,9 @@ let forecastingC = false;
               ctx.textAlign= 'center';
               
               for (let i = 0; i < 6; i ++){
-                  ctx.fillText('2020', chart.getDatasetMeta(3).data[i].x, chart.getDatasetMeta(3).data[i].y - 15);
+                  ctx.fillText('2019', chart.getDatasetMeta(3).data[i].x, chart.getDatasetMeta(3).data[i].y - 15);
                   
-                  ctx.fillText('2019', chart.getDatasetMeta(6).data[i].x, chart.getDatasetMeta(6).data[i].y - 15);
+                  ctx.fillText('2020', chart.getDatasetMeta(6).data[i].x, chart.getDatasetMeta(6).data[i].y - 15);
               }
           }
       }
