@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-sankey.min.js"></script>
+
+
 
     <title>Prototyp</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">    
@@ -536,19 +541,19 @@
                                                 <h2 style="color: white;" class="accordion-header" role="tab"><button id="bigdrop" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-1" aria-expanded="true" aria-controls="accordion-1 .item-1">Tidsperiod</button></h2>
                                                 <div class="accordion-collapse collapse show item-1" role="tabpanel" data-bs-parent="#accordion-1">
                                                     <div class="accordion-body" style="margin: 0vw;padding:0.65vw">
-                                                        <div class="btn-group" role="group"><button id="yearbutton" class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;">År</button><button class="btn btn-primary" type="button" style="background: #d6e4f7;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;">Månad</button><button class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;">Vecka</button><button class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;">Dag</button></div>
+                                                        <div class="btn-group" role="group" style="width:100%"><button id="yearbutton" class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;">År</button><button class="btn btn-primary" type="button" style="background: #d6e4f7;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;">Månad</button><button class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;">Vecka</button><button class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;">Dag</button></div>
                                                         
                                                         <div class="input-group input-group-sm mb-3">
                                                             <span style="background-color:#d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;" class="input-group-text"><i class="icon ion-android-menu" style="font-size: 0.85vw;"></i></button></span>
                                                             <input style="background-color: #d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;" class="form-control form-control-sm" type="text" placeholder="Sök efter tidsperiod">                                                       
                                                          </div>
                                                         <ul class="list-group list-group-flush">
-                                                            <li id="bigliitem" class="list-group-item">Januari 2020<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
                                                             <li id="bigliitem" class="list-group-item">Januari 2019<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
-                                                            <li id="bigliitem" class="list-group-item">Februari 2020<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
                                                             <li id="bigliitem" class="list-group-item">Februari 2019<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
-                                                            <li id="bigliitem" class="list-group-item">Mars 2020<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
                                                             <li id="bigliitem" class="list-group-item">Mars 2019<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
+                                                            <li id="bigliitem" class="list-group-item">Januari 2020<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
+                                                            <li id="bigliitem" class="list-group-item">Februari 2020<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
+                                                            <li id="bigliitem" class="list-group-item">Mars 2020<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -671,6 +676,8 @@
 
                                                         <script>
                                                             // const big = document.getElementById('bigChart');
+                                                            const sumArray = [2300,2600, 2700, 2600,2400,3100,2400,2700,2600,2600,2000,2800];
+                                                            const indexArray = [0,0,0,0,1,1,1]
                                                             const data = {
                                                                 labels: ['Slipning', 'Pumpning', 'Slipning', 'Pumpning', 'Slipning', 'Pumpning'],
                                                                 datasets: [
@@ -747,13 +754,9 @@
                                                                         ctx.fillText('Feb', x.getPixelForValue( 2.5), chart.chartArea.bottom + 30)
                                                                         ctx.fillText('Mar', x.getPixelForValue(4.5), chart.chartArea.bottom + 30)
 
-                                                                        ctx.font = '0.85vw roboto';
-                                                                        ctx.fillStyle = '#333333';
-                                                                        ctx.textAlign= 'center';
                                                                         
                                                                         for (let i = 0; i < 6; i ++){
                                                                             ctx.fillText('2020', chart.getDatasetMeta(3).data[i].x, chart.getDatasetMeta(3).data[i].y - 15);
-                                                                            
                                                                             ctx.fillText('2019', chart.getDatasetMeta(6).data[i].x, chart.getDatasetMeta(6).data[i].y - 15);
                                                                         }
                                                                     }
@@ -775,6 +778,7 @@
                                                                          x: {
                                                                              stacked:true, 
                                                                             display:true, 
+
                                                                         }
                                                                     }, 
                                                                      events: ['mousemove','click'],
@@ -795,6 +799,14 @@
                                                                                 pointStyle:'circle', 
                                                                                 padding: 35,
                                                                             }
+                                                                     },
+                                                                     tooltip: {
+                                                                        callbacks:{
+                                                                            afterBody: function(context){
+                                                                                return "Total förbrukning: " + sumArray[context[0].dataIndex*2 + indexArray[context[0].datasetIndex]];
+                                                                            }
+                                                                        }
+
                                                                      },           
 
                                                                 }, 
