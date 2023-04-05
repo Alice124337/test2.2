@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-sankey.min.js"></script>
+
+
 
     <title>Prototyp</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -19,6 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+    
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap3.min.css">
 </head>
@@ -535,19 +541,19 @@
                                                 <h2 style="color: white;" class="accordion-header" role="tab"><button id="bigdrop" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-1" aria-expanded="true" aria-controls="accordion-1 .item-1">Tidsperiod</button></h2>
                                                 <div class="accordion-collapse collapse show item-1" role="tabpanel" data-bs-parent="#accordion-1">
                                                     <div class="accordion-body" style="margin: 0vw;padding:0.65vw">
-                                                        <div class="btn-group" role="group"><button id="yearbutton" class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;">År</button><button class="btn btn-primary" type="button" style="background: #d6e4f7;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;">Månad</button><button class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;">Vecka</button><button class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;">Dag</button></div>
-
+                                                        <div class="btn-group" role="group" style="width:100%"><button id="yearbutton" class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;">År</button><button class="btn btn-primary" type="button" style="background: #d6e4f7;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;">Månad</button><button class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;">Vecka</button><button class="btn btn-primary" type="button" style="background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;">Dag</button></div>
+                                                        
                                                         <div class="input-group input-group-sm mb-3">
                                                             <span style="background-color:#d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;" class="input-group-text"><i class="icon ion-android-menu" style="font-size: 0.85vw;"></i></button></span>
                                                             <input style="background-color: #d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;" class="form-control form-control-sm" type="text" placeholder="Sök efter tidsperiod">
                                                          </div>
                                                         <ul class="list-group list-group-flush">
-                                                            <li id="bigliitem" class="list-group-item">Januari 2020<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
                                                             <li id="bigliitem" class="list-group-item">Januari 2019<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
-                                                            <li id="bigliitem" class="list-group-item">Februari 2020<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
                                                             <li id="bigliitem" class="list-group-item">Februari 2019<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
-                                                            <li id="bigliitem" class="list-group-item">Mars 2020<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
                                                             <li id="bigliitem" class="list-group-item">Mars 2019<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
+                                                            <li id="bigliitem" class="list-group-item">Januari 2020<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
+                                                            <li id="bigliitem" class="list-group-item">Februari 2020<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
+                                                            <li id="bigliitem" class="list-group-item">Mars 2020<button class="btn" type="button" style="padding:0px; float: right;"><i class="icon ion-close-round" style="font-size: 0.85vw;"></i></button></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -670,6 +676,8 @@
 
                                                         <script>
                                                             // const big = document.getElementById('bigChart');
+                                                            const sumArray = [2300,2600, 2700, 2600,2400,3100,2400,2700,2600,2600,2000,2800];
+                                                            const indexArray = [0,0,0,0,1,1,1]
                                                             const data = {
                                                                 labels: ['Slipning', 'Pumpning', 'Slipning', 'Pumpning', 'Slipning', 'Pumpning'],
                                                                 datasets: [
@@ -746,13 +754,9 @@
                                                                         ctx.fillText('Feb', x.getPixelForValue( 2.5), chart.chartArea.bottom + 30)
                                                                         ctx.fillText('Mar', x.getPixelForValue(4.5), chart.chartArea.bottom + 30)
 
-                                                                        ctx.font = '0.85vw roboto';
-                                                                        ctx.fillStyle = '#333333';
-                                                                        ctx.textAlign= 'center';
-
+                                                                        
                                                                         for (let i = 0; i < 6; i ++){
                                                                             ctx.fillText('2020', chart.getDatasetMeta(3).data[i].x, chart.getDatasetMeta(3).data[i].y - 15);
-
                                                                             ctx.fillText('2019', chart.getDatasetMeta(6).data[i].x, chart.getDatasetMeta(6).data[i].y - 15);
                                                                         }
                                                                     }
@@ -772,8 +776,9 @@
                                                                             stacked:true
                                                                          },
                                                                          x: {
-                                                                             stacked:true,
-                                                                            display:true,
+                                                                             stacked:true, 
+                                                                            display:true, 
+
                                                                         }
                                                                     },
                                                                      events: ['mousemove','click'],
@@ -795,6 +800,14 @@
                                                                                 padding: 35,
                                                                             }
                                                                      },
+                                                                     tooltip: {
+                                                                        callbacks:{
+                                                                            afterBody: function(context){
+                                                                                return "Total förbrukning: " + sumArray[context[0].dataIndex*2 + indexArray[context[0].datasetIndex]];
+                                                                            }
+                                                                        }
+
+                                                                     },           
 
                                                                 },
                                                                     responsive: true,
@@ -839,15 +852,33 @@
                             <div class="card-header" style="text-align: left; padding-top: 0.3vw; padding-bottom: 0.3vw;">
                                 <div class="row d-xl-flex align-items-xl-center">
                                     <div class="col d-lg-flex align-items-lg-center">
-                                        <h1 class="d-xl-flex justify-content-xl-start align-items-xl-center" style="font-family: Roboto, sans-serif;margin-bottom: 0;font-size: 1.6vw; color: black">Årshjul<button class="btn" type="button"><i class="icon ion-ios-information-outline" style="font-size: 1.6vw;"></i></button></h1>
+                                        <h1 class="d-xl-flex justify-content-xl-start align-items-xl-center" style="font-family: Roboto, sans-serif;margin-bottom: 0;font-size: 1.6vw; color: black">Årshjul<button class="btn" type="button" data-toggle='modal' data-target='#wheelInfo'><i class="icon ion-ios-information-outline" style="font-size: 1.6vw;"></i></button></h1>
                                     </div>
                                     <div class="col d-lg-flex d-xl-flex justify-content-lg-end justify-content-xl-end"><button class="btn" type="button"><i class="icon ion-close-round" style="font-size: 1.6vw;"></i></button></div>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                            <div class="col-xl-10" style="margin-bottom: 15px;">
-                                                <select class="selectpicker" multiple data-selected data-none-selected-text="Välj person" style="margin-right: 1vw;">
+                                    <div class="row" style="padding-bottom: 1.5vw;">
+                                    <!-- ÅR Knappar  -->
+                                        <div class="col-xxl-7" style="font-size: 0.85vw;width: 100%;">
+                                            <div class="row d-xl-flex" style="font-size: 0.85vw;margin-bottom: 3px;">
+                                                <div class="col-xl-3 d-flex flex-column-reverse" style="padding-right: 61px;margin-right: -41px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-left: 0px;margin-right: -9px;background: #D6E4F7;">År</button></div>
+                                                <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >2017</button></div>
+                                                <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >2018</button></div>
+                                                <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >2019</button></div>
+                                                <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >2020</button></div>
+                                                <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" id="yearannual21" onclick="changeAnnual()" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >2021</button></div>
+                                                <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button"  style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >2022</button></div>
+                                                <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" id="yearannual22" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" >2023</button></div>
+                                                <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" >2024</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                            <!-- <div class="col-xl-10" style="margin-bottom: 15px;">
+                                                <select class="selectpicker" multiple data-selected data-none-selected-text="Välj person" style="margin-right: 1vw; padding-left: 0vw">
                                                     <option selected>Narvik</option>
                                                     <option selected>Oslo</option>
                                                     <option selected>Sveg</option>
@@ -857,48 +888,126 @@
                                                     <option data-icon="fa-solid fa-circle purple" selected>Teknisk Åtgärd</option>
                                                     <option data-icon="fa-solid fa-circle grey" selected>Övrigt</option>
                                                 </select>
-                                            </div>
+                                            </div> -->
                                     <div class="col-xl-2 justify-content-xl-end align-items-xl-end" style="text-align: right;">
-                                        <div class="btn-group btn-group-sm justify-content-xl-end" role="group" style="padding-top: 6px;margin-top: -6px;padding-bottom: 7px;margin-bottom: -1px;padding-left: 0px;"><button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xl-center align-items-xxl-center" type="button" style="padding-top: 2px;padding-left: 1px;padding-right: 1px;margin-right: -1px;margin-left: -1px;background: rgb(214,228,247);border-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-dashed" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                            <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95"></path>
-                                            <path d="M3.69 8.56a9 9 0 0 0 -.69 3.44"></path>
-                                            <path d="M3.69 15.44a9 9 0 0 0 1.95 2.92"></path>
-                                            <path d="M8.56 20.31a9 9 0 0 0 3.44 .69"></path>
-                                            <path d="M15.44 20.31a9 9 0 0 0 2.92 -1.95"></path>
-                                            <path d="M20.31 15.44a9 9 0 0 0 .69 -3.44"></path>
-                                            <path d="M20.31 8.56a9 9 0 0 0 -1.95 -2.92"></path>
-                                            <path d="M15.44 3.69a9 9 0 0 0 -3.44 -.69"></path>
-                                         </svg></button><button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xl-center align-items-xxl-center" type="button" style="padding-right: 0px;padding-left: 1px;background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" class="d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;">
+                                        <!-- <div class="btn-group btn-group-sm justify-content-xl-end" role="group" style="padding-top: 6px;margin-top: -6px;padding-bottom: 7px;margin-bottom: -1px;padding-left: 0px;">
+                                            <button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xl-center align-items-xxl-center" type="button" style="padding-top: 2px;padding-left: 1px;padding-right: 1px;margin-right: -1px;margin-left: -1px;background: rgb(214,228,247);border-color: rgb(214,228,247);">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-dashed" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                    <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95"></path>
+                                                    <path d="M3.69 8.56a9 9 0 0 0 -.69 3.44"></path>
+                                                    <path d="M3.69 15.44a9 9 0 0 0 1.95 2.92"></path>
+                                                    <path d="M8.56 20.31a9 9 0 0 0 3.44 .69"></path>
+                                                    <path d="M15.44 20.31a9 9 0 0 0 2.92 -1.95"></path>
+                                                    <path d="M20.31 15.44a9 9 0 0 0 .69 -3.44"></path>
+                                                    <path d="M20.31 8.56a9 9 0 0 0 -1.95 -2.92"></path>
+                                                    <path d="M15.44 3.69a9 9 0 0 0 -3.44 -.69"></path>
+                                                </svg>
+                                            </button>
+                                            <button class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xl-center align-items-xxl-center" type="button" style="padding-right: 0px;padding-left: 1px;background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" class="d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;">
                                                     <path d="M3 4C3 3.44772 3.44772 3 4 3H16C16.5523 3 17 3.44772 17 4V6C17 6.55228 16.5523 7 16 7H4C3.44772 7 3 6.55228 3 6V4Z" fill="currentColor"></path>
                                                     <path d="M3 10C3 9.44771 3.44772 9 4 9H10C10.5523 9 11 9.44771 11 10V16C11 16.5523 10.5523 17 10 17H4C3.44772 17 3 16.5523 3 16V10Z" fill="currentColor"></path>
                                                     <path d="M14 9C13.4477 9 13 9.44771 13 10V16C13 16.5523 13.4477 17 14 17H16C16.5523 17 17 16.5523 17 16V10C17 9.44771 16.5523 9 16 9H14Z" fill="currentColor"></path>
-                                                </svg></button></div>
+                                                </svg>
+                                            </button>
+                                        </div> -->
                                     </div>
                                 </div>
-                                <div class="row d-xl-flex justify-content-xl-center align-items-xl-center">
-                                    <div class="col-xl-6 d-xl-flex" style="background: url(&quot;assets/img/wheel4.jpg&quot;) center / contain no-repeat, rgba(255,255,255,0);border-radius: 0px;height: 23vw;width: 23vw;">
-                                        <div class="col d-xl-flex justify-content-xl-start align-items-xl-center" style="margin-left: 16vw; margin-top:9vw">
-                                            <!-- <button class="btn btn-info" style="height: 13px; width: 13px; padding: 0px; border-radius: 10px;" type="button" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"></button> -->
-                                            <input type="button" style="height: 1.13vw; width: 1.13vw; padding: 0px; border-radius: 10px; background-color:#6750A4" class="btn btn-secondary" data-html="true" title="
-                                                <h5 class='card-title' style='margin:0;'>Pumpoptimering
+                                <div class="row d-xl-flex justify-content-xl align-items-xl">
+                                    <div class="col-4">
+                                        <div class="row">
+                                            <select class="selectpicker" multiple data-selected data-none-selected-text="Välj person" style="margin-right: 1vw; padding-left: 0vw;">
+                                                <option selected>Narvik</option>
+                                                <option selected>Oslo</option>
+                                                <option selected>Sveg</option>
+                                            </select>
+                                        </div>
+                                        <div class="row" style="margin-top:0.5vw">
+                                            <select class="selectpicker" multiple data-selected data-none-selected-text="Välj kategori">
+                                                <option data-icon="fa-solid fa-circle blue" selected>Lagefterlevnad</option>
+                                                <option data-icon="fa-solid fa-circle purple" selected>Teknisk Åtgärd</option>
+                                                <option data-icon="fa-solid fa-circle grey" selected>Övrigt</option>
+                                            </select>
+                                        </div>
+                                        <div class="row" style="margin-top:2vw">
+                                            <div class="col d-xl-flex justify-content-xl-start align-items-xl-center"><button id="selectbtn" class="btn btn-info" style="background-color: #00629F; color: white; width:97%" type="button" onclick="newActivity()">Ny aktivitet</button></div>
+                                        </div>
+                                        
 
-                                                <img class='img-fluid' src='assets/img/namelogga.jpg' style='height: 2.3vw; width: 2.3vw; border-radius: 2vw; margin-top:-0.2vw; float: right;padding-bottom:0vw'></h5>"
+                                    </div>
+                                    <div class="col-xl-7 d-xl-flex"  id="annualDiv" style="background: url(&quot;assets/img/wheel4.jpg&quot;) center / contain no-repeat, rgba(255,255,255,0);border-radius: 0px;height: 29vw;width: 29vw; margin-left:2vw;">
+                                        <div class="col d-xl-flex justify-content-xl-start align-items-xl-center" style="margin-left: 19.5vw; margin-top:9vw">
+                                            <!-- <button class="btn btn-info" style="height: 13px; width: 13px; padding: 0px; border-radius: 10px;" type="button" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"></button> -->
+                                            <input type="button" id="marbtn" style="height: 1.23vw; width: 1.23vw; padding: 0px; border-radius: 10px; background-color:#6750A4" class="btn btn-secondary" data-html="true" title="                                                
+                                                <h5 class='card-title' style='margin:0;'>Pumpoptimering      
+                                                <img class='img-fluid' src='assets/img/namelogga.jpg' style='height: 2.3vw; width: 2.3vw; border-radius: 2vw; margin-top:-0.2vw; float: right;padding-bottom:0vw'></h5>" 
                                                 data-content="
                                                 <div class='card-body' style='padding: 0.5vw'>
-
                                                 <h6 class='card-text'>Optimering av kylpumpar i Narvik</h6>
-                                                <p >Kostnad: 30 TSEK<br>
-                                                Tidsåtgång: 30 h<br>
+                                                <p >
                                                 Klart: 2023-04-01</p>
+                                                <table class='table'>
+                                                    <thead>
+                                                      <tr class='table-primary'>
+                                                        <td scope='col'></td>
+                                                        <td scope='col'>Utfall</td>
+                                                        <td scope='col'>Prognos</td>
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                      <tr>
+                                                        <td>Kostnad<br>(TSEK)</td>
+                                                        <td>-</td>
+                                                        <td>30</td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td>Tid (h)</td>
+                                                        <td>-</td>
+                                                        <td>30</td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
                                                 <a class='btn btn-primary' data-toggle='modal' data-target='#yearlyModal'>Mer Info</a>
                                             </div>" data-toggle="popover"/>
+
+                                            <input type="button" id="julbtn" style="height: 1.23vw; width: 1.23vw; padding: 0px; margin-top: 10.2vw; margin-left: -9vw;border-radius: 10px; background-color:#00629F; display: none" class="btn btn-secondary" data-html="true" title="                                                
+                                            <h5 class='card-title' style='margin:0;'>Energimätning      
+                                            
+                                            <img class='img-fluid' src='assets/img/namelogga.jpg' style='height: 2.3vw; width: 2.3vw; border-radius: 2vw; margin-top:-0.2vw; float: right;padding-bottom:0vw'></h5>" 
+                                            data-content="
+                                            <div class='card-body' style='padding: 0.5vw'>
+                                            <h6 class='card-text'>Energimätning i Narvik</h6>
+                                            Klart: 2022-06-20</p>
+                                            <table class='table'>
+                                            <thead>
+                                                <tr class='table-primary'>
+                                                  <td scope='col'></td>
+                                                  <td scope='col'>Utfall</td>
+                                                  <td scope='col'>Prognos</td>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr>
+                                                  <td>Kostnad<br>(TSEK)</td>
+                                                  <td style='color:#DD2400'>42</td>
+                                                  <td>40</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Tid (h)</td>
+                                                  <td style='color:#DD2400'>21</td>
+                                                  <td>20</td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                            <a class='btn btn-primary' data-toggle='modal' data-target='#yearlyModal2'>Mer Info</a>
+                                        </div>" data-toggle="popover"/>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col d-xl-flex justify-content-xl-start align-items-xl-center"><button id="selectbtn" class="btn btn-info" style="background-color: #00629F; color: white" type="button" onclick="newActivity()">Ny aktivitet</button></div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -920,9 +1029,9 @@
                                 <h6>Tidsram</h6>
                                 <p style="color:#73777F;font-size: 0.85vw;text-align: left;margin-top: 0vw;">2023-01-01 – 2023-02-01 </p>
                                 <h6>Kostnad</h6>
-                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;">40 TSEK</p>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;">30 TSEK</p>
                                 <h6>Tidsåtgång</h6>
-                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;">300 h</p>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;">30 h</p>
                                 <h6>Ansvarig</h6>
                                 <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;">Alice Elkjaer, Projektledare huvudkontoret i Narvik <br>
                                     A.E@mail.com, 0722 22 22 22</p>
@@ -933,6 +1042,63 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" >Ändra</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="modal fade" id="yearlyModal2"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9999">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel" style="color: black;">Energimätning</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div id="yearlyModal2" class="modal-body">
+                                <h6>Projektbeskrivning</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;">Mätning i Narviks fabriksanläggning som ligger till grund för årets energikartläggning. </p>
+                                <h6>Kategori</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left;margin-top: 0vw;">Lagefterlevnad</p>
+                                <h6>Tidsram</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left;margin-top: 0vw;">2022-06-20 – 2022-06-20 </p>
+                                <h6>Kostnad</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;">40 TSEK</p>
+                                <h6>Tidsåtgång</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;">20 h</p>
+                                <h6>Ansvarig</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;">Alice Elkjaer, Projektledare huvudkontoret i Narvik <br>
+                                    A.E@mail.com, 0722 22 22 22</p>
+                                <h6>Länkar</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;"> <a style="color:#00629F" href="url"> Projektplan </a><br> <a style="color:#00629F" href="url"> Budget </a><br> <a style="color:#00629F" href="url"> Riskhanteringsplan </a></p>
+                                <h6>Kommentarer</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;">Försenad aktivitet, flyttad från 2022-05-10</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" >Ändra</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="modal fade" id="wheelInfo"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9999">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel" style="color: black;">Info årshjul</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div id="wheelInfo" class="modal-body">
+                                <h6>Beskrivning</h6>
+                                <p style="color:#73777F;font-size: 0.85vw;text-align: left; margin-top: 0vw;">Årshjulet visualiserar vilka aktiviteter som genomförts eller ska genomföras under ett kalenderår. Du kan klicka på en aktivitet i hjulet för att få veta mer om aktiviteten. Via filtreringsfunktionen kan du välja vilka anläggningar, samt vilken typ av aktiviteter du vill kolla på. Aktiviteterna delas in i tre huvudsakliga kategorier: lagefterlevnad, teknisk åtgärd och övrigt. Lagefterlevnad syftar till de aktiviteter som organisationen måste genomföra enligt lag under ett kalenderår. Teknisk åtgärd syftar till underhållsaktiviteter och andra tekniska åtgärder. Det är även möjligt att skapa nya aktiviteter via 'Ny aktivitet'- knappen.  </p>
+                            </div>
+                            <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
                             </div>
                           </div>
@@ -954,26 +1120,26 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div class="row"><div class="row" style="padding-bottom: 3px;">
+                                <div class="row">
+                                    <div class="row" style="padding-bottom: 3px;">
 
-    <!-- ÅR Knappar  -->
-    <div class="col-xxl-7" style="font-size: 0.85vw;width: 100%;">
-        <div class="row d-xl-flex" style="font-size: 0.85vw;margin-bottom: 3px;">
-            <div class="col-xl-3 d-flex flex-column-reverse" style="padding-right: 61px;margin-right: -41px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-left: 0px;margin-right: -9px;background: #D6E4F7;">År</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2017</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2018</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2019</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2020</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2021</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="YSelectBudget(this)">2022</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2023</button></div>
-            <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2024</button></div>
-        </div>
-
-    </div>
-</div>
-</div>
-
+                                    <!-- ÅR Knappar  -->
+                                        <div class="col-xxl-7" style="font-size: 0.85vw;width: 100%;">
+                                            <div class="row d-xl-flex" style="font-size: 0.85vw;margin-bottom: 3px;">
+                                                <div class="col-xl-3 d-flex flex-column-reverse" style="padding-right: 61px;margin-right: -41px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-left: 0px;margin-right: -9px;background: #D6E4F7;">År</button></div>
+                                                <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2017</button></div>
+                                                <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2018</button></div>
+                                                <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2019</button></div>
+                                                <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2020</button></div>
+                                                <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2021</button></div>
+                                                <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;" onclick="YSelectBudget(this)">2022</button></div>
+                                                <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2023</button></div>
+                                                <div class="col d-flex flex-column-reverse justify-content-start" style="font-size: 0.85vw;margin-left: -9px;padding-left: 8px;margin-right: -8px;"><button class="btn btn-sm" type="button" style="font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;" onclick="YSelectBudget(this)">2024</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 <div class="row" style="margin-left: 0.1vw; margin-top: 1.4vw; margin-bottom: 1vw; ">
                                     <!-- <div class="col">
                                         <div class="alert alert-secondary" style="background-color:#fefefe; display: flex; font-size: 1.2vw; margin-left: 0vw" role="alert">
@@ -1022,12 +1188,15 @@
                                             <button id="buttonChangeGraph" class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xxl-center" type="button" style="background: rgb(214,228,247);border-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="d-xxl-flex align-items-xxl-center" style="font-size: 1.6vw;color: #0f1d2a;">
                                                     <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                                     <path d="M160 80C160 53.49 181.5 32 208 32H240C266.5 32 288 53.49 288 80V432C288 458.5 266.5 480 240 480H208C181.5 480 160 458.5 160 432V80zM0 272C0 245.5 21.49 224 48 224H80C106.5 224 128 245.5 128 272V432C128 458.5 106.5 480 80 480H48C21.49 480 0 458.5 0 432V272zM400 96C426.5 96 448 117.5 448 144V432C448 458.5 426.5 480 400 480H368C341.5 480 320 458.5 320 432V144C320 117.5 341.5 96 368 96H400z"></path>
-                                                </svg></button>
+                                                </svg>
+                                            </button>
                                                 <button class="btn btn-primary d-xl-flex d-xxl-flex align-items-xxl-center" type="button" style="background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);" onclick="changeBudgetTable(this)"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" class="d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;">
                                                     <path d="M3 4C3 3.44772 3.44772 3 4 3H16C16.5523 3 17 3.44772 17 4V6C17 6.55228 16.5523 7 16 7H4C3.44772 7 3 6.55228 3 6V4Z" fill="currentColor"></path>
                                                     <path d="M3 10C3 9.44771 3.44772 9 4 9H10C10.5523 9 11 9.44771 11 10V16C11 16.5523 10.5523 17 10 17H4C3.44772 17 3 16.5523 3 16V10Z" fill="currentColor"></path>
                                                     <path d="M14 9C13.4477 9 13 9.44771 13 10V16C13 16.5523 13.4477 17 14 17H16C16.5523 17 17 16.5523 17 16V10C17 9.44771 16.5523 9 16 9H14Z" fill="currentColor"></path>
-                                                </svg></button></div>
+                                                </svg>
+                                            </button>
+                                        </div>
                                         </div>
                                 </div>
                                 <!-- MWH/TSEK/kgCO" Knappar  -->
@@ -1115,43 +1284,6 @@
                                 </div> -->
                             </div>
 
-                            <!-- <div class="row" style="margin-left: 0vw;">
-
-                                <div class="alert alert-secondary" style="background-color:#fefefe; display:flex; font-size: 1.2vw; width:37%; padding: 0.5vw; " role="alert">
-                                    <div class="col" style="width: 2vw; ">
-                                        <div class="row" >
-                                            <p style="color:#42474e;font-size: 0.85vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;"> <i class="fa-solid fa-star"></i> kWh/producerad enhet</p>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col" style="display:flex">
-                                                <p style="color:#73777F;font-size: 0.75vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;">Uppmätt värde: <p style="color:black;font-size: 0.75vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;"> 13.6 [5,6]</p> </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                    <div class="col-2" style="display:grid; justify-content:center; align-content: center; margin-right: 1vw; margin-left: 0vw; ">
-                                        <button type="button" class="btn btn-danger btn-sm"  disabled>+ 236%</button>
-                                    </div>
-
-                                </div>
-
-                                <div class="alert alert-secondary" style="background-color:#fefefe; display:flex; font-size: 1.2vw; width:37%; padding: 0.5vw; margin-left: 2vw;" role="alert">
-                                    <div class="col" style="width: 2vw; ">
-                                        <div class="row" >
-                                            <p style="color:#42474e;font-size: 0.85vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;"> <i class="fa-solid fa-star"></i> kWh/ton</p>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col" style="display:flex">
-                                                <p style="color:#73777F;font-size: 0.75vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;">Uppmätt värde: <p style="color:black;font-size: 0.75vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;"> 13.6 [5,6]</p> </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                    <div class="col-2" style="display:grid; justify-content:center; align-content: center; margin-right: 1vw; margin-left: 0vw; ">
-                                        <button type="button" class="btn btn-danger btn-sm"  disabled>+ 236%</button>
-                                    </div>
-
-                                </div>
-
-                            </div> -->
                                 <div class="row" id="budgetTextrow" >
                                 <!-- Footer  -->
                                     <div class="col" style="margin-top:6px">

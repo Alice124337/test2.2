@@ -8,6 +8,17 @@ let forecastingC = false;
       console.log("loaded");
     }
 
+    function changeTimeVar(){
+
+        if (document.getElementById("flexRadioDefault1timevar").checked){
+            changeToEfectFromVar();
+        } else {
+            changeToEfectVAR();
+        }
+
+        
+    }
+
     // function to change the accordion to the reduced version used in sankey and efect 
     function reducedAcordion(){
       document.getElementById("accordion-1").innerHTML= "\
@@ -15,23 +26,85 @@ let forecastingC = false;
         <h2 style='color: white;' class='accordion-header' role='tab'><button id='bigdrop' class='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#accordion-1 .item-1' aria-expanded='true' aria-controls='accordion-1 .item-1'>Tidsperiod</button></h2>\
         <div class='accordion-collapse collapse show item-1' role='tabpanel' data-bs-parent='#accordion-1'>\
             <div class='accordion-body' style='margin: 0vw;padding:0.65vw'>\
-                <div class='btn-group' role='group'><button id='yearbutton' class='btn btn-primary' type='button' style='background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;'>År</button><button class='btn btn-primary' type='button' style='background: #d6e4f7;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;'>Månad</button><button class='btn btn-primary' type='button' style='background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;'>Vecka</button><button class='btn btn-primary' type='button' style='background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;'>Dag</button></div>\
+                <div class='btn-group' role='group' style='width:100%'><button class='btn btn-primary' type='button' style='background: #d6e4f7;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;'>Månad</button><button class='btn btn-primary' type='button' style='background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;'>Vecka</button><button class='btn btn-primary' type='button' style='background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;'>Dag</button></div>\
                 <div class='input-group input-group-sm mb-3'>\
                     <span style='background-color:#d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;' class='input-group-text'><i class='icon ion-android-menu' style='font-size: 0.85vw;'></i></button></span>\
                     <input style='background-color: #d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;' class='form-control form-control-sm' type='text' placeholder='Sök efter tidsperiod'>\
                 </div>\
                 <ul class='list-group list-group-flush'>\
-                    <li id='bigliitem' class='list-group-item'>Januari 2020<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
                     <li id='bigliitem' class='list-group-item'>Januari 2019<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
-                    <li id='bigliitem' class='list-group-item'>Februari 2020<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
                     <li id='bigliitem' class='list-group-item'>Februari 2019<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
-                    <li id='bigliitem' class='list-group-item'>Mars 2020<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
                     <li id='bigliitem' class='list-group-item'>Mars 2019<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
+                    <li id='bigliitem' class='list-group-item'>Januari 2020<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
+                    <li id='bigliitem' class='list-group-item'>Februari 2020<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
+                    <li id='bigliitem' class='list-group-item'>Mars 2020<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
                 </ul>\
             </div>\
         </div>\
-      </div>";
+    </div>\
+    <div class='accordion-item'>\
+    <h2 class='accordion-header' role='tab'><button  id='bigdrop' class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#accordion-1 .item-4' aria-expanded='false' aria-controls='accordion-1 .item-4'>Förbrukare</button></h2>\
+    <div class='accordion-collapse collapse item-4' role='tabpanel' data-bs-parent='#accordion-1'>\
+        <div class='accordion-body' style='margin: 0vw;padding:0.65vw'>\
+            <div class='input-group input-group-sm mb-3'>\
+                <span style='background-color:#d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;' class='input-group-text'><i class='icon ion-android-menu' style='font-size: 0.85vw;'></i></button></span>\
+                <input style='background-color: #d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;' class='form-control form-control-sm' type='text' placeholder='Sök efter funktion'>\
+             </div>\
+            <ul class='list-group list-group-flush'>\
+                <li id='bigliitem' class='list-group-item'>Maskin A<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
+                <li id='bigliitem' class='list-group-item'>Maskin B<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
+                <li id='bigliitem' class='list-group-item'>Maskin C<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
+            </ul>\
+        </div>\
+    </div>\
+</div>\
+    <div class='accordion-item'>\
+    <h2 class='accordion-header' role='tab'><button id='bigdrop' class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#accordion-1 .item-5' aria-expanded='false' aria-controls='accordion-1 .item-4'>Sortering</button></h2>\
+    <div class='accordion-collapse collapse item-5' role='tabpanel' data-bs-parent='#accordion-1'>\
+        <div class='accordion-body' style='margin: 0vw;padding:0.65vw'>\
+            <p style='margin-bottom: 0.65vw; font-size: 0.85vw;'>Välj presenteringsalternativ</p>\
+            <div class='form-check'>\
+            <input class='form-check-input' type='radio' name='flexRadioDefault' id='flexRadioDefault1timevar' checked onchange='changeTimeVar()'>\
+            <label class='form-check-label' for='flexRadioDefault1'>\
+            <p style='margin-bottom: 0.65vw; font-size: 1vw;'>Rådata</p>\
+            </label>\
+            </div>\
+            <div class='form-check'>\
+            <input class='form-check-input' type='radio' name='flexRadioDefault' id='flexRadioDefault2timevar' onchange='changeTimeVar()'>\
+            <label class='form-check-label' for='flexRadioDefault2'>\
+            <p style='margin-bottom: 0.65vw; font-size: 1vw;'>Varaktighet</p>\
+            </label>\
+            </div>\
+        </div>\
+    </div>\
+</div>\
+      ";
     }
+
+
+    function reducedAcordion2(){
+        document.getElementById("accordion-1").innerHTML= "\
+        <div class='accordion-item'>\
+          <h2 style='color: white;' class='accordion-header' role='tab'><button id='bigdrop' class='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#accordion-1 .item-1' aria-expanded='true' aria-controls='accordion-1 .item-1'>Tidsperiod</button></h2>\
+          <div class='accordion-collapse collapse show item-1' role='tabpanel' data-bs-parent='#accordion-1'>\
+              <div class='accordion-body' style='margin: 0vw;padding:0.65vw'>\
+                  <div class='btn-group' role='group' style='width:100%'><button id='yearbutton' class='btn btn-primary' type='button' style='background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;'>År</button><button class='btn btn-primary' type='button' style='background: #d6e4f7;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;'>Månad</button><button class='btn btn-primary' type='button' style='background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;'>Vecka</button><button class='btn btn-primary' type='button' style='background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;'>Dag</button></div>\
+                  <div class='input-group input-group-sm mb-3'>\
+                      <span style='background-color:#d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;' class='input-group-text'><i class='icon ion-android-menu' style='font-size: 0.85vw;'></i></button></span>\
+                      <input style='background-color: #d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;' class='form-control form-control-sm' type='text' placeholder='Sök efter tidsperiod'>\
+                  </div>\
+                  <ul class='list-group list-group-flush'>\
+                      <li id='bigliitem' class='list-group-item'>Januari 2019<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
+                      <li id='bigliitem' class='list-group-item'>Februari 2019<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
+                      <li id='bigliitem' class='list-group-item'>Mars 2019<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
+                      <li id='bigliitem' class='list-group-item'>Januari 2020<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
+                      <li id='bigliitem' class='list-group-item'>Februari 2020<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
+                      <li id='bigliitem' class='list-group-item'>Mars 2020<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
+                  </ul>\
+              </div>\
+          </div>\
+        ";
+      }
 
     //function to change the accordion to the expanded version 
     function resetAccordion(){
@@ -40,18 +113,18 @@ let forecastingC = false;
                                                 <h2 style='color: white;' class='accordion-header' role='tab'><button id='bigdrop' class='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#accordion-1 .item-1' aria-expanded='true' aria-controls='accordion-1 .item-1'>Tidsperiod</button></h2>\
                                                 <div class='accordion-collapse collapse show item-1' role='tabpanel' data-bs-parent='#accordion-1'>\
                                                     <div class='accordion-body' style='margin: 0vw;padding:0.65vw'>\
-                                                        <div class='btn-group' role='group'><button id='yearbutton' class='btn btn-primary' type='button' style='background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;'>År</button><button class='btn btn-primary' type='button' style='background: #d6e4f7;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;'>Månad</button><button class='btn btn-primary' type='button' style='background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;'>Vecka</button><button class='btn btn-primary' type='button' style='background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;'>Dag</button></div>\
+                                                        <div class='btn-group' role='group' style='width:100%'><button id='yearbutton' class='btn btn-primary' type='button' style='background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;'>År</button><button class='btn btn-primary' type='button' style='background: #d6e4f7;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;border-right: 1px solid #d6e4f7;'>Månad</button><button class='btn btn-primary' type='button' style='background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;'>Vecka</button><button class='btn btn-primary' type='button' style='background: #f1f0f4;color: #42474e;font-size: 0.85vw;border: 2px solid #d6e4f7;'>Dag</button></div>\
                                                         <div class='input-group input-group-sm mb-3'>\
                                                             <span style='background-color:#d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;' class='input-group-text'><i class='icon ion-android-menu' style='font-size: 0.85vw;'></i></button></span>\
                                                             <input style='background-color: #d6e4f7; margin-top: 0.65vw; font-size: 0.85vw;' class='form-control form-control-sm' type='text' placeholder='Sök efter tidsperiod'>\
                                                          </div>\
                                                         <ul class='list-group list-group-flush'>\
-                                                            <li id='bigliitem' class='list-group-item'>Januari 2020<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
                                                             <li id='bigliitem' class='list-group-item'>Januari 2019<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
-                                                            <li id='bigliitem' class='list-group-item'>Februari 2020<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
                                                             <li id='bigliitem' class='list-group-item'>Februari 2019<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
-                                                            <li id='bigliitem' class='list-group-item'>Mars 2020<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
                                                             <li id='bigliitem' class='list-group-item'>Mars 2019<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
+                                                            <li id='bigliitem' class='list-group-item'>Januari 2020<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
+                                                            <li id='bigliitem' class='list-group-item'>Februari 2020<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
+                                                            <li id='bigliitem' class='list-group-item'>Mars 2020<button class='btn' type='button' style='padding:0px; float: right;'><i class='icon ion-close-round' style='font-size: 0.85vw;'></i></button></li>\
                                                         </ul>\
                                                     </div>\
                                                 </div>\
@@ -126,6 +199,103 @@ let forecastingC = false;
     }
 
 
+    function drillDownSankey(){
+        document.getElementById("container").innerHTML =""; 
+        // elem.setAttribute("id", "container"); 
+        // elem.setAttribute("style", "height: 527px")
+    
+        // document.getElementById("bigboxROW").appendChild(elem);
+        
+    
+        var data = [
+            {from: "Värme",  to: "Kontorsklimat", weight: 300,},
+            {from: "Värme",  to: "Lagerlokal", weight: 100,},
+            {from: "Kokning",  to: "Trycksättning", weight: 500},
+            {from: "Kokning",  to: "Uppvärmning", weight: 200},
+            {from: "Kokning",  to: null, weight: 200},
+            {from: "Slipning",  to: "Planslipning", weight: 300,},
+            {from: "Slipning",  to: "Fleroperationsslipning", weight: 200,},
+            {from: "Intern transport",  to: "Truckar", weight: 500},
+            {from: "Intern transport",  to: "Områdes buss", weight: 100},
+            {from: "Intern transport",  to: "Mattransport", weight: 50},
+            {from: "Intern transport",  to: "Interna leveranser", weight: 500},
+            {from: "Pumpning",  to: "Slangpump", weight: 500},
+            {from: "Pumpning",  to: "Fatpump", weight: 500},
+    
+          ];
+          
+          // create a chart and set the data
+          var chart = anychart.sankey(data);
+    
+          chart.node().tooltip().format(function() {
+    
+            
+            var incomeText = "";
+            var outcomeText = "";
+    
+            if (this.income.length >0){
+                incomeText += " Inkommande: \n";
+            }
+    
+            if (this.outcome.length >0){
+                outcomeText += " Utgående: \n";
+            }
+          
+            for (i = 0; i < this.income.length; i++) {
+              incomeText += "-" + this.income[i].name + " " + this.income[i].value + "\n";
+              if (i == (this.income.length -1) && this.outcome.length > 0){
+                incomeText += "\n";
+                }
+            }
+          
+            for (i = 0; i < this.outcome.length; i++) {
+              outcomeText += "-" + this.outcome[i].name + " " + this.outcome[i].value + "\n";
+            }
+        
+          
+            return incomeText + outcomeText;
+          });
+          
+          // set the width of nodes
+          chart.nodeWidth("30%");
+          
+          
+          // set the container id
+          chart.container("container");
+    
+    
+          chart
+            .title()
+            .enabled(true)
+            .useHtml(true)
+            .text(
+            '<span style = "color: #2b2b2b; font-size:20px;">Energiflöde [MWh]</span>'
+            );
+    
+            chart.palette([
+                "#FFDFA6",
+                "#b5d6d6",
+                "#D1F0FF",
+                "#A67DC3",
+                "#0094D4",
+                "#9ACBFF",
+                "#8BC34A",
+                "#9CADCE",
+                "#FFB4AB",
+                "#C4DBAB",
+                "#AD405E",
+                "#FF9800",
+    
+              ]);
+
+              chart.listen("click", function(e){
+                changeToSankey()
+              });
+          
+          
+          // initiate drawing the chart
+          chart.draw();
+    }
     // function to change the big component into the sankey chart 
     function changeToSankey(){
       document.getElementById("bigboxROW").innerHTML=""; 
@@ -138,11 +308,207 @@ let forecastingC = false;
       document.getElementById("sankeytab").className = "nav-link active";
       document.getElementById("sankeytab").style.color = "#42474e"; 
 
-      reducedAcordion();
+      reducedAcordion2();
       
-      var elem = document.createElement("img");
-      elem.setAttribute("src", "assets/img/sankey3.jpg");
-      document.getElementById("bigboxROW").appendChild(elem);
+    //   var elem = document.createElement("img");
+    //   elem.setAttribute("src", "assets/img/sankey3.jpg");
+    //   document.getElementById("bigboxROW").appendChild(elem);
+
+    var elem = document.createElement("div");
+    elem.setAttribute("id", "container"); 
+    elem.setAttribute("style", "height: 527px")
+
+    document.getElementById("bigboxROW").appendChild(elem);
+    
+
+    var data = [
+        {from: "Koks",  to: "Hus A", weight: 2300,},
+        {from: "Hus A",  to: "Kokning", weight: 2300},
+
+        {from: "Fjärrvärme",  to: "Hus A", weight: 2300},
+        {from: "Hus A",  to: "Värme", weight: 2300},
+        {from: "Fjärrvärme",  to: "Hus B", weight: 1000},
+        {from: "Hus B",  to: "Slipning", weight: 2000},
+        {from: "Fjärrvärme",  to: "Hus C", weight: 1000},
+        {from: "Hus C",  to: "Kokning", weight: 1000},
+
+        {from: "Kokning",  to: null, weight: 200},
+
+        {from: "El",  to: "Hus A", weight: 1000},
+        {from: "Hus A",  to: "Slipning", weight: 1000},
+        {from: "El",  to: "Hus B", weight: 2000},
+        {from: "Hus B",  to: "Intern transport", weight: 2000},
+
+        {from: "Olja",  to: "Hus A", weight: 1000},
+        {from: "Hus A",  to: "Slipning", weight: 1000},
+        {from: "Olja",  to: "Hus B", weight: 1000},
+        {from: "Hus A",  to: "Kokning", weight: 1000},
+        {from: "Olja",  to: "Hus C", weight: 4300},
+        {from: "Hus C",  to: "Slipning", weight: 1000},
+        {from: "Hus C",  to: "Pumpning", weight: 1000},
+        {from: "Hus C",  to: "Intern transport", weight: 2300},
+      ];
+      
+      // create a chart and set the data
+      var chart = anychart.sankey(data);
+
+      chart.node().tooltip().format(function() {
+
+        
+        var incomeText = "";
+        var outcomeText = "";
+
+        if (this.income.length >0){
+            incomeText += " Inkommande: \n";
+        }
+
+        if (this.outcome.length >0){
+            outcomeText += " Utgående: \n";
+        }
+      
+        for (i = 0; i < this.income.length; i++) {
+          incomeText += "-" + this.income[i].name + " " + this.income[i].value + "\n";
+          if (i == (this.income.length -1) && this.outcome.length > 0){
+            incomeText += "\n";
+            }
+        }
+      
+        for (i = 0; i < this.outcome.length; i++) {
+          outcomeText += "-" + this.outcome[i].name + " " + this.outcome[i].value + "\n";
+        }
+    
+      
+        return incomeText + outcomeText;
+      });
+      
+      // set the width of nodes
+      chart.nodeWidth("30%");
+      
+      
+      // set the container id
+      chart.container("container");
+
+
+      chart
+        .title()
+        .enabled(true)
+        .useHtml(true)
+        .text(
+        '<span style = "color: #2b2b2b; font-size:20px;">Energiflöde [MWh]</span>'
+        );
+
+        chart.palette([
+            "#9ACBFF",
+            "#8BC34A",
+            "#9CADCE",
+            "#FFB4AB",
+            "#C4DBAB",
+            "#AD405E",
+            "#FF9800",
+            "#b5d6d6",
+            "#FFDFA6",
+            "#D1F0FF",
+            "#A67DC3",
+            "#0094D4",
+
+          ]);
+
+          chart.listen("click", function(e){
+            if (e.domTarget.tag && e.domTarget.tag.element) {
+                var el = e.domTarget.tag.element;      
+
+                  if (el.level == 2){
+                    drillDownSankey();
+                  }
+                }
+          });
+      
+      // initiate drawing the chart
+      chart.draw();
+
+
+
+      
+    }
+
+    function effectChart(x, data1, data2, data3, data4){
+        new Chart(x, {
+            data: {
+                labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32', '33', '34', '35', '36', '37', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'],
+                datasets: [  
+                 {
+                   type: 'line',
+                   label: 'Effekttak',
+                   data: data3,
+                   borderWidth: 2, 
+                   borderColor: '#42474E',
+                   backgroundColor: '#42474E',
+                   },
+                   {
+                     type: 'line',
+                     label: 'Baslast',
+                     data: data4,
+                     borderWidth: 2, 
+                     borderColor: '#00629F',
+                     backgroundColor: '#00629F',
+                     },                                            
+                 {
+                type: 'line',
+                label: 'Januari 2020',
+                data: data1,
+                borderWidth: 2, 
+                borderColor:'#9ACBFF',
+                backgroundColor: '#9ACBFF',
+                }, {
+                 type: 'line',
+                 label: 'Januari 2019',
+                 data: data2,
+                 borderWidth: 2, 
+                 borderColor: '#6750A4',
+                 backgroundColor: '#6750A4',
+                 },
+     
+            ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        display:true
+                    }, 
+                    x: {
+                        stacked:false, 
+                        display:false
+                    }
+                }, 
+                events: ['mousemove','click'],
+                
+             //    onClick: (e) => {
+             //        alert("Du klicka på grafen"); 
+             //    }, 
+                elements: {
+                 point: {
+                   radius: 0,
+                 }, 
+                }, 
+                plugins: {
+                 legend: {
+                   display: true,
+                   position: 'bottom',
+                   labels: {
+                       usePointStyle: true, 
+                       pointStyle:'circle', 
+                       padding: 40,
+                   }
+               }, subtitle : {
+                 display : true, 
+                 text: "Timmar", 
+                 position: 'bottom',
+                 padding: -50,
+               }
+                }
+            }
+            });
     }
 
 
@@ -183,84 +549,71 @@ let forecastingC = false;
      let data4 = data1.map(x => 39);
  
      // chart for effect
-     new Chart(x, {
-       data: {
-           labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32', '33', '34', '35', '36', '37', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'],
-           datasets: [  
-            {
-              type: 'line',
-              label: 'Effekttak',
-              data: data3,
-              borderWidth: 2, 
-              borderColor: '#42474E',
-              backgroundColor: '#42474E',
-              },
-              {
-                type: 'line',
-                label: 'Baslast',
-                data: data4,
-                borderWidth: 2, 
-                borderColor: '#00629F',
-                backgroundColor: '#00629F',
-                },                                            
-            {
-           type: 'line',
-           label: 'Januari 2020',
-           data: data1,
-           borderWidth: 2, 
-           borderColor:'#9ACBFF',
-           backgroundColor: '#9ACBFF',
-           }, {
-            type: 'line',
-            label: 'Januari 2019',
-            data: data2,
-            borderWidth: 2, 
-            borderColor: '#6750A4',
-            backgroundColor: '#6750A4',
-            },
-
-       ]
-       },
-       options: {
-           scales: {
-               y: {
-                   beginAtZero: true,
-                   display:true
-               }, 
-               x: {
-                   stacked:false, 
-                   display:false
-               }
-           }, 
-           events: ['mousemove','click'],
-           
-        //    onClick: (e) => {
-        //        alert("Du klicka på grafen"); 
-        //    }, 
-           elements: {
-            point: {
-              radius: 0,
-            }, 
-           }, 
-           plugins: {
-            legend: {
-              display: true,
-              position: 'bottom',
-              labels: {
-                  usePointStyle: true, 
-                  pointStyle:'circle', 
-                  padding: 40,
-              }
-          }, subtitle : {
-            display : true, 
-            text: "Timmar", 
-            position: 'bottom',
-            padding: -50,
-          }
-           }
-       }
-       });
+     effectChart(x, data1, data2, data3, data4); 
     }
+
+    function changeToEfectFromVar(){
+        document.getElementById("bigboxROW").innerHTML=""; 
+  
+        var x = document.createElement("CANVAS");
+  
+        var y = document.createElement("DIV");
+        y.className = "col-xl-1 offset-xl-0";
+        y.innerHTML = "<div class='btn-group-vertical btn-group-sm' role='group'><button id='MWhbtn' class='btn btn-sm' type='button' style='font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;'>MW</button><button id='TSEKbtn' class='btn btn-sm' type='button' style='font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;'>TSEK</button></div>"
+        document.getElementById("bigboxROW").appendChild(y);
+  
+        var z = document.createElement("DIV");
+        z.className = "col-xl-11";
+        z.id="innerboxdiv";
+        document.getElementById("bigboxROW").appendChild(z);
+           
+       document.getElementById("innerboxdiv").appendChild(x);
+           
+       let data = [12, 19, 3, 5, 2, 5, 4, 7, 5, 6, 7 ,8 ,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
+         
+       let data1 = data.map(x => Math.floor(Math.random() * 20)+ 30);    
+       let data2 = data1.map(x => Math.floor(Math.random() * 20) +30);
+       // sets data to constant 
+       let data3 = data1.map(x => 45);
+       let data4 = data1.map(x => 39);
+   
+       // chart for effect
+       effectChart(x, data1, data2, data3, data4); 
+      }
+
+    function changeToEfectVAR(){
+        document.getElementById("bigboxROW").innerHTML=""; 
+  
+        var x = document.createElement("CANVAS");
+  
+        var y = document.createElement("DIV");
+        y.className = "col-xl-1 offset-xl-0";
+        y.innerHTML = "<div class='btn-group-vertical btn-group-sm' role='group'><button id='MWhbtn' class='btn btn-sm' type='button' style='font-size: 0.85vw;margin-right: 3px;background: #D6E4F7;'>MW</button><button id='TSEKbtn' class='btn btn-sm' type='button' style='font-size: 0.85vw;margin-right: 3px;background: #f1f0f4;'>TSEK</button></div>"
+        document.getElementById("bigboxROW").appendChild(y);
+  
+        var z = document.createElement("DIV");
+        z.className = "col-xl-11";
+        z.id="innerboxdiv";
+        document.getElementById("bigboxROW").appendChild(z);
+           
+       document.getElementById("innerboxdiv").appendChild(x);
+           
+       let data = [12, 19, 3, 5, 2, 5, 4, 7, 5, 6, 7 ,8 ,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
+         
+       let data1 = data.map(x => Math.floor(Math.random() * 20)+ 30);    
+       let data2 = data1.map(x => Math.floor(Math.random() * 20) +30);
+       data1.sort(); 
+       data1.reverse(); 
+
+       data2.sort(); 
+       data2.reverse(); 
+       // sets data to constant 
+       let data3 = data1.map(x => 45);
+       let data4 = data1.map(x => 39);
+   
+       // chart for effect
+       effectChart(x, data1, data2, data3, data4); 
+      }
 
     //Change the big div into the suplied energy chart
     function changeToSupliedEnergy() {
@@ -292,6 +645,9 @@ let forecastingC = false;
         document.getElementById("bigboxROW").appendChild(z);
            
        document.getElementById("innerboxdiv").appendChild(x);
+
+       const sumArray = [4300,3600, 4200, 3700,3700,4100];
+       const indexArray = [0,0,0,0,0,1,1,1,1]
 
        const data = {
         labels: ['Jan', 'Feb', 'Mar'],
@@ -429,7 +785,15 @@ let forecastingC = false;
                         pointStyle:'circle', 
                         padding: 35,
                     }
-             },           
+             },   
+             tooltip: {
+                callbacks:{
+                    afterBody: function(context){
+                        return "Total tillförsel: " + sumArray[context[0].dataIndex*2 + indexArray[context[0].datasetIndex]];
+                    }
+                }
+
+             },         
 
         }, 
             responsive: true,
@@ -1210,6 +1574,16 @@ function newSchedule() {
 
 function newMadeMeasure() {
     alert("Du har nu genomfört åtgärden!");
+}
+
+function changeAnnual() {
+    // document.getElementById("annualDiv").setAttribute("style", "background: url(assets/img/wheel5.jpg) center / contain no-repeat, rgba(255,255,255,0);border-radius: 0px;height: 29vw;width: 29vw; margin-left:2vw;");
+    document.getElementById("annualDiv").style.backgroundImage ="url(assets/img/wheel7.jpg)";
+    document.getElementById("yearannual21").style.background = "rgb(214, 228, 247)"; 
+    document.getElementById("yearannual22").style.background = "rgb(241, 240, 244)"; 
+    document.getElementById("julbtn").style.display = "unset";
+    document.getElementById("marbtn").style.display = "none";
+
 }
 
 
