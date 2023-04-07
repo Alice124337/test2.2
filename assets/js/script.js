@@ -216,7 +216,7 @@ let forecastingC = false;
             {from: "Slipning",  to: "Planslipning", weight: 300,},
             {from: "Slipning",  to: "Fleroperationsslipning", weight: 200,},
             {from: "Intern transport",  to: "Truckar", weight: 500},
-            {from: "Intern transport",  to: "Områdes buss", weight: 100},
+            {from: "Intern transport",  to: "Områdesbuss", weight: 100},
             {from: "Intern transport",  to: "Mattransport", weight: 50},
             {from: "Intern transport",  to: "Interna leveranser", weight: 500},
             {from: "Pumpning",  to: "Slangpump", weight: 500},
@@ -1274,6 +1274,36 @@ function changeSelect() {
         document.getElementById("benchmark").appendChild(elem);
   
         document.getElementById("benchmark-info").innerHTML="<p id='benchmark-info' style='color: rgb(33,37,41);font-size: 1vw;text-align: center;margin-bottom: 0px;'>Plåt AB:s <strong>energiförbrukning per m<sub><strong>2</strong></sub></strong> är <strong>11% högre än genomsnittet</strong> inom branschen.</p>";
+      }
+
+      if (selected == "MWh/anställd") {
+        document.getElementById("benchmark").innerHTML=""; 
+        var elem = document.createElement("img");
+        elem.setAttribute("src", "assets/img/benchmark-mwh-anstalld.jpg");
+        elem.setAttribute("class", "img-fluid")
+        document.getElementById("benchmark").appendChild(elem);
+  
+        document.getElementById("benchmark-info").innerHTML="<p id='benchmark-info' style='color: rgb(33,37,41);font-size: 1vw;text-align: center;margin-bottom: 0px;'>Plåt AB:s <strong>energiförbrukning (MWh) per anställd</strong> är <strong>21% lägre än genomsnittet</strong> inom branschen.</p>";
+      }
+
+      if (selected == "CO₂/anställd") {
+        document.getElementById("benchmark").innerHTML=""; 
+        var elem = document.createElement("img");
+        elem.setAttribute("src", "assets/img/benchmark-co2-actual.jpg");
+        elem.setAttribute("class", "img-fluid")
+        document.getElementById("benchmark").appendChild(elem);
+  
+        document.getElementById("benchmark-info").innerHTML="<p id='benchmark-info' style='color: rgb(33,37,41);font-size: 1vw;text-align: center;margin-bottom: 0px;'>Plåt AB:s <strong>koldioxidförbrukning (CO₂) per anställd</strong> är <strong>34% högre än genomsnittet</strong> inom branschen.</p>";
+      }
+
+      if (selected == "Andel förnybar energi") {
+        document.getElementById("benchmark").innerHTML=""; 
+        var elem = document.createElement("img");
+        elem.setAttribute("src", "assets/img/benchmark-andel-fornybar.jpg");
+        elem.setAttribute("class", "img-fluid")
+        document.getElementById("benchmark").appendChild(elem);
+  
+        document.getElementById("benchmark-info").innerHTML="<p id='benchmark-info' style='color: rgb(33,37,41);font-size: 1vw;text-align: center;margin-bottom: 0px;'>Plåt AB:s <strong>andel förnybar energi</strong> är <strong>20% högre än genomsnittet</strong> inom branschen.</p>";
       }
 
     

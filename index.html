@@ -307,10 +307,10 @@
                         <div class="col">
                             <select class="selectpicker" data-size="6" onchange="changeSelect()" data-live-search="true">
                                 <optgroup label="Total">
-                                    <option disabled>MWh/anställd</option>
+                                    <option>MWh/anställd</option>
                                     <option selected>MWh/m²</option>
-                                    <option disabled>CO₂/anställd</option>
-                                    <option disabled>Andel förnybar energi</option>
+                                    <option>CO₂/anställd</option>
+                                    <option>Andel förnybar energi</option>
                                     <option>MWh/omsatt TSEK</option>
                                 </optgroup>
                                 <optgroup label="Lokalvärme">
@@ -331,7 +331,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-top: 0.5vw; margin-bottom: 0.5vw;">
+            <div class="row" style="margin-top: 0.5vw; margin-bottom: 0.9vw;">
                 <div id="benchmark" class="col">
                     <img src="assets\img\benchmark-co2-externt.JPG" class="img-fluid" >
                 </div>
@@ -1014,7 +1014,7 @@
                                                 <h5 class='card-title' style='margin:0;'>Pumpoptimering      
                                                 <img class='img-fluid' src='assets/img/namelogga.jpg' style='height: 2.3vw; width: 2.3vw; border-radius: 2vw; margin-top:-0.2vw; float: right;padding-bottom:0vw'></h5>" 
                                                 data-content="
-                                                <div class='card-body' style='padding: 0.5vw'>
+                                                <div class='card-body' style='padding: 0.5vw;'>
                                                 <h6 class='card-text'>Optimering av kylpumpar i Narvik</h6>
                                                 <p >
                                                 Klart: 2023-04-01</p>
@@ -1223,7 +1223,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col" style="display:flex">
-                                                    <p style="color:#73777F;font-size: 0.75vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;">Uppmätt värde: <p style="color:black;font-size: 0.75vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;"> 136 [5,6]</p> </p>
+                                                    <p style="color:#73777F;font-size: 0.75vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;">Uppmätt värde: <p style="color:black;font-size: 0.75vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;"> 13,2 [5,6]</p> </p>
                                             </div>
                                         </div>
                                     </div>
@@ -1255,12 +1255,12 @@
                                             <i class="fa-sharp fa-solid fa-chalkboard-user" style="margin-right:1vw"></i> <p style="color:#73777F;font-size: 0.85vw;text-align: left;margin-bottom: 0px; margin-top: 0vw;">  TJA</p>
                                         </div> -->
                                         <div class="btn-group btn-group-sm" role="group" style="margin-bottom:1vw" >
-                                            <button id="buttonChangeGraph" class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xxl-center" type="button" style="background: rgb(214,228,247);border-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="d-xxl-flex align-items-xxl-center" style="font-size: 1.6vw;color: #0f1d2a;">
+                                            <button id="buttonChangeGraph" class="btn btn-primary d-xl-flex d-xxl-flex justify-content-xl-center align-items-xxl-center" type="button" style="margin-bottom: 0.2vw; background: rgb(214,228,247);border-color: rgb(214,228,247);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="d-xxl-flex align-items-xxl-center" style="font-size: 1.6vw;color: #0f1d2a;">
                                                     <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                                     <path d="M160 80C160 53.49 181.5 32 208 32H240C266.5 32 288 53.49 288 80V432C288 458.5 266.5 480 240 480H208C181.5 480 160 458.5 160 432V80zM0 272C0 245.5 21.49 224 48 224H80C106.5 224 128 245.5 128 272V432C128 458.5 106.5 480 80 480H48C21.49 480 0 458.5 0 432V272zM400 96C426.5 96 448 117.5 448 144V432C448 458.5 426.5 480 400 480H368C341.5 480 320 458.5 320 432V144C320 117.5 341.5 96 368 96H400z"></path>
                                                 </svg>
                                             </button>
-                                                <button class="btn btn-primary d-xl-flex d-xxl-flex align-items-xxl-center" type="button" style="background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);" onclick="changeBudgetTable(this)"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" class="d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;">
+                                                <button class="btn btn-primary d-xl-flex d-xxl-flex align-items-xxl-center" type="button" style="margin-bottom: 0.2vw; background: rgb(241,240,244);border-color: rgb(214,228,247);border-top-color: rgb(214,228,247);border-right-color: rgb(214,228,247);border-bottom-color: rgb(214,228,247);border-left-color: rgb(214,228,247);" onclick="changeBudgetTable(this)"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" class="d-xl-flex d-xxl-flex flex-fill justify-content-xl-center align-items-xl-center align-items-xxl-center" style="font-size: 1.6vw;color: #42474e;">
                                                     <path d="M3 4C3 3.44772 3.44772 3 4 3H16C16.5523 3 17 3.44772 17 4V6C17 6.55228 16.5523 7 16 7H4C3.44772 7 3 6.55228 3 6V4Z" fill="currentColor"></path>
                                                     <path d="M3 10C3 9.44771 3.44772 9 4 9H10C10.5523 9 11 9.44771 11 10V16C11 16.5523 10.5523 17 10 17H4C3.44772 17 3 16.5523 3 16V10Z" fill="currentColor"></path>
                                                     <path d="M14 9C13.4477 9 13 9.44771 13 10V16C13 16.5523 13.4477 17 14 17H16C16.5523 17 17 16.5523 17 16V10C17 9.44771 16.5523 9 16 9H14Z" fill="currentColor"></path>
@@ -1381,6 +1381,10 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
+                                    <div class="col">
+                                        <p style="color:#73777F;font-size: 0.85vw;text-align: left;margin-bottom: -5px; margin-top: 0vw;">I grafen ges en prognos för hur plåt AB förhåller sig till uppsatt mål utifrån historiska, kommande och föreslagna åtgärder.
+                                        </p>
+                                    </div>
                                     <div class="col d-xl-flex justify-content-xl-end">
                                         <select class="selectpicker" multiple data-selected data-none-selected-text="Välj anläggning">
                                             <option selected>Narvik</option>
@@ -1403,18 +1407,18 @@
                                                     data-content="
                                                     <div class='card-body' style='padding: 0.5vw'>
 
-                                                    <h6 class='card-text'><center>Energiförbrukning (MWh/år)</center></h6>
+                                                    <h5 class='card-text'><center>Energiförbrukning (MWh/år)</center></h5>
                                                     <div class='row' style='margin-top: 2vw; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding: 0px;'>
                                                         <div class='col-xl-5' style='margin: 0px; padding: 0px;'>
-                                                            <center><p style='color: #dd2400; font-size: 2.3vw; margin: 0px; padding: 0px;'>9945</p></center>
-                                                            <center><p style='font-size: 0.82vw;'>Prognos 2025</p></center>
+                                                            <center><p style='color: #dd2400; font-size: 2.6vw; margin: 0px; padding: 0px;'>9945</p></center>
+                                                            <center><p style='font-size: 1vw;'>Prognos 2025</p></center>
                                                         </div>
                                                         <div class='col-xl-2' style='margin: 0px; padding: 0px;'>
                                                             <center><img src='assets\img\linje.png' style='height: 5vw;'></center>
                                                         </div>
                                                         <div class='col-xl-5' style='padding: 0vw; margin: 0px;'>
-                                                            <center><p style='font-size: 2.3vw; margin: 0px; padding: 0px;'>6000</p></center>
-                                                            <center><p style='font-size: 0.82vw;'><i class='fa-sharp fa-solid fa-star fa-lg' style='color: #ffdfa6; margin-right: 5px;'></i>Mål 2025</p></center>
+                                                            <center><p style='font-size: 2.6vw; margin: 0px; padding: 0px;'>6000</p></center>
+                                                            <center><p style='font-size: 1vw;'><i class='fa-sharp fa-solid fa-star fa-lg' style='color: #ffdfa6; margin-right: 5px;'></i>Mål 2025</p></center>
                                                         </div>
                                                     </div>
                                                     <div
