@@ -1279,7 +1279,7 @@ function changeSelect() {
       if (selected == "MWh/anställd") {
         document.getElementById("benchmark").innerHTML=""; 
         var elem = document.createElement("img");
-        elem.setAttribute("src", "assets/img/benchmark-mwh-anstalld.jpg");
+        elem.setAttribute("src", "assets/img/benchmark-mwh-anstalld.JPG");
         elem.setAttribute("class", "img-fluid")
         document.getElementById("benchmark").appendChild(elem);
   
