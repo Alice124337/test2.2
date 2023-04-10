@@ -1269,7 +1269,7 @@ function changeSelect() {
     if (selected == "MWh/m²") {
         document.getElementById("benchmark").innerHTML=""; 
         var elem = document.createElement("img");
-        elem.setAttribute("src", "assets/img/benchmark-co2-externt.jpg");
+        elem.setAttribute("src", "assets/img/benchmark-co2-externt.JPG");
         elem.setAttribute("class", "img-fluid")
         document.getElementById("benchmark").appendChild(elem);
   
@@ -1289,7 +1289,7 @@ function changeSelect() {
       if (selected == "CO₂/anställd") {
         document.getElementById("benchmark").innerHTML=""; 
         var elem = document.createElement("img");
-        elem.setAttribute("src", "assets/img/benchmark-co2-actual.jpg");
+        elem.setAttribute("src", "assets/img/benchmark-co2-actual.JPG");
         elem.setAttribute("class", "img-fluid")
         document.getElementById("benchmark").appendChild(elem);
   
@@ -1299,7 +1299,7 @@ function changeSelect() {
       if (selected == "Andel förnybar energi") {
         document.getElementById("benchmark").innerHTML=""; 
         var elem = document.createElement("img");
-        elem.setAttribute("src", "assets/img/benchmark-andel-fornybar.jpg");
+        elem.setAttribute("src", "assets/img/benchmark-andel-fornybar.JPG");
         elem.setAttribute("class", "img-fluid")
         document.getElementById("benchmark").appendChild(elem);
   
